@@ -1,0 +1,19 @@
+@media screen and (min-width: 600px) {
+  .main {
+    padding: 128px 64px;
+  }
+
+  .portfolio-item {
+    padding: 20px 40px;
+  }
+
+  .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .project-list-item {
+    width: 49%;
+  }
+}
