@@ -1,0 +1,28 @@
+@media screen and (min-width: 900px) {
+  /* .dialog-content {
+    width: fit-content;
+    height: fit-content;
+  } */
+
+  .container {
+    flex-direction: row;
+  }
+
+  .main {
+    height: 100%;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  #secondary {
+    flex: 2;
+    overflow-y: auto;
+    border-radius: 35px 0 0 35px;
+    box-shadow: var(--material-shadow-3);
+    margin: 3% 0 1% 0;
+  }
+
+  .portfolio-item {
+    padding: 20px 40px;
+  }
+}
