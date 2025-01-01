@@ -9,6 +9,33 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Mobile hamburger menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+const navOverlay = document.getElementById('navOverlay');
+
+const toggleMobileMenu = () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    navOverlay.classList.toggle('active');
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+};
+
+const closeMobileMenu = () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+};
+
+hamburger.addEventListener('click', toggleMobileMenu);
+navOverlay.addEventListener('click', closeMobileMenu);
+
+// Close mobile menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
 // Dark mode toggle
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
