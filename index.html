@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Karandeep Bhardwaj - Senior Full-Stack Developer with 7+ years of experience in microservices, AWS, and full-stack technologies.">
     <meta name="theme-color" content="#ffffff">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="KB Portfolio">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    
+    <!-- View Transitions API -->
+    <meta name="view-transition" content="same-origin">
+    
     <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
     <title>Karandeep Bhardwaj</title>
@@ -40,9 +51,27 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Karandeep Bhardwaj</h1>
-            <p class="hero-subtitle">Software Developer</p>
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                <span>Open to opportunities</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="typing-text" id="typingText"></span>
+                <span class="typing-cursor">|</span>
+            </h1>
+            <p class="hero-subtitle">Senior Full-Stack Developer</p>
             <div class="hero-line"></div>
+            <div class="hero-actions">
+                <a href="Karandeep_Resume.pdf" download class="btn-download">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download Resume
+                </a>
+                <span class="keyboard-hint">Press <kbd>⌘</kbd><kbd>K</kbd> to navigate</span>
+            </div>
         </div>
     </section>
 
@@ -274,6 +303,67 @@
     <footer class="footer">
         <p>© 2025 Karandeep Bhardwaj</p>
     </footer>
+
+    <!-- Command Palette -->
+    <div class="command-palette-overlay" id="commandPaletteOverlay"></div>
+    <div class="command-palette" id="commandPalette">
+        <div class="command-palette-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="commandInput" placeholder="Type a command or search..." autocomplete="off">
+            <kbd class="command-esc">ESC</kbd>
+        </div>
+        <div class="command-palette-results" id="commandResults">
+            <div class="command-group">
+                <div class="command-group-title">Navigation</div>
+                <button class="command-item" data-action="navigate" data-target="#about">
+                    <span class="command-icon">→</span>
+                    <span class="command-label">Go to About</span>
+                    <span class="command-shortcut">↵</span>
+                </button>
+                <button class="command-item" data-action="navigate" data-target="#experience">
+                    <span class="command-icon">→</span>
+                    <span class="command-label">Go to Experience</span>
+                    <span class="command-shortcut">↵</span>
+                </button>
+                <button class="command-item" data-action="navigate" data-target="#skills">
+                    <span class="command-icon">→</span>
+                    <span class="command-label">Go to Skills</span>
+                    <span class="command-shortcut">↵</span>
+                </button>
+                <button class="command-item" data-action="navigate" data-target="#contact">
+                    <span class="command-icon">→</span>
+                    <span class="command-label">Go to Contact</span>
+                    <span class="command-shortcut">↵</span>
+                </button>
+            </div>
+            <div class="command-group">
+                <div class="command-group-title">Actions</div>
+                <button class="command-item" data-action="download">
+                    <span class="command-icon">↓</span>
+                    <span class="command-label">Download Resume</span>
+                    <span class="command-shortcut">↵</span>
+                </button>
+                <button class="command-item" data-action="theme">
+                    <span class="command-icon">◐</span>
+                    <span class="command-label">Toggle Dark Mode</span>
+                    <span class="command-shortcut">↵</span>
+                </button>
+                <button class="command-item" data-action="linkedin">
+                    <span class="command-icon">↗</span>
+                    <span class="command-label">Open LinkedIn</span>
+                    <span class="command-shortcut">↵</span>
+                </button>
+                <button class="command-item" data-action="github">
+                    <span class="command-icon">↗</span>
+                    <span class="command-label">Open GitHub</span>
+                    <span class="command-shortcut">↵</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
