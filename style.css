@@ -116,6 +116,13 @@ body {
     opacity: 0.6;
 }
 
+/* Nav Right Container */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 /* Theme Toggle - Pill Switch Style */
 .theme-toggle {
     display: flex;
@@ -721,13 +728,12 @@ body {
         padding: 1rem 1.5rem;
     }
 
-    .theme-toggle {
-        margin-left: auto;
+    .nav-links {
+        display: none;
     }
 
     .hamburger {
         display: flex !important;
-        margin-left: 0.5rem;
     }
 
     .nav-links {
