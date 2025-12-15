@@ -57,16 +57,15 @@ body {
 /* ========== CURSOR GLOW ========== */
 .cursor-glow {
     position: fixed;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--glow-color) 0%, transparent 60%);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    z-index: 9999;
+    z-index: 1;
     opacity: 0;
-    transition: opacity 0.3s ease;
-    mix-blend-mode: screen;
+    transition: opacity 0.5s ease;
 }
 
 .cursor-glow.active {
@@ -96,16 +95,18 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
     z-index: 9998;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.035;
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    background-image: url("data:image/png;base64,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");
 }
 
 [data-theme="dark"] .noise-overlay {
-    opacity: 0.05;
+    opacity: 0.06;
 }
 
 /* ========== TEXT REVEAL ANIMATION ========== */
@@ -128,40 +129,17 @@ body {
 .f1-canvas-container {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 450px;
     margin-top: 2rem;
     border-radius: 12px;
     overflow: hidden;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: #1a1a2e;
 }
 
-[data-theme="dark"] .f1-canvas-container {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-}
-
-#f1Canvas {
+.f1-canvas-container iframe {
     width: 100%;
     height: 100%;
-    display: block;
-}
-
-.f1-overlay {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    z-index: 10;
-}
-
-.f1-hint {
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.7);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    border: none;
 }
 
 /* Navigation */
