@@ -10,12 +10,14 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 300;
     color: #1a1a1a;
     background-color: #fff;
     line-height: 1.6;
     letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Navigation */
@@ -338,25 +340,20 @@ body {
     margin-bottom: 3rem;
 }
 
-.contact-links {
+.contact-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    max-width: 500px;
 }
 
-.contact-link {
+.form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
+    gap: 0.5rem;
 }
 
-.contact-link:hover {
-    opacity: 0.6;
-}
-
-.contact-type {
+.form-group label {
     font-size: 0.7rem;
     font-weight: 500;
     letter-spacing: 0.2em;
@@ -364,10 +361,89 @@ body {
     color: #999;
 }
 
-.contact-value {
-    font-size: 1rem;
+.form-group input,
+.form-group textarea {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.875rem 1rem;
+    border: 1px solid #ddd;
+    background: #fff;
     color: #1a1a1a;
-    letter-spacing: 0.05em;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #bbb;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #1a1a1a;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-submit {
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.form-submit:hover {
+    background: #fff;
+    color: #1a1a1a;
+}
+
+.contact-social {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.social-link {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    text-decoration: none;
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+.social-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #1a1a1a;
+    transition: width 0.3s ease;
+}
+
+.social-link:hover::after {
+    width: 100%;
+}
+
+.social-link:hover {
+    opacity: 0.6;
 }
 
 /* Footer */
