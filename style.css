@@ -924,6 +924,11 @@ body {
         min-height: 80vh;
     }
 
+    .hero-title {
+        white-space: normal;
+        word-break: break-word;
+    }
+
     .section {
         padding: 4rem 1.5rem;
     }
@@ -1015,6 +1020,7 @@ body {
     margin-bottom: 1rem;
     min-height: 1.2em;
     line-height: 1.1;
+    white-space: nowrap;
 }
 
 .typing-text {
