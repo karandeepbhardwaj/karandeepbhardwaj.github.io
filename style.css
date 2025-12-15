@@ -67,6 +67,7 @@ body {
     z-index: 1000;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s ease, background-color var(--transition-speed) ease;
+    gap: 1rem;
 }
 
 .nav.scrolled {
@@ -120,46 +121,141 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    padding: 8px;
     background: transparent;
     border: none;
     cursor: pointer;
-    order: 2;
+    z-index: 1002;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .toggle-track {
     position: relative;
-    width: 52px;
+    width: 56px;
     height: 28px;
-    background: #e5e7eb;
+    background: linear-gradient(180deg, #87CEEB 0%, #38bdf8 100%);
     border-radius: 999px;
-    transition: background 0.3s ease;
-    border: 1px solid #d1d5db;
+    transition: background 0.4s ease;
+    overflow: hidden;
+    border: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] .toggle-track {
-    background: #374151;
-    border-color: #4b5563;
+    background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%);
+}
+
+/* Cloud decoration */
+.toggle-cloud {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 6px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.toggle-cloud::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    top: -3px;
+    left: 2px;
+}
+
+.toggle-cloud::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    top: -2px;
+    right: 2px;
+}
+
+[data-theme="dark"] .toggle-cloud {
+    opacity: 0;
+}
+
+/* Stars decoration */
+.toggle-stars {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+[data-theme="dark"] .toggle-stars {
+    opacity: 1;
+}
+
+.toggle-stars .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fef08a;
+    border-radius: 50%;
+    box-shadow: 0 0 3px #fef08a;
+}
+
+.toggle-stars .star:nth-child(1) {
+    top: 7px;
+    left: 8px;
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.toggle-stars .star:nth-child(2) {
+    top: 16px;
+    left: 14px;
+    width: 1.5px;
+    height: 1.5px;
+    animation: twinkle 2s ease-in-out infinite 0.5s;
+}
+
+.toggle-stars .star:nth-child(3) {
+    top: 9px;
+    left: 20px;
+    width: 1.5px;
+    height: 1.5px;
+    animation: twinkle 1.8s ease-in-out infinite 0.3s;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
 }
 
 .toggle-thumb {
     position: absolute;
-    top: 2px;
-    left: 2px;
+    top: 3px;
+    left: 3px;
     width: 22px;
     height: 22px;
-    background: #ffffff;
+    background: linear-gradient(180deg, #FEF3C7 0%, #FDE047 100%);
     border-radius: 50%;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 4px rgba(250, 204, 21, 0.4);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 [data-theme="dark"] .toggle-thumb {
-    transform: translateX(24px);
-    background: #1f2937;
+    transform: translateX(28px);
+    background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+    box-shadow: 0 1px 4px rgba(203, 213, 225, 0.4);
 }
 
 .toggle-thumb .sun-icon,
@@ -169,12 +265,12 @@ body {
 }
 
 .toggle-thumb .sun-icon {
-    color: #f59e0b;
+    color: #f97316;
     opacity: 1;
 }
 
 .toggle-thumb .moon-icon {
-    color: #fbbf24;
+    color: #64748b;
     opacity: 0;
 }
 
@@ -622,11 +718,16 @@ body {
 
 @media (max-width: 768px) {
     .nav {
-        padding: 1.5rem 2rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .theme-toggle {
+        margin-left: auto;
     }
 
     .hamburger {
         display: flex !important;
+        margin-left: 0.5rem;
     }
 
     .nav-links {
