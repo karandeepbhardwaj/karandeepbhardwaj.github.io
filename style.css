@@ -803,29 +803,39 @@ body {
 
 .form-submit:hover {
     background: var(--text-primary);
+    color: var(--bg-primary);
 }
 
-.contact-social {
+/* Footer Social Links */
+.footer-social {
     display: flex;
+    justify-content: center;
     gap: 1.5rem;
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
+    margin-bottom: 1rem;
 }
 
-.social-link {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0;
-    text-transform: none;
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-light);
     color: var(--text-secondary);
     text-decoration: none;
-    position: relative;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
-.social-link:hover {
+.footer-social a:hover {
+    border-color: var(--accent-color);
     color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.footer-social svg {
+    width: 18px;
+    height: 18px;
 }
 
 /* Footer */
