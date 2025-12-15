@@ -1,0 +1,7 @@
+# robots.txt for karandeepbhardwaj.github.io
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://karandeepbhardwaj.github.io/sitemap.xml
