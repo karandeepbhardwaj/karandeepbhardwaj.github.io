@@ -1,50 +1,43 @@
-const sections = document.querySelectorAll('section');
-let currentSection = 0; 
-let scrollThreshold = 50; // Pixels
-let lastScrollY = 0;
+// Navigation scroll effect
+const nav = document.querySelector('.nav');
 
-window.addEventListener('wheel', (event) => {
-    event.preventDefault();
-
-    const currentScrollY = window.pageYOffset;
-    const scrollDelta = currentScrollY - lastScrollY;
-
-    if (Math.abs(scrollDelta) > scrollThreshold) {
-        if (event.deltaY > 0) {
-            if (currentSection < sections.length - 1) {
-                currentSection++;
-                scrollToSection(sections[currentSection]);
-            }
-        } else { 
-            if (currentSection > 0) {
-                currentSection--;
-                scrollToSection(sections[currentSection]);
-            }
-        }
-        lastScrollY = currentScrollY;  
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
     }
 });
 
-function scrollToSection(target) {
-    const duration = 1200; 
-    const easing = easeInOutCubic; 
-    const start = window.pageYOffset;
-    const startTime = performance.now();
-
-    function animation(currentTime) {
-        const elapsedTime = currentTime - startTime;
-        const progress = easing(elapsedTime / duration);
-        const targetY = start + (target.offsetTop - start) * progress;
-        window.scrollTo({ top: targetY, behavior: 'auto' }); 
-
-        if (elapsedTime < duration) {
-            requestAnimationFrame(animation); 
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
-    }
+    });
+});
 
-    requestAnimationFrame(animation); 
-}
+// Intersection Observer for scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
 
-function easeInOutCubic(t) {
-    return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1;
-}
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Observe all section content elements
+document.querySelectorAll('.section-content').forEach(el => {
+    observer.observe(el);
+});
