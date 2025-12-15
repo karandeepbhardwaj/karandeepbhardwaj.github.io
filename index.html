@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karandeep Bhardwaj</title>
+    <meta name="description" content="Karandeep Bhardwaj - Senior Full-Stack Developer with 7+ years of experience in microservices, AWS, and full-stack technologies.">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Karandeep Bhardwaj</title>
 </head>
 <body>
     <!-- Navigation -->
@@ -224,19 +224,30 @@
                 <div class="section-label">Contact</div>
                 <div class="section-content">
                     <p class="contact-intro">Let's connect.</p>
-                    <div class="contact-links">
-                        <a href="mailto:bkarandeep@icloud.com" class="contact-link">
-                            <span class="contact-type">Email</span>
-                            <span class="contact-value">bkarandeep@icloud.com</span>
-                        </a>
-                        <a href="https://linkedin.com/in/karandeepbhardwaj" target="_blank" class="contact-link">
-                            <span class="contact-type">LinkedIn</span>
-                            <span class="contact-value">linkedin.com/in/karandeepbhardwaj</span>
-                        </a>
-                        <a href="https://github.com/karandeepbhardwaj" target="_blank" class="contact-link">
-                            <span class="contact-type">GitHub</span>
-                            <span class="contact-value">github.com/karandeepbhardwaj</span>
-                        </a>
+                    
+                    <form class="contact-form" action="https://formspree.io/f/xzzegpqj" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Your company (optional)">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Send Message</button>
+                    </form>
+
+                    <div class="contact-social">
+                        <a href="https://linkedin.com/in/karandeepbhardwaj" target="_blank" class="social-link">LinkedIn</a>
+                        <a href="https://github.com/karandeepbhardwaj" target="_blank" class="social-link">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -245,7 +256,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2024 Karandeep Bhardwaj</p>
+        <p>© 2025 Karandeep Bhardwaj</p>
     </footer>
 
     <script src="script.js"></script>
