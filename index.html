@@ -34,9 +34,23 @@
     
     <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Three.js for 3D Model -->
+    <script async src="https://unpkg.com/three@0.157.0/build/three.min.js"></script>
+    <script async src="https://unpkg.com/three@0.157.0/examples/js/loaders/GLTFLoader.js"></script>
+    
     <title>Karandeep Bhardwaj</title>
 </head>
 <body>
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+    
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-logo">KB</div>
@@ -115,13 +129,13 @@
             <div class="section-grid">
                 <div class="section-label">About</div>
                 <div class="section-content">
-                    <p class="about-text">
+                    <p class="about-text text-reveal">
                         Dynamic Senior Full-Stack Developer with 7+ years of experience 
                         architecting and developing scalable, high-performance applications 
                         in Agile environments. Expert in microservices, AWS cloud solutions, 
                         and full-stack technologies.
                     </p>
-                    <p class="about-text">
+                    <p class="about-text text-reveal">
                         Known for quickly ramping up and excelling, with a strong passion 
                         for mentoring junior developers.
                     </p>
@@ -267,6 +281,24 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Car Section -->
+    <section id="f1" class="section f1-section">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-label">Passion</div>
+                <div class="section-content">
+                    <p class="about-text text-reveal">When I'm not coding, you'll find me watching Formula 1. Max Verstappen and Red Bull Racing fan since 2016.</p>
+                    <div class="f1-canvas-container">
+                        <canvas id="f1Canvas"></canvas>
+                        <div class="f1-overlay">
+                            <span class="f1-hint">Drag to rotate • Scroll to zoom</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
