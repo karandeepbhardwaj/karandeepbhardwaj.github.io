@@ -1,27 +1,5 @@
-// ========== CURSOR GLOW EFFECT ==========
-const cursorGlow = document.getElementById('cursorGlow');
-let mouseX = 0, mouseY = 0;
-let glowX = 0, glowY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursorGlow.classList.add('active');
-});
-
-document.addEventListener('mouseleave', () => {
-    cursorGlow.classList.remove('active');
-});
-
-// Smooth cursor follow
-const animateCursor = () => {
-    glowX += (mouseX - glowX) * 0.1;
-    glowY += (mouseY - glowY) * 0.1;
-    cursorGlow.style.left = glowX + 'px';
-    cursorGlow.style.top = glowY + 'px';
-    requestAnimationFrame(animateCursor);
-};
-animateCursor();
+// ========== CURSOR GLOW EFFECT (DISABLED) ==========
+// Removed for cleaner Wealthsimple-style design
 
 // ========== SCROLL PROGRESS ==========
 const scrollProgress = document.getElementById('scrollProgress');
@@ -48,15 +26,33 @@ document.querySelectorAll('.text-reveal').forEach(el => {
     textRevealObserver.observe(el);
 });
 
-// Navigation scroll effect
+// Navigation scroll effect & Back to Top button
 const nav = document.querySelector('.nav');
+const backToTop = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
+    // Nav scroll effect
     if (window.scrollY > 50) {
         nav.classList.add('scrolled');
     } else {
         nav.classList.remove('scrolled');
     }
+    
+    // Back to top button visibility
+    if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+// Back to top click handler
+backToTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 // Mobile hamburger menu
