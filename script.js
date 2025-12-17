@@ -37,7 +37,10 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all section content elements
-document.querySelectorAll('.section-content').forEach(el => {
-    observer.observe(el);
+// Add animation class and observe all section content elements
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.section-content').forEach(el => {
+        el.classList.add('animate');
+        observer.observe(el);
+    });
 });
