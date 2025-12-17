@@ -3,65 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Landing Page</title>
+    <title>Karandeep Bhardwaj</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section id="intro" class="dot-bg">
-        <div class="container">
-            <div class="text-4xl font-bold text-center">Your Name</div> 
-            <div class="text-lg mt-4 text-center">Your tagline or short description here</div> 
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">KB</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Karandeep Bhardwaj</h1>
+            <p class="hero-subtitle">Senior Full-Stack Developer</p>
+            <div class="hero-line"></div>
         </div>
     </section>
 
-    <section id="skills">
+    <!-- About Section -->
+    <section id="about" class="section">
         <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="grid grid-cols-3 gap-4"> 
-                <div class="badge">Skill 1</div>
-                <div class="badge">Skill 2</div>
-                <div class="badge">Skill 3</div>
-            </div> 
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-entry">
-                <h3>Degree Title</h3>
-                <p>Institution Name | Dates Attended</p>
+            <div class="section-grid">
+                <div class="section-label">About</div>
+                <div class="section-content">
+                    <p class="about-text">
+                        Dynamic Senior Full-Stack Developer with 7+ years of experience 
+                        architecting and developing scalable, high-performance applications 
+                        in Agile environments. Expert in microservices, AWS cloud solutions, 
+                        and full-stack technologies.
+                    </p>
+                    <p class="about-text">
+                        Known for quickly ramping up and excelling, with a strong passion 
+                        for mentoring junior developers.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Location</span>
+                            <span class="detail-value">Montreal, Canada</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Education</span>
+                            <span class="detail-value">M.Sc. Computer Science, Concordia University</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Certification</span>
+                            <span class="detail-value">AWS Solutions Architect - Associate</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="experience">
+    <!-- Experience Section -->
+    <section id="experience" class="section section-alt">
         <div class="container">
-            <h2>Work Experience</h2>
-            <div class="experience-entry">
-                <h3>Job Title</h3>
-                <p>Company Name | Dates of Employment</p>
-            </div> 
+            <div class="section-grid">
+                <div class="section-label">Experience</div>
+                <div class="section-content">
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Lead Software Engineer</h3>
+                            <span class="experience-date">Nov 2021 – Present</span>
+                        </div>
+                        <p class="experience-company">SunLife Financial</p>
+                        <ul class="experience-list">
+                            <li>Led modernization of customer-facing systems processing 600k+ daily requests using microservice and serverless architecture</li>
+                            <li>Achieved 100% availability on 1M+ traffic with 30% lower latency KPIs</li>
+                            <li>Directed architecture reducing contact center costs by 45%</li>
+                            <li>Optimized microservices cutting database query latency by 50%</li>
+                            <li>Mentored 5+ junior developers in development best practices</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Full Stack Engineer</h3>
+                            <span class="experience-date">Jan 2021 – Nov 2021</span>
+                        </div>
+                        <p class="experience-company">Tecsys Inc.</p>
+                        <ul class="experience-list">
+                            <li>Refactored monolithic system into Cloud microservices, handling 50x concurrent requests</li>
+                            <li>Improved performance by 85% through event-based architecture</li>
+                            <li>Developed customs compliance microservice saving $900K annually</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Full Stack Engineer</h3>
+                            <span class="experience-date">Jan 2020 – Jan 2021</span>
+                        </div>
+                        <p class="experience-company">BIDGALA</p>
+                        <ul class="experience-list">
+                            <li>Built e-commerce social platform with Python (Django) and React on AWS</li>
+                            <li>Improved transaction throughput by 30% through payment system optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Software Developer</h3>
+                            <span class="experience-date">Jan 2017 – Aug 2018</span>
+                        </div>
+                        <p class="experience-company">Unisys Pvt. Ltd.</p>
+                        <ul class="experience-list">
+                            <li>Collaborated with cross-functional teams in enterprise application development</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact">
+    <!-- Skills Section -->
+    <section id="skills" class="section">
         <div class="container">
-            <h2>Contact Me</h2>
-            <form>
-                <div class="mb-4">
-                    <input type="text" placeholder="Your Name" class="input" >
+            <div class="section-grid">
+                <div class="section-label">Skills</div>
+                <div class="section-content">
+                    
+                    <div class="skills-category">
+                        <h4 class="skills-title">Languages</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Golang</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Ruby on Rails</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4 class="skills-title">Frameworks</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Vue</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Express</span>
+                            <span class="skill-tag">Tailwind</span>
+                            <span class="skill-tag">Kafka</span>
+                            <span class="skill-tag">GraphQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4 class="skills-title">Cloud & AWS</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Lambda</span>
+                            <span class="skill-tag">S3</span>
+                            <span class="skill-tag">SNS</span>
+                            <span class="skill-tag">SQS</span>
+                            <span class="skill-tag">Step Functions</span>
+                            <span class="skill-tag">API Gateway</span>
+                            <span class="skill-tag">DynamoDB</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4 class="skills-title">Tools</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Microservices</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Jenkins</span>
+                            <span class="skill-tag">OpenShift</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="mb-4">
-                    <input type="email" placeholder="Your Email" class="input">
-                </div>
-                <div class="mb-4">
-                    <textarea placeholder="Your Message" class="textarea"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send</button>
-            </form>
+            </div>
         </div>
     </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section section-alt">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-label">Education</div>
+                <div class="section-content">
+                    
+                    <div class="education-item">
+                        <h3 class="education-degree">Master of Computer Science</h3>
+                        <p class="education-school">Concordia University, Montreal</p>
+                        <span class="education-date">Jan 2019 – Dec 2021</span>
+                    </div>
+
+                    <div class="education-item">
+                        <h3 class="education-degree">Bachelor of Computer Science</h3>
+                        <p class="education-school">Chandigarh Engineering College, India</p>
+                        <span class="education-date">Aug 2013 – June 2017</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-label">Contact</div>
+                <div class="section-content">
+                    <p class="contact-intro">Let's connect.</p>
+                    <div class="contact-links">
+                        <a href="mailto:bkarandeep@icloud.com" class="contact-link">
+                            <span class="contact-type">Email</span>
+                            <span class="contact-value">bkarandeep@icloud.com</span>
+                        </a>
+                        <a href="https://linkedin.com/in/karandeepbhardwaj" target="_blank" class="contact-link">
+                            <span class="contact-type">LinkedIn</span>
+                            <span class="contact-value">linkedin.com/in/karandeepbhardwaj</span>
+                        </a>
+                        <a href="https://github.com/karandeepbhardwaj" target="_blank" class="contact-link">
+                            <span class="contact-type">GitHub</span>
+                            <span class="contact-value">github.com/karandeepbhardwaj</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Karandeep Bhardwaj</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
