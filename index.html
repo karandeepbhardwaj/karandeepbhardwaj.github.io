@@ -87,6 +87,8 @@
         @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
         .hero-line{width:60px;height:2px;background:var(--color-accent);margin:2rem auto 0;opacity:0;animation:fadeInUp 1s ease 0.4s forwards}
         .hero-actions{display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:2rem;opacity:0;animation:fadeInUp 1s ease 0.6s forwards}
+        .scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--color-accent),#a855f7);z-index:10000;pointer-events:none}
+        .cursor-spotlight{position:fixed;width:500px;height:500px;border-radius:50%;pointer-events:none;z-index:-1;opacity:0;transform:translate(-50%,-50%);will-change:left,top;background:radial-gradient(circle,rgba(255,107,53,0.06) 0%,transparent 70%)}
         .floating-nav{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(30px);display:flex;align-items:center;gap:0.25rem;padding:0.5rem 0.75rem;z-index:1000;opacity:0}
     </style>
 
@@ -96,6 +98,12 @@
     <title>Karandeep Bhardwaj — Lead Software Engineer & AI Systems Architect</title>
 </head>
 <body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cursor Spotlight -->
+    <div class="cursor-spotlight" id="cursorSpotlight"></div>
 
     <!-- Floating Navigation -->
     <nav class="floating-nav glass-pill" id="floatingNav">
@@ -121,6 +129,11 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="16 18 22 12 16 6"/>
                 <polyline points="8 6 2 12 8 18"/>
+            </svg>
+        </a>
+        <a href="#projects" class="nav-icon" data-section="projects" aria-label="Projects">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
             </svg>
         </a>
         <a href="#contact" class="nav-icon" data-section="contact" aria-label="Contact">
@@ -152,7 +165,7 @@
     <section class="hero" id="hero">
         <div class="hero-content">
             <h1 class="hero-title">
-                <span class="typing-text" id="typingText"></span>
+                <span class="typing-text gradient-text" id="typingText"></span>
                 <span class="typing-cursor">|</span>
             </h1>
             <p class="hero-subtitle">Lead Software Engineer & AI Systems Architect</p>
@@ -373,6 +386,122 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-label gradient-text">Projects</div>
+                <div class="bento-grid">
+
+                    <a href="https://github.com/karandeepbhardwaj/Yapper" target="_blank" rel="noopener noreferrer" class="project-card glass-panel bento-large">
+                        <div class="project-hero project-hero-yapper">
+                            <svg class="project-hero-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                <line x1="12" y1="19" x2="12" y2="23"/>
+                                <line x1="8" y1="23" x2="16" y2="23"/>
+                            </svg>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Yapper</h3>
+                            <p class="project-desc">Voice-to-text desktop app that captures speech, refines transcripts with AI, and auto-pastes at your cursor position.</p>
+                            <div class="project-tags">
+                                <span class="project-tag glass-pill">Tauri 2</span>
+                                <span class="project-tag glass-pill">Rust</span>
+                                <span class="project-tag glass-pill">React</span>
+                                <span class="project-tag glass-pill">TypeScript</span>
+                                <span class="project-tag glass-pill">Swift</span>
+                            </div>
+                        </div>
+                        <span class="project-link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"/>
+                                <polyline points="7 7 17 7 17 17"/>
+                            </svg>
+                        </span>
+                    </a>
+
+                    <a href="https://github.com/karandeepbhardwaj/AirBrowse" target="_blank" rel="noopener noreferrer" class="project-card glass-panel bento-large">
+                        <div class="project-hero project-hero-airbrowse">
+                            <img src="images/projects/airbrowse.png" alt="AirBrowse — VS Code chat interface for browser automation" class="project-hero-img" loading="lazy" width="512" height="410">
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">AirBrowse</h3>
+                            <p class="project-desc">Browser automation powered by GitHub Copilot — control a browser through natural language, no API keys needed.</p>
+                            <div class="project-tags">
+                                <span class="project-tag glass-pill">VS Code Extension</span>
+                                <span class="project-tag glass-pill">Chrome Extension</span>
+                                <span class="project-tag glass-pill">Node.js</span>
+                                <span class="project-tag glass-pill">TypeScript</span>
+                            </div>
+                        </div>
+                        <span class="project-link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"/>
+                                <polyline points="7 7 17 7 17 17"/>
+                            </svg>
+                        </span>
+                    </a>
+
+                    <a href="https://github.com/karandeepbhardwaj/prepwise" target="_blank" rel="noopener noreferrer" class="project-card glass-panel bento-small">
+                        <div class="project-hero project-hero-prepwise">
+                            <svg class="project-hero-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">PrepWise</h3>
+                            <p class="project-desc">AI-powered interview preparation guide generator from job postings.</p>
+                            <div class="project-tags">
+                                <span class="project-tag glass-pill">Python</span>
+                                <span class="project-tag glass-pill">FastAPI</span>
+                                <span class="project-tag glass-pill">LangChain</span>
+                                <span class="project-tag glass-pill">React</span>
+                            </div>
+                        </div>
+                        <span class="project-link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"/>
+                                <polyline points="7 7 17 7 17 17"/>
+                            </svg>
+                        </span>
+                    </a>
+
+                    <a href="https://github.com/karandeepbhardwaj/pixl.ink" target="_blank" rel="noopener noreferrer" class="project-card glass-panel bento-small">
+                        <div class="project-hero project-hero-pixlink">
+                            <svg class="project-hero-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">pixl.ink</h3>
+                            <p class="project-desc">Self-hosted image sharing with instant short URLs and QR codes.</p>
+                            <div class="project-tags">
+                                <span class="project-tag glass-pill">Go</span>
+                                <span class="project-tag glass-pill">HTMX</span>
+                                <span class="project-tag glass-pill">SQLite</span>
+                                <span class="project-tag glass-pill">Tailwind</span>
+                            </div>
+                        </div>
+                        <span class="project-link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"/>
+                                <polyline points="7 7 17 7 17 17"/>
+                            </svg>
+                        </span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
@@ -485,6 +614,11 @@
                 <button class="command-item" data-action="navigate" data-target="#skills">
                     <span class="command-icon">&rarr;</span>
                     <span class="command-label">Go to Skills</span>
+                    <span class="command-shortcut">&crarr;</span>
+                </button>
+                <button class="command-item" data-action="navigate" data-target="#projects">
+                    <span class="command-icon">&rarr;</span>
+                    <span class="command-label">Go to Projects</span>
                     <span class="command-shortcut">&crarr;</span>
                 </button>
                 <button class="command-item" data-action="navigate" data-target="#contact">
