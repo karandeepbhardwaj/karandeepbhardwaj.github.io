@@ -70,8 +70,25 @@
     <!-- View Transitions API -->
     <meta name="view-transition" content="same-origin">
 
-    <link rel="preload" href="style.css" as="style">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--color-bg:#f0eee6;--color-text:#1a1a1a;--color-text-secondary:#3d3d3d;--color-text-muted:#666;--color-text-light:#888;--color-border:rgba(0,0,0,0.08);--color-accent:#FF6B35;--mesh-1:rgba(255,154,108,0.25);--mesh-2:rgba(168,130,255,0.2);--mesh-3:rgba(108,200,255,0.18);--mesh-4:rgba(255,200,120,0.15);--glass-bg:rgba(255,255,255,0.35);--glass-bg-hover:rgba(255,255,255,0.5);--glass-border:rgba(255,255,255,0.5);--glass-blur:12px;--glass-radius:28px;--glass-radius-pill:100px;--glass-shadow-outer:0 0 2px rgba(0,0,0,0.06),0 2px 12px rgba(0,0,0,0.08);--glass-shadow-inner:inset 1px 1px 0px rgba(255,255,255,0.6),inset -1px -1px 0px rgba(255,255,255,0.2),inset 0 0 16px rgba(255,255,255,0.3);--glass-shadow-hover:0 0 4px rgba(0,0,0,0.08),0 8px 24px rgba(0,0,0,0.12);--pill-bg:rgba(255,255,255,0.45);--pill-shadow-inner:inset 1px 1px 0px rgba(255,255,255,0.7),inset -1px -1px 0px rgba(255,255,255,0.3),inset 0 0 12px rgba(255,255,255,0.4);--font-normal:400;--font-medium:500;--font-semibold:600;--font-bold:700;--text-sm:0.875rem;--transition-fast:0.15s ease;--transition-base:0.2s ease;--transition-slow:0.3s ease}
+        [data-theme="dark"]{--color-bg:#0e0e12;--color-text:#f0f0f0;--color-text-secondary:#c8c8c8;--color-text-muted:#888;--color-text-light:#666;--color-border:rgba(255,255,255,0.06);--color-accent:#FF7F50;--mesh-1:rgba(56,189,248,0.12);--mesh-2:rgba(168,85,247,0.12);--mesh-3:rgba(20,184,166,0.08);--mesh-4:rgba(99,102,241,0.1);--glass-bg:rgba(255,255,255,0.06);--glass-bg-hover:rgba(255,255,255,0.1);--glass-border:rgba(255,255,255,0.08);--glass-shadow-outer:0 0 2px rgba(0,0,0,0.2),0 2px 12px rgba(0,0,0,0.25);--glass-shadow-inner:inset 1px 1px 0px -0.5px rgba(255,255,255,0.1),inset -1px -1px 0px -0.5px rgba(255,255,255,0.05),inset 0 0 3px rgba(255,255,255,0.08),inset 0 0 16px rgba(255,255,255,0.04);--glass-shadow-hover:0 0 4px rgba(0,0,0,0.3),0 8px 24px rgba(0,0,0,0.35);--pill-bg:rgba(255,255,255,0.08);--pill-shadow-inner:inset 1px 1px 0px -0.5px rgba(255,255,255,0.12),inset -1px -1px 0px -0.5px rgba(255,255,255,0.05),inset 0 0 3px rgba(255,255,255,0.08),inset 0 0 16px rgba(255,255,255,0.03)}
+        html{scroll-behavior:smooth;overflow-x:hidden}
+        body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:var(--color-text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh;background-color:var(--color-bg);position:relative;z-index:0;transition:background-color 0.5s ease}
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:0 3rem}
+        .hero-content{text-align:center;max-width:700px}
+        .hero-title{font-size:clamp(2.5rem,10vw,5rem);font-weight:600;letter-spacing:-0.02em;margin-bottom:1.5rem;min-height:1.2em;line-height:1.1}
+        .typing-cursor{display:inline-block;color:var(--color-accent);animation:blink 1s step-end infinite;font-weight:200}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+        .hero-subtitle{font-size:1.25rem;color:var(--color-text-secondary);opacity:0;animation:fadeInUp 1s ease 0.2s forwards}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        .hero-line{width:60px;height:2px;background:var(--color-accent);margin:2rem auto 0;opacity:0;animation:fadeInUp 1s ease 0.4s forwards}
+        .hero-actions{display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:2rem;opacity:0;animation:fadeInUp 1s ease 0.6s forwards}
+        .floating-nav{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(30px);display:flex;align-items:center;gap:0.25rem;padding:0.5rem 0.75rem;z-index:1000;opacity:0}
+    </style>
 
     <link rel="icon" type="image/svg+xml" href="icon-192.svg">
     <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
