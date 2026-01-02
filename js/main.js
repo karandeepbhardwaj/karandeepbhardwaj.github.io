@@ -8,6 +8,9 @@ import { initNavigation } from './navigation.js';
 import { initAnimations } from './animations.js';
 import { initCommandPalette } from './command-palette.js';
 import { initGlassEffects } from './glass-effects.js';
+import { initTiltEffect } from './tilt-effect.js';
+import { initMagneticEffect } from './magnetic-effect.js';
+import { initCursorSpotlight } from './cursor-spotlight.js';
 
 /**
  * Initialize Service Worker for PWA
@@ -34,11 +37,16 @@ const init = () => {
     initServiceWorker();
 
     // Non-critical — defer to idle time
-    const deferGlass = () => initGlassEffects();
+    const deferEffects = () => {
+        initGlassEffects();
+        initTiltEffect();
+        initMagneticEffect();
+        initCursorSpotlight();
+    };
     if ('requestIdleCallback' in window) {
-        requestIdleCallback(deferGlass, { timeout: 2000 });
+        requestIdleCallback(deferEffects, { timeout: 2000 });
     } else {
-        setTimeout(deferGlass, 200);
+        setTimeout(deferEffects, 200);
     }
 };
 
