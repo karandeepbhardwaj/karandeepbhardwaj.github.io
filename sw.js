@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kb-portfolio-v3';
+const CACHE_NAME = 'kb-portfolio-v4';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -11,7 +11,8 @@ const urlsToCache = [
     '/js/glass-effects.js',
     '/manifest.json',
     '/icon-192.png',
-    '/icon-512.png'
+    '/icon-512.png',
+    '/icon-192.svg'
 ];
 
 // Install service worker and cache assets
@@ -36,38 +37,45 @@ self.addEventListener('activate', (event) => {
     );
 });
 
-// Fetch with network-first strategy for HTML, cache-first for assets
+// Stale-while-revalidate for HTML, cache-first for assets
 self.addEventListener('fetch', (event) => {
     const { request } = event;
-    const url = new URL(request.url);
-    
+
     // Skip non-GET requests
     if (request.method !== 'GET') return;
-    
-    // Network-first for HTML pages
+
+    // Skip external requests (analytics, formspree)
+    if (new URL(request.url).origin !== self.location.origin) return;
+
     if (request.headers.get('accept')?.includes('text/html')) {
+        // Stale-while-revalidate for HTML
         event.respondWith(
-            fetch(request)
-                .then((response) => {
-                    const clone = response.clone();
-                    caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+            caches.match(request).then((cached) => {
+                const fetchPromise = fetch(request).then((response) => {
+                    if (response.ok) {
+                        const clone = response.clone();
+                        caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+                    }
                     return response;
-                })
-                .catch(() => caches.match(request))
+                }).catch(() => cached);
+
+                return cached || fetchPromise;
+            })
         );
         return;
     }
-    
-    // Cache-first for other assets
+
+    // Cache-first for assets
     event.respondWith(
-        caches.match(request)
-            .then((cached) => {
-                if (cached) return cached;
-                return fetch(request).then((response) => {
+        caches.match(request).then((cached) => {
+            if (cached) return cached;
+            return fetch(request).then((response) => {
+                if (response.ok) {
                     const clone = response.clone();
                     caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-                    return response;
-                });
-            })
+                }
+                return response;
+            });
+        })
     );
 });
