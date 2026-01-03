@@ -1174,11 +1174,21 @@ body::after {
         transition-duration: 0.01ms !important;
     }
 
-    body {
-        animation: none;
+    body::after {
+        animation: none !important;
     }
 
     .skill-tag {
+        opacity: 1;
+        transform: none;
+    }
+
+    .section-content.animate {
+        opacity: 1;
+        transform: none;
+    }
+
+    .text-reveal {
         opacity: 1;
         transform: none;
     }
