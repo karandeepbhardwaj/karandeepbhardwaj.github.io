@@ -16,44 +16,59 @@ const handleScroll = () => {
 };
 
 /**
- * Track which section is currently in view and update active nav icon
+ * Track which section is currently in view and update active nav icon.
+ * Uses scroll position (offset from top) — more reliable than IntersectionObserver
+ * for sections of varying heights.
  */
-const initSectionObserver = () => {
-    const sections = document.querySelectorAll('section[id]');
-    const visibleSections = new Map();
+const initSectionTracking = () => {
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    if (!sections.length) return;
+
+    let ticking = false;
 
     const updateActiveNav = () => {
-        let best = null;
-        let bestRatio = 0;
-        visibleSections.forEach((ratio, id) => {
-            if (ratio > bestRatio) {
-                bestRatio = ratio;
-                best = id;
-            }
-        });
-        if (best) {
+        const scrollTop = window.scrollY;
+        const viewportHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+
+        // If near bottom of page, activate last section
+        if (scrollTop + viewportHeight >= docHeight - 50) {
+            const lastId = sections[sections.length - 1].id;
             navIcons.forEach(icon => {
-                icon.classList.toggle('active', icon.dataset.section === best);
+                icon.classList.toggle('active', icon.dataset.section === lastId);
             });
+            return;
         }
+
+        // Find which section's top is closest to 30% of viewport from top
+        const trigger = scrollTop + viewportHeight * 0.3;
+        let activeId = sections[0].id;
+
+        for (const section of sections) {
+            if (section.offsetTop <= trigger) {
+                activeId = section.id;
+            } else {
+                break;
+            }
+        }
+
+        navIcons.forEach(icon => {
+            icon.classList.toggle('active', icon.dataset.section === activeId);
+        });
     };
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                const id = entry.target.id;
-                if (entry.isIntersecting) {
-                    visibleSections.set(id, entry.intersectionRatio);
-                } else {
-                    visibleSections.delete(id);
-                }
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateActiveNav();
+                ticking = false;
             });
-            updateActiveNav();
-        },
-        { threshold: [0, 0.1, 0.2, 0.4, 0.6], rootMargin: '-10% 0px -30% 0px' }
-    );
+            ticking = true;
+        }
+    }, { passive: true });
 
-    sections.forEach(section => observer.observe(section));
+    // Initial call
+    updateActiveNav();
 };
 
 /**
@@ -62,7 +77,7 @@ const initSectionObserver = () => {
 const showFloatingNav = () => {
     setTimeout(() => {
         floatingNav?.classList.add('visible');
-    }, 800);
+    }, 1800);
 };
 
 /**
@@ -107,8 +122,8 @@ export const initNavigation = () => {
         });
     });
 
-    // Section observer for active nav state
-    initSectionObserver();
+    // Section tracking for active nav state
+    initSectionTracking();
 
     // Floating nav entrance animation
     showFloatingNav();
