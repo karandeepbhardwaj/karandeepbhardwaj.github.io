@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kb-portfolio-v4';
+const CACHE_NAME = 'kb-portfolio-v5';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -9,6 +9,9 @@ const urlsToCache = [
     '/js/animations.js',
     '/js/command-palette.js',
     '/js/glass-effects.js',
+    '/js/tilt-effect.js',
+    '/js/magnetic-effect.js',
+    '/js/cursor-spotlight.js',
     '/manifest.json',
     '/icon-192.png',
     '/icon-512.png',
