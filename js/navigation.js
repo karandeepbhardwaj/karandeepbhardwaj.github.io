@@ -20,19 +20,37 @@ const handleScroll = () => {
  */
 const initSectionObserver = () => {
     const sections = document.querySelectorAll('section[id]');
+    const visibleSections = new Map();
+
+    const updateActiveNav = () => {
+        let best = null;
+        let bestRatio = 0;
+        visibleSections.forEach((ratio, id) => {
+            if (ratio > bestRatio) {
+                bestRatio = ratio;
+                best = id;
+            }
+        });
+        if (best) {
+            navIcons.forEach(icon => {
+                icon.classList.toggle('active', icon.dataset.section === best);
+            });
+        }
+    };
 
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach(entry => {
+                const id = entry.target.id;
                 if (entry.isIntersecting) {
-                    const sectionId = entry.target.id;
-                    navIcons.forEach(icon => {
-                        icon.classList.toggle('active', icon.dataset.section === sectionId);
-                    });
+                    visibleSections.set(id, entry.intersectionRatio);
+                } else {
+                    visibleSections.delete(id);
                 }
             });
+            updateActiveNav();
         },
-        { threshold: 0.15, rootMargin: '-10% 0px -40% 0px' }
+        { threshold: [0, 0.1, 0.2, 0.4, 0.6], rootMargin: '-10% 0px -30% 0px' }
     );
 
     sections.forEach(section => observer.observe(section));
