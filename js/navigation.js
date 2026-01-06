@@ -32,7 +32,7 @@ const initSectionObserver = () => {
                 }
             });
         },
-        { threshold: 0.3, rootMargin: '-10% 0px -40% 0px' }
+        { threshold: 0.15, rootMargin: '-10% 0px -40% 0px' }
     );
 
     sections.forEach(section => observer.observe(section));
