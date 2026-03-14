@@ -7,6 +7,7 @@ import { initTheme } from './theme.js';
 import { initNavigation } from './navigation.js';
 import { initAnimations } from './animations.js';
 import { initCommandPalette } from './command-palette.js';
+import { initGlassEffects } from './glass-effects.js';
 
 /**
  * Initialize Service Worker for PWA
@@ -29,6 +30,7 @@ const init = () => {
     initNavigation();
     initAnimations();
     initCommandPalette();
+    initGlassEffects();
     initServiceWorker();
 };
 

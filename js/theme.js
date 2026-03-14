@@ -21,10 +21,10 @@ const getPreferredTheme = () => {
 const setTheme = (theme) => {
     html.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
-    
+
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', theme === 'dark' ? '#0a0a0a' : '#ffffff');
+        metaThemeColor.setAttribute('content', theme === 'dark' ? '#0e0e12' : '#f0eee6');
     }
 };
 
@@ -40,13 +40,10 @@ const toggleTheme = () => {
  * Initialize theme module
  */
 export const initTheme = () => {
-    // Set initial theme
     setTheme(getPreferredTheme());
-    
-    // Toggle on button click
+
     themeToggle?.addEventListener('click', toggleTheme);
-    
-    // Listen for system theme changes
+
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
         if (!localStorage.getItem('theme')) {
             setTheme(e.matches ? 'dark' : 'light');
