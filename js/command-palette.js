@@ -4,7 +4,7 @@
  */
 
 import { toggleTheme } from './theme.js';
-import { scrollToElement } from './navigation.js';
+import { scrollToElement, scrollToTop } from './navigation.js';
 
 const commandPalette = document.getElementById('commandPalette');
 const commandOverlay = document.getElementById('commandPaletteOverlay');
@@ -77,7 +77,11 @@ const executeCommand = (item) => {
     
     switch (action) {
         case 'navigate':
-            if (target) scrollToElement(target);
+            if (target === '#hero') {
+                scrollToTop();
+            } else if (target) {
+                scrollToElement(target);
+            }
             break;
         case 'download':
             window.open('Karandeep_Resume.pdf', '_blank');
