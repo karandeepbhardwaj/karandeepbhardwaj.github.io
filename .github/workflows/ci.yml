@@ -37,6 +37,7 @@ jobs:
             --accept 200,204,301,302,403,429
             --exclude "formspree.io"
             --exclude "mailto:"
+            --base "https://karandeepbhardwaj.me"
             "*.html"
           fail: true
 
