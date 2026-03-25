@@ -1,0 +1,38 @@
+name: Security Headers Check
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * 1' # Weekly on Monday
+
+permissions:
+  contents: read
+
+jobs:
+  check-headers:
+    name: Verify Security Headers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check HTTPS redirect
+        run: |
+          STATUS=$(curl -o /dev/null -s -w "%{http_code}" -L http://karandeepbhardwaj.me)
+          FINAL_URL=$(curl -o /dev/null -s -w "%{url_effective}" -L http://karandeepbhardwaj.me)
+          echo "Status: $STATUS"
+          echo "Final URL: $FINAL_URL"
+          if [[ "$FINAL_URL" != https://* ]]; then
+            echo "::warning::HTTP is not redirecting to HTTPS"
+          fi
+
+      - name: Check security headers
+        run: |
+          echo "Checking security headers for karandeepbhardwaj.me..."
+          HEADERS=$(curl -sI https://karandeepbhardwaj.me 2>/dev/null || curl -sI http://karandeepbhardwaj.me)
+          echo "$HEADERS"
+          echo "---"
+          echo "Note: GitHub Pages has limited header control."
+          echo "Security headers are set via meta tags in HTML."
+
+      - name: Verify SSL certificate
+        run: |
+          echo | openssl s_client -connect karandeepbhardwaj.me:443 -servername karandeepbhardwaj.me 2>/dev/null | openssl x509 -noout -dates -subject -issuer 2>/dev/null || echo "::warning::SSL certificate check failed"

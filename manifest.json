@@ -1,13 +1,22 @@
 {
+    "id": "/",
     "name": "Karandeep Bhardwaj - Portfolio",
     "short_name": "KB Portfolio",
-    "description": "Software Developer Portfolio",
+    "description": "Senior Full-Stack Engineer Portfolio",
     "start_url": "/",
+    "scope": "/",
     "display": "standalone",
     "background_color": "#ffffff",
-    "theme_color": "#1a1a1a",
+    "theme_color": "#f0eee6",
     "orientation": "portrait-primary",
+    "categories": ["portfolio", "personal"],
     "icons": [
+        {
+            "src": "icon-192.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
         {
             "src": "icon-192.png",
             "sizes": "192x192",
