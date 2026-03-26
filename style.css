@@ -120,7 +120,7 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: var(--font-normal);
     color: var(--color-text);
     line-height: 1.7;
@@ -191,6 +191,29 @@ body::after {
 .glass-panel > * {
     position: relative;
     z-index: 1;
+}
+
+/* Project cards: no blur/overlay on hero — glass only on body */
+.project-card.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.project-card.glass-panel::before {
+    display: none;
+}
+
+.project-card .project-body {
+    background: var(--glass-bg);
+    position: relative;
+}
+
+@supports (backdrop-filter: blur(1px)) {
+    .project-card .project-body {
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(var(--glass-blur));
+    }
 }
 
 
@@ -660,6 +683,62 @@ body::after {
 .skills-list.visible .skill-tag {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ===== PAGE LOAD TRANSITION ===== */
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.page-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-name {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    background: linear-gradient(90deg, var(--color-accent), #a855f7, var(--color-accent));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+}
+
+.loader-bar {
+    width: 120px;
+    height: 3px;
+    background: var(--color-border);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader-bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--color-accent), #a855f7);
+    transform-origin: left;
+    animation: loaderFill 1.2s ease forwards;
+}
+
+@keyframes loaderFill {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
 }
 
 /* ===== SCROLL PROGRESS BAR ===== */
