@@ -745,10 +745,11 @@ body::after {
     transform-style: preserve-3d;
 }
 
-/* Kill link color/underline inheritance on ALL descendants */
-#projects a.project-card *,
-#projects a.project-card:visited *,
-#projects a.project-card:-webkit-any-link * {
+/* Kill link color/underline inheritance on text descendants */
+#projects a.project-card .project-body,
+#projects a.project-card .project-body *,
+#projects a.project-card:visited .project-body *,
+#projects a.project-card:-webkit-any-link .project-body * {
     text-decoration: none;
     color: inherit;
 }
@@ -851,11 +852,12 @@ body::after {
     height: 32px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9) !important;
     opacity: 0;
     transform: translate(-4px, 4px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 2;
+    z-index: 3;
+    text-decoration: none !important;
 }
 
 /* Show link icon on hover (desktop) */
@@ -1320,11 +1322,16 @@ body::after {
     }
 
     .project-hero {
-        height: 150px;
+        height: 160px;
     }
 
     .bento-large .project-hero {
-        height: 160px;
+        height: 180px;
+    }
+
+    .form-submit {
+        align-self: center;
+        width: 100%;
     }
 
     .floating-nav {
@@ -1395,11 +1402,11 @@ body::after {
     }
 
     .project-hero {
-        height: 130px;
+        height: 140px;
     }
 
     .bento-large .project-hero {
-        height: 140px;
+        height: 160px;
     }
 
     .nav-icon {

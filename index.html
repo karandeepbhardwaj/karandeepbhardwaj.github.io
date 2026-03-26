@@ -91,11 +91,12 @@
         .cursor-spotlight{position:fixed;width:500px;height:500px;border-radius:50%;pointer-events:none;z-index:-1;opacity:0;transform:translate(-50%,-50%);will-change:left,top;background:radial-gradient(circle,rgba(255,107,53,0.06) 0%,transparent 70%)}
         .floating-nav{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(30px);display:flex;align-items:center;gap:0.25rem;padding:0.5rem 0.75rem;z-index:1000;opacity:0}
         #projects a.project-card,#projects a.project-card:link,#projects a.project-card:visited,#projects a.project-card:-webkit-any-link{text-decoration:none;color:var(--color-text);display:flex;flex-direction:column;position:relative;-webkit-tap-highlight-color:transparent}
-        #projects a.project-card *,#projects a.project-card:-webkit-any-link *{text-decoration:none;color:inherit}
+        #projects a.project-card .project-body,#projects a.project-card .project-body *{text-decoration:none;color:inherit}
         .project-title{color:var(--color-text)}.project-desc{color:var(--color-text-secondary)}.project-tag{color:var(--color-text-muted)}
-        .project-hero-icon{color:rgba(255,255,255,0.85)}
+        .project-hero-icon{color:rgba(255,255,255,0.85) !important}
+        .project-link-icon{color:rgba(255,255,255,0.9) !important}
         .bento-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
-        @media(max-width:768px){.bento-grid{grid-template-columns:1fr}}
+        @media(max-width:768px){.bento-grid{grid-template-columns:1fr}.form-submit{align-self:center;width:100%}}
     </style>
 
     <link rel="icon" type="image/svg+xml" href="icon-192.svg">
