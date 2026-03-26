@@ -725,29 +725,34 @@ body::after {
     gap: 1.25rem;
 }
 
-.project-card {
+a.project-card,
+a.project-card:visited,
+a.project-card:hover,
+a.project-card:active {
     display: flex;
     flex-direction: column;
+    position: relative;
     text-decoration: none;
-    color: inherit;
+    color: var(--color-text);
     cursor: pointer;
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
                 box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.project-card:hover {
+a.project-card:hover {
     box-shadow: var(--glass-shadow-inner), var(--glass-shadow-hover);
 }
 
 .project-hero {
     position: relative;
     height: 180px;
-    border-radius: var(--glass-radius) var(--glass-radius) 0 0;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .bento-large .project-hero {
@@ -795,6 +800,7 @@ body::after {
     font-weight: var(--font-semibold);
     margin-bottom: 0.5rem;
     letter-spacing: -0.01em;
+    color: var(--color-text);
 }
 
 .project-desc {
@@ -846,7 +852,7 @@ body::after {
 }
 
 /* 3D tilt transition reset */
-.project-card {
+a.project-card {
     transform-style: preserve-3d;
 }
 
@@ -1366,6 +1372,28 @@ body::after {
 
     .glass-panel {
         border-radius: 20px;
+    }
+
+    .project-body {
+        padding: 1rem 1.25rem 1.25rem;
+    }
+
+    .project-hero {
+        height: 130px;
+    }
+
+    .bento-large .project-hero {
+        height: 140px;
+    }
+
+    .nav-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .nav-icon svg {
+        width: 16px;
+        height: 16px;
     }
 }
 
