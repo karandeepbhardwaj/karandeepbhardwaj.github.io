@@ -130,29 +130,32 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
 
-    /* Animated gradient mesh background */
     background-color: var(--color-bg);
+    transition: background-color 0.5s ease;
+    position: relative;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: -20%;
+    z-index: -1;
     background-image:
         radial-gradient(ellipse 80% 60% at 20% 30%, var(--mesh-1), transparent),
         radial-gradient(ellipse 60% 80% at 80% 20%, var(--mesh-2), transparent),
         radial-gradient(ellipse 70% 50% at 50% 80%, var(--mesh-3), transparent),
         radial-gradient(ellipse 50% 70% at 75% 60%, var(--mesh-4), transparent);
-    background-attachment: fixed;
     background-size: 100% 100%;
+    will-change: transform;
     animation: meshShift 25s ease-in-out infinite alternate;
-    transition: background-color 0.5s ease;
+    pointer-events: none;
 }
 
 @keyframes meshShift {
-    0% {
-        background-position: 0% 0%, 100% 0%, 50% 100%, 75% 50%;
-    }
-    50% {
-        background-position: 30% 20%, 70% 30%, 20% 70%, 90% 40%;
-    }
-    100% {
-        background-position: 10% 40%, 90% 10%, 40% 90%, 60% 70%;
-    }
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(3%, -2%) scale(1.02); }
+    100% { transform: translate(-2%, 3%) scale(1.01); }
 }
 
 /* ===== GLASS COMPONENTS ===== */
