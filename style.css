@@ -702,7 +702,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    max-width: 450px;
 }
 
 .form-group {
@@ -742,7 +741,8 @@ body {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: var(--color-text-light);
+    color: var(--color-text-muted);
+    opacity: 0.8;
 }
 
 .form-group input:focus,
