@@ -68,7 +68,7 @@ const scrollToTop = () => {
  * Initialize navigation module
  */
 export const initNavigation = () => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     // Back to top handler
     backToTop?.addEventListener('click', (e) => {
