@@ -64,9 +64,28 @@ const initScrollAnimations = () => {
 };
 
 /**
+ * Initialize scroll progress bar
+ */
+const initScrollProgress = () => {
+    const bar = document.getElementById('scrollProgress');
+    if (!bar) return;
+
+    const updateProgress = () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        bar.style.width = progress + '%';
+    };
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+};
+
+/**
  * Initialize all animations
  */
 export const initAnimations = () => {
     initTypingEffect();
     initScrollAnimations();
+    initScrollProgress();
 };
