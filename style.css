@@ -725,10 +725,13 @@ body::after {
     gap: 1.25rem;
 }
 
-a.project-card,
-a.project-card:visited,
-a.project-card:hover,
-a.project-card:active {
+/* Force-reset link styles — #projects ID boosts specificity above Safari UA */
+#projects a.project-card,
+#projects a.project-card:link,
+#projects a.project-card:visited,
+#projects a.project-card:hover,
+#projects a.project-card:active,
+#projects a.project-card:-webkit-any-link {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -739,9 +742,18 @@ a.project-card:active {
                 box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform;
     -webkit-tap-highlight-color: transparent;
+    transform-style: preserve-3d;
 }
 
-a.project-card:hover {
+/* Kill link color/underline inheritance on ALL descendants */
+#projects a.project-card *,
+#projects a.project-card:visited *,
+#projects a.project-card:-webkit-any-link * {
+    text-decoration: none;
+    color: inherit;
+}
+
+#projects a.project-card:hover {
     box-shadow: var(--glass-shadow-inner), var(--glass-shadow-hover);
 }
 
@@ -846,14 +858,18 @@ a.project-card:hover {
     z-index: 2;
 }
 
+/* Show link icon on hover (desktop) */
 .project-card:hover .project-link-icon {
     opacity: 1;
     transform: translate(0, 0);
 }
 
-/* 3D tilt transition reset */
-a.project-card {
-    transform-style: preserve-3d;
+/* Always show link icon on touch devices (no hover) */
+@media (pointer: coarse) {
+    .project-link-icon {
+        opacity: 0.7;
+        transform: translate(0, 0);
+    }
 }
 
 /* ===== EDUCATION SECTION ===== */
