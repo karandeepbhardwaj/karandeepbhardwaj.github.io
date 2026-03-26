@@ -26,12 +26,20 @@ const initServiceWorker = () => {
  * Initialize all modules
  */
 const init = () => {
+    // Critical path — runs immediately
     initTheme();
     initNavigation();
     initAnimations();
     initCommandPalette();
-    initGlassEffects();
     initServiceWorker();
+
+    // Non-critical — defer to idle time
+    const deferGlass = () => initGlassEffects();
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(deferGlass, { timeout: 2000 });
+    } else {
+        setTimeout(deferGlass, 200);
+    }
 };
 
 // Start the application
