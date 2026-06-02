@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lead Software Engineer and AI Systems Architect with 7+ years building production LLM systems, agentic workflows, and cloud-native platforms at enterprise scale. Expert in Amazon Bedrock, AgentCore, LangGraph, RAG pipelines, and serverless architecture.">
+    <meta name="description" content="Karandeep Bhardwaj — Lead Software Engineer & AI Systems Architect with 7+ years building production LLM systems, agentic workflows, and cloud-native platforms at enterprise scale. AWS Bedrock, AgentCore, LangGraph, RAG pipelines, serverless.">
     <meta name="author" content="Karandeep Bhardwaj">
-    <meta name="theme-color" content="#f0eee6">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <link rel="dns-prefetch" href="https://formspree.io">
+    <meta name="theme-color" content="#f6f5f0">
+    <meta name="color-scheme" content="light">
     <link rel="canonical" href="https://karandeepbhardwaj.me/">
 
-    <!-- Security: CSP (only valid http-equiv security header for meta tags) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://formspree.io; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
+    <!-- Security: Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://formspree.io; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://karandeepbhardwaj.me/">
     <meta property="og:title" content="Karandeep Bhardwaj — Lead AI Engineer">
@@ -33,7 +28,7 @@
     <meta name="twitter:description" content="Building production AI systems at enterprise scale. LangGraph · Amazon Bedrock AgentCore · RAG Pipelines · Serverless · AWS">
     <meta name="twitter:image" content="https://karandeepbhardwaj.me/icon-512.png">
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -42,655 +37,753 @@
         "url": "https://karandeepbhardwaj.me",
         "jobTitle": "Lead Software Engineer",
         "description": "Lead Software Engineer and AI Systems Architect with 7+ years building production LLM systems, agentic workflows, and cloud-native platforms at enterprise scale.",
-        "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "Concordia University"
-        },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Concordia University" },
         "knowsAbout": ["LLM", "AWS", "Serverless", "React", "Python", "TypeScript", "Agentic Workflows"],
-        "sameAs": [
-            "https://linkedin.com/in/karandeepbhardwaj",
-            "https://github.com/karandeepbhardwaj"
-        ]
+        "sameAs": ["https://linkedin.com/in/karandeepbhardwaj", "https://github.com/karandeepbhardwaj"]
     }
     </script>
 
-    <!-- Google Analytics -->
+    <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <title>Karandeep Bhardwaj — Lead Software Engineer & AI Systems Architect</title>
+
+    <style>
+        :root {
+            --bg: #f6f5f0;
+            --bg-alt: #f1efe7;
+            --surface: #fdfcf9;
+            --text: #1a1915;
+            --muted: #5f5e57;
+            --faint: #908f86;
+            --accent: #bd5d3a;
+            --accent-soft: #ecddd3;
+            --border: rgba(26,25,21,0.10);
+            --border-strong: rgba(26,25,21,0.16);
+            --shadow: 0 1px 2px rgba(26,25,21,0.04), 0 8px 24px rgba(26,25,21,0.05);
+            --radius: 16px;
+            --maxw: 940px;
+            --font-serif: "Hoefler Text", Georgia, Cambria, "Times New Roman", serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            font-size: 17px;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        ::selection { background: var(--accent-soft); color: var(--text); }
+
+        /* ---------- Layout ---------- */
+        .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+
+        section { padding: 5.5rem 0; }
+        section + section { border-top: 1px solid var(--border); }
+
+        .eyebrow {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.75rem;
+        }
+
+        h2.section-title {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: clamp(1.7rem, 4vw, 2.3rem);
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+            margin-bottom: 2.25rem;
+        }
+
+        /* ---------- Nav ---------- */
+        header.nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(246,245,240,0.82);
+            backdrop-filter: saturate(180%) blur(12px);
+            -webkit-backdrop-filter: saturate(180%) blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: -0.01em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+        .brand .mark {
+            width: 30px; height: 30px;
+            display: grid; place-items: center;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 9px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            font-family: var(--font-sans);
+            letter-spacing: 0;
+        }
+        .nav-links { display: flex; gap: 1.6rem; align-items: center; }
+        .nav-links a {
+            font-size: 0.92rem;
+            color: var(--muted);
+            transition: color 0.15s ease;
+        }
+        .nav-links a:hover { color: var(--text); }
+        .nav-cta {
+            font-size: 0.9rem !important;
+            color: var(--text) !important;
+            border: 1px solid var(--border-strong);
+            padding: 0.4rem 0.9rem;
+            border-radius: 100px;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+        .nav-cta:hover { background: var(--bg-alt); border-color: var(--accent); }
+        @media (max-width: 680px) {
+            .nav-links a:not(.nav-cta) { display: none; }
+            .brand-name { display: none; }
+        }
+
+        /* ---------- Hero ---------- */
+        .hero { padding-top: 6rem; padding-bottom: 5rem; }
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.85rem;
+            border-radius: 100px;
+            margin-bottom: 1.75rem;
+        }
+        .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #4c9a5a;
+            box-shadow: 0 0 0 3px rgba(76,154,90,0.18);
+        }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: clamp(2.5rem, 7vw, 4.1rem);
+            line-height: 1.05;
+            letter-spacing: -0.025em;
+            margin-bottom: 1.1rem;
+        }
+        .hero .role {
+            font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: 1.4rem;
+        }
+        .hero .role .accent { color: var(--accent); }
+        .hero .lead {
+            font-size: 1.12rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin-bottom: 2.2rem;
+        }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: center; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 0.7rem 1.3rem;
+            border-radius: 100px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+        }
+        .btn:active { transform: translateY(1px); }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover { background: #a64e2f; }
+        .btn-ghost { background: transparent; color: var(--text); border-color: var(--border-strong); }
+        .btn-ghost:hover { background: var(--surface); border-color: var(--accent); }
+        .hero-meta {
+            margin-top: 2.4rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem 2.4rem;
+            font-size: 0.92rem;
+            color: var(--muted);
+        }
+        .hero-meta b { color: var(--text); font-weight: 600; }
+
+        /* ---------- About ---------- */
+        .about-text p { color: var(--muted); max-width: 760px; }
+        .about-text p + p { margin-top: 1.1rem; }
+        .about-grid {
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+        .about-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.35rem;
+        }
+        .about-card .k {
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--faint);
+            margin-bottom: 0.4rem;
+        }
+        .about-card .v { font-weight: 500; font-size: 0.96rem; }
+        @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- Experience ---------- */
+        .exp { position: relative; padding-left: 1.6rem; }
+        .exp::before {
+            content: "";
+            position: absolute;
+            left: 4px; top: 6px; bottom: 6px;
+            width: 2px;
+            background: var(--border);
+        }
+        .exp-item { position: relative; padding-bottom: 2.5rem; }
+        .exp-item:last-child { padding-bottom: 0; }
+        .exp-item::before {
+            content: "";
+            position: absolute;
+            left: -1.6rem; top: 7px;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 4px var(--bg);
+            transform: translateX(0);
+        }
+        .exp-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.25rem 1rem;
+        }
+        .exp-role { font-weight: 600; font-size: 1.1rem; }
+        .exp-date { font-size: 0.85rem; color: var(--faint); white-space: nowrap; }
+        .exp-co { color: var(--accent); font-weight: 500; font-size: 0.95rem; margin: 0.15rem 0 0.85rem; }
+        .exp-list { list-style: none; display: grid; gap: 0.55rem; }
+        .exp-list li {
+            position: relative;
+            padding-left: 1.15rem;
+            color: var(--muted);
+            font-size: 0.97rem;
+        }
+        .exp-list li::before {
+            content: "";
+            position: absolute;
+            left: 0; top: 0.65em;
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--border-strong);
+        }
+
+        /* ---------- Skills ---------- */
+        .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem 2.5rem; }
+        .skill-group h3 {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--faint);
+            margin-bottom: 0.85rem;
+            font-weight: 600;
+        }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .tag {
+            font-size: 0.86rem;
+            color: var(--text);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.75rem;
+            border-radius: 100px;
+        }
+        @media (max-width: 640px) { .skills-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- Projects ---------- */
+        .proj-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2.25rem;
+        }
+        .proj-head h2 { margin-bottom: 0; }
+        .proj-head .ghlink { font-size: 0.92rem; color: var(--accent); font-weight: 500; }
+        .proj-head .ghlink:hover { text-decoration: underline; }
+        .proj-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.1rem;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.4rem 1.5rem 1.5rem;
+            transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+        .card:hover { transform: translateY(-3px); border-color: var(--border-strong); box-shadow: var(--shadow); }
+        .card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.9rem; }
+        .card-mark {
+            width: 40px; height: 40px;
+            border-radius: 11px;
+            display: grid; place-items: center;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #fff;
+            font-family: var(--font-serif);
+        }
+        .card-arrow { color: var(--faint); transition: transform 0.15s ease, color 0.15s ease; }
+        .card:hover .card-arrow { color: var(--accent); transform: translate(2px, -2px); }
+        .card h3 { font-size: 1.12rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .card p { font-size: 0.94rem; color: var(--muted); margin-bottom: 1rem; flex: 1; }
+        .card .tags .tag { font-size: 0.78rem; padding: 0.22rem 0.6rem; background: var(--bg-alt); }
+        @media (max-width: 680px) { .proj-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- Education ---------- */
+        .edu-grid { display: grid; gap: 1rem; }
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.25rem 1rem;
+            padding: 1.1rem 1.35rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+        .edu-item .deg { font-weight: 600; font-size: 1rem; }
+        .edu-item .sch { color: var(--muted); font-size: 0.92rem; }
+
+        /* ---------- Contact ---------- */
+        .contact-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; }
+        .contact-lead p { color: var(--muted); margin-bottom: 1.5rem; max-width: 360px; }
+        .contact-links { display: grid; gap: 0.6rem; }
+        .contact-links a {
+            display: inline-flex; align-items: center; gap: 0.65rem;
+            color: var(--text); font-size: 0.96rem;
+        }
+        .contact-links a:hover { color: var(--accent); }
+        .contact-links svg { color: var(--muted); }
+        form { display: grid; gap: 1rem; }
+        .field { display: grid; gap: 0.4rem; }
+        .field label { font-size: 0.82rem; color: var(--muted); font-weight: 500; }
+        .field input, .field textarea {
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--text);
+            background: var(--surface);
+            border: 1px solid var(--border-strong);
+            border-radius: 11px;
+            padding: 0.65rem 0.85rem;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+        .field input:focus, .field textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
+        .field textarea { resize: vertical; min-height: 110px; }
+        form .btn-primary { justify-content: center; }
+        @media (max-width: 720px) { .contact-wrap { grid-template-columns: 1fr; gap: 2rem; } }
+
+        /* ---------- Footer ---------- */
+        footer.site {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 0;
+        }
+        .footer-inner {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+        .footer-social { display: flex; gap: 1rem; }
+        .footer-social a { color: var(--muted); transition: color 0.15s ease; }
+        .footer-social a:hover { color: var(--accent); }
+
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="#top" class="brand"><span class="mark">KB</span><span class="brand-name">Karandeep Bhardwaj</span></a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact" class="nav-cta">Get in touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+        <div class="wrap">
+            <span class="availability"><span class="dot"></span>Open to staff &amp; lead AI engineering roles</span>
+            <h1>Karandeep Bhardwaj</h1>
+            <p class="role">Lead Software Engineer <span class="accent">&amp;</span> AI Systems Architect</p>
+            <p class="lead">
+                I build production AI systems at enterprise scale — agentic workflows, RAG pipelines,
+                and serverless platforms that serve 600k+ requests a day with 99.99% availability.
+            </p>
+            <div class="hero-actions">
+                <a href="Karandeep_Resume.pdf" download class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download Resume
+                </a>
+                <a href="#contact" class="btn btn-ghost">Get in touch</a>
+            </div>
+            <div class="hero-meta">
+                <span><b>7+ years</b> shipping software</span>
+                <span><b>Montreal</b>, Canada</span>
+                <span><b>AWS</b> Solutions Architect</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="wrap">
+            <p class="eyebrow">About</p>
+            <div class="about-text">
+                <p>
+                    Lead Software Engineer and AI systems architect with 7+ years delivering production
+                    AI systems and cloud-native platforms that serve enterprise-scale business needs.
+                    I specialize in LLM-based agentic workflows, RAG pipelines, and serverless
+                    architecture, with microservices processing 600k+ daily requests.
+                </p>
+                <p>
+                    Expert in AWS (Bedrock, Lambda, Lex, AgentCore) and modern full-stack development
+                    (Python, TypeScript, React). I've delivered 80% reductions in agent handle time
+                    through LLM-driven automation, and I enjoy driving technical roadmaps, cross-functional
+                    collaboration, and growing high-performing engineering teams.
+                </p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card"><div class="k">Location</div><div class="v">Montreal, Canada</div></div>
+                <div class="about-card"><div class="k">Education</div><div class="v">M.Sc. Computer Science — Concordia University</div></div>
+                <div class="about-card"><div class="k">Certification</div><div class="v">AWS Solutions Architect – Associate</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="wrap">
+            <p class="eyebrow">Experience</p>
+            <h2 class="section-title">Where I've worked</h2>
+            <div class="exp">
+
+                <div class="exp-item">
+                    <div class="exp-head">
+                        <span class="exp-role">Lead Software Engineer</span>
+                        <span class="exp-date">Nov 2021 – Present</span>
+                    </div>
+                    <p class="exp-co">SunLife Financial</p>
+                    <ul class="exp-list">
+                        <li>Architected an AI-powered call routing system using LangGraph + LLM, cutting contact center agent handle time by 80% through intelligent authentication workflows.</li>
+                        <li>Designed and productionized an MCP integration enabling dynamic tool orchestration across multi-agent systems, with custom middleware enforcing 3-tier authentication.</li>
+                        <li>Spearheading on-prem to cloud migration onto Amazon Bedrock AgentCore — deploying agents via AgentCore Gateway and Runtime for fully managed, scalable infrastructure.</li>
+                        <li>Led migration to serverless architecture processing 600k+ daily requests, achieving 99.99% availability with 30% lower latency.</li>
+                        <li>Led and mentored a team of 5+ engineers on LLM system design and agentic architecture, owning the technical roadmap and presenting quarterly AI strategy to senior leadership.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-head">
+                        <span class="exp-role">Full Stack Engineer</span>
+                        <span class="exp-date">Jan 2021 – Nov 2021</span>
+                    </div>
+                    <p class="exp-co">Tecsys Inc.</p>
+                    <ul class="exp-list">
+                        <li>Led a monolith-to-microservices re-architecture using event-driven design (Kafka + SQS), scaling to 50x concurrent requests and increasing throughput by 85%.</li>
+                        <li>Engineered an end-to-end customs compliance microservice (AWS SAM, Lambda, SQS, S3, SFTP), eliminating a vendor dependency and delivering $900K in validated annual savings.</li>
+                        <li>Led front-end modernization with Storybook and atomic design — a reusable component library adopted across 3+ product teams, boosting velocity by 25%.</li>
+                        <li>Established an org-wide testing strategy (TDD with Jest, k6 load testing) achieving zero P0 incidents during peak traffic.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-head">
+                        <span class="exp-role">Full Stack Engineer</span>
+                        <span class="exp-date">Jan 2020 – Jan 2021</span>
+                    </div>
+                    <p class="exp-co">BIDGALA</p>
+                    <ul class="exp-list">
+                        <li>Architected and shipped a full-stack e-commerce social platform (Django + React) with RESTful APIs on AWS (EC2, RDS, S3), supporting early-stage product growth.</li>
+                        <li>Defined technical architecture and mentored 3 junior developers, establishing code review standards and Git workflows that reduced integration conflicts by 40%.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-head">
+                        <span class="exp-role">Software Developer</span>
+                        <span class="exp-date">Jan 2017 – Aug 2018</span>
+                    </div>
+                    <p class="exp-co">Unisys Pvt. Ltd.</p>
+                    <ul class="exp-list">
+                        <li>Developed enterprise Java applications for Fortune 500 clients in cross-functional Agile squads, contributing across the full SDLC and establishing team-wide coding standards.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="wrap">
+            <p class="eyebrow">Skills</p>
+            <h2 class="section-title">Tools &amp; technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <div class="tags">
+                        <span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Java</span><span class="tag">Go</span><span class="tag">SQL</span><span class="tag">Ruby on Rails</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>AI / ML</h3>
+                    <div class="tags">
+                        <span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">Amazon Bedrock</span><span class="tag">AgentCore</span><span class="tag">RAG Pipelines</span><span class="tag">Vector DBs</span><span class="tag">MCP</span><span class="tag">Prompt Engineering</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Frameworks</h3>
+                    <div class="tags">
+                        <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Vue</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Django</span><span class="tag">Kafka</span><span class="tag">GraphQL</span><span class="tag">Tailwind</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Cloud &amp; DevOps</h3>
+                    <div class="tags">
+                        <span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">Jenkins</span><span class="tag">CI/CD</span><span class="tag">GitOps</span><span class="tag">OpenShift</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Architecture</h3>
+                    <div class="tags">
+                        <span class="tag">Microservices</span><span class="tag">Serverless</span><span class="tag">Event-Driven</span><span class="tag">Multi-Agent Systems</span><span class="tag">System Design</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Testing</h3>
+                    <div class="tags">
+                        <span class="tag">Jest</span><span class="tag">k6</span><span class="tag">TDD</span><span class="tag">Test Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="wrap">
+            <p class="eyebrow">Projects</p>
+            <div class="proj-head">
+                <h2 class="section-title">Recent open-source work</h2>
+                <a href="https://github.com/karandeepbhardwaj" target="_blank" rel="noopener" class="ghlink">View all on GitHub →</a>
+            </div>
+            <div class="proj-grid">
+
+                <a href="https://github.com/karandeepbhardwaj/Yapper" target="_blank" rel="noopener" class="card">
+                    <div class="card-top">
+                        <span class="card-mark" style="background:#bd5d3a">Y</span>
+                        <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                    </div>
+                    <h3>Yapper</h3>
+                    <p>Voice-to-text desktop app that captures speech, refines transcripts with AI, and auto-pastes at your cursor position.</p>
+                    <div class="tags"><span class="tag">Tauri 2</span><span class="tag">Rust</span><span class="tag">React</span><span class="tag">Whisper</span></div>
+                </a>
+
+                <a href="https://github.com/karandeepbhardwaj/AirBrowse" target="_blank" rel="noopener" class="card">
+                    <div class="card-top">
+                        <span class="card-mark" style="background:#3a7fbd">A</span>
+                        <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                    </div>
+                    <h3>AirBrowse</h3>
+                    <p>Browser automation powered by GitHub Copilot — control a browser through natural language, no API keys needed.</p>
+                    <div class="tags"><span class="tag">VS Code Ext</span><span class="tag">Chrome Ext</span><span class="tag">Node.js</span><span class="tag">TypeScript</span></div>
+                </a>
+
+                <a href="https://github.com/karandeepbhardwaj/wrapzone" target="_blank" rel="noopener" class="card">
+                    <div class="card-top">
+                        <span class="card-mark" style="background:#6b4fb5">W</span>
+                        <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                    </div>
+                    <h3>wrapzone</h3>
+                    <p>Premium vehicle-wrapping booking platform with 3-tier packages, built on Next.js 15, Drizzle ORM, and Stripe.</p>
+                    <div class="tags"><span class="tag">Next.js 15</span><span class="tag">Drizzle</span><span class="tag">Stripe</span><span class="tag">TypeScript</span></div>
+                </a>
+
+                <a href="https://github.com/karandeepbhardwaj/cashstash" target="_blank" rel="noopener" class="card">
+                    <div class="card-top">
+                        <span class="card-mark" style="background:#4c9a5a">C</span>
+                        <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                    </div>
+                    <h3>cashstash</h3>
+                    <p>Private, offline-first budget tracker that syncs to Google Drive. No ads, no tracking — your data stays yours.</p>
+                    <div class="tags"><span class="tag">TypeScript</span><span class="tag">Offline-first</span><span class="tag">Drive Sync</span></div>
+                </a>
+
+                <a href="https://github.com/karandeepbhardwaj/pixl.ink" target="_blank" rel="noopener" class="card">
+                    <div class="card-top">
+                        <span class="card-mark" style="background:#c98a2b">P</span>
+                        <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                    </div>
+                    <h3>pixl.ink</h3>
+                    <p>Self-hosted image sharing with instant short URLs and QR codes. Built with Go, Templ, HTMX, and Tailwind.</p>
+                    <div class="tags"><span class="tag">Go</span><span class="tag">HTMX</span><span class="tag">SQLite</span><span class="tag">Tailwind</span></div>
+                </a>
+
+                <a href="https://github.com/karandeepbhardwaj/Yappy" target="_blank" rel="noopener" class="card">
+                    <div class="card-top">
+                        <span class="card-mark" style="background:#b5474f">Y</span>
+                        <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                    </div>
+                    <h3>Yappy</h3>
+                    <p>Offline voice-to-text dictation for VS Code with Copilot LLM refinement. Free, secure, and enterprise-friendly.</p>
+                    <div class="tags"><span class="tag">VS Code Ext</span><span class="tag">TypeScript</span><span class="tag">Whisper</span></div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <div class="wrap">
+            <p class="eyebrow">Education</p>
+            <h2 class="section-title">Academics &amp; certifications</h2>
+            <div class="edu-grid">
+                <div class="edu-item">
+                    <span class="deg">Master of Computer Science</span>
+                    <span class="sch">Concordia University, Montreal · 2018 – 2020</span>
+                </div>
+                <div class="edu-item">
+                    <span class="deg">Bachelor of Computer Science</span>
+                    <span class="sch">Chandigarh Engineering College, India · 2013 – 2017</span>
+                </div>
+                <div class="edu-item">
+                    <span class="deg">AWS Solutions Architect – Associate</span>
+                    <span class="sch">Amazon Web Services · 2022</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="wrap">
+            <p class="eyebrow">Contact</p>
+            <div class="contact-wrap">
+                <div class="contact-lead">
+                    <h2 class="section-title">Let's connect</h2>
+                    <p>Have a role, a project, or just want to talk about AI systems? Drop me a note and I'll get back to you.</p>
+                    <div class="contact-links">
+                        <a href="https://linkedin.com/in/karandeepbhardwaj" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/></svg>
+                            linkedin.com/in/karandeepbhardwaj
+                        </a>
+                        <a href="https://github.com/karandeepbhardwaj" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.003 0c2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.373-12-12-12z"/></svg>
+                            github.com/karandeepbhardwaj
+                        </a>
+                    </div>
+                </div>
+                <form action="https://formspree.io/f/mjknzlon" method="POST">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Your message..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site">
+        <div class="footer-inner">
+            <span>© 2026 Karandeep Bhardwaj</span>
+            <div class="footer-social">
+                <a href="https://linkedin.com/in/karandeepbhardwaj" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/></svg>
+                </a>
+                <a href="https://github.com/karandeepbhardwaj" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.003 0c2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Analytics (deferred, non-blocking) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F93L5YE4B0"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-F93L5YE4B0');
-    </script>
-
-    <!-- PWA Meta Tags -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="KB Portfolio">
-    <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="icon-192.png">
-
-    <!-- View Transitions API -->
-    <meta name="view-transition" content="same-origin">
-
-    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
-    <style>
-        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        :root{--color-bg:#f0eee6;--color-text:#1a1a1a;--color-text-secondary:#3d3d3d;--color-text-muted:#666;--color-text-light:#888;--color-border:rgba(0,0,0,0.08);--color-accent:#FF6B35;--mesh-1:rgba(255,154,108,0.25);--mesh-2:rgba(168,130,255,0.2);--mesh-3:rgba(108,200,255,0.18);--mesh-4:rgba(255,200,120,0.15);--glass-bg:rgba(255,255,255,0.35);--glass-bg-hover:rgba(255,255,255,0.5);--glass-border:rgba(255,255,255,0.5);--glass-blur:12px;--glass-radius:28px;--glass-radius-pill:100px;--glass-shadow-outer:0 0 2px rgba(0,0,0,0.06),0 2px 12px rgba(0,0,0,0.08);--glass-shadow-inner:inset 1px 1px 0px rgba(255,255,255,0.6),inset -1px -1px 0px rgba(255,255,255,0.2),inset 0 0 16px rgba(255,255,255,0.3);--glass-shadow-hover:0 0 4px rgba(0,0,0,0.08),0 8px 24px rgba(0,0,0,0.12);--pill-bg:rgba(255,255,255,0.45);--pill-shadow-inner:inset 1px 1px 0px rgba(255,255,255,0.7),inset -1px -1px 0px rgba(255,255,255,0.3),inset 0 0 12px rgba(255,255,255,0.4);--font-normal:400;--font-medium:500;--font-semibold:600;--font-bold:700;--text-sm:0.875rem;--transition-fast:0.15s ease;--transition-base:0.2s ease;--transition-slow:0.3s ease}
-        [data-theme="dark"]{--color-bg:#0e0e12;--color-text:#f0f0f0;--color-text-secondary:#c8c8c8;--color-text-muted:#888;--color-text-light:#666;--color-border:rgba(255,255,255,0.06);--color-accent:#FF7F50;--mesh-1:rgba(56,189,248,0.12);--mesh-2:rgba(168,85,247,0.12);--mesh-3:rgba(20,184,166,0.08);--mesh-4:rgba(99,102,241,0.1);--glass-bg:rgba(255,255,255,0.06);--glass-bg-hover:rgba(255,255,255,0.1);--glass-border:rgba(255,255,255,0.08);--glass-shadow-outer:0 0 2px rgba(0,0,0,0.2),0 2px 12px rgba(0,0,0,0.25);--glass-shadow-inner:inset 1px 1px 0px -0.5px rgba(255,255,255,0.1),inset -1px -1px 0px -0.5px rgba(255,255,255,0.05),inset 0 0 3px rgba(255,255,255,0.08),inset 0 0 16px rgba(255,255,255,0.04);--glass-shadow-hover:0 0 4px rgba(0,0,0,0.3),0 8px 24px rgba(0,0,0,0.35);--pill-bg:rgba(255,255,255,0.08);--pill-shadow-inner:inset 1px 1px 0px -0.5px rgba(255,255,255,0.12),inset -1px -1px 0px -0.5px rgba(255,255,255,0.05),inset 0 0 3px rgba(255,255,255,0.08),inset 0 0 16px rgba(255,255,255,0.03)}
-        html{scroll-behavior:smooth;overflow-x:hidden}
-        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:var(--color-text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh;background-color:var(--color-bg);position:relative;z-index:0;transition:background-color 0.5s ease}
-        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:0 3rem}
-        .hero-content{text-align:center;max-width:700px}
-        .hero-title{font-size:clamp(2.5rem,10vw,5rem);font-weight:600;letter-spacing:-0.02em;margin-bottom:1.5rem;min-height:1.2em;line-height:1.1}
-        .typing-cursor{display:inline-block;color:var(--color-accent);animation:blink 1s step-end infinite;font-weight:200}
-        @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-        .hero-subtitle{font-size:1.25rem;color:var(--color-text-secondary);opacity:0;animation:fadeInUp 1s ease 0.2s forwards}
-        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-        .hero-line{width:60px;height:2px;background:var(--color-accent);margin:2rem auto 0;opacity:0;animation:fadeInUp 1s ease 0.4s forwards}
-        .hero-actions{display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:2rem;opacity:0;animation:fadeInUp 1s ease 0.6s forwards}
-        .page-loader{position:fixed;inset:0;z-index:99999;background:var(--color-bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;transition:opacity 0.6s ease,visibility 0.6s ease}
-        .page-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
-        .loader-name{font-size:clamp(2rem,6vw,3.5rem);font-weight:700;letter-spacing:-0.03em;background:linear-gradient(90deg,var(--color-accent),#a855f7,var(--color-accent));background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientShift 3s ease infinite}
-        .loader-bar{width:120px;height:3px;background:var(--color-border);border-radius:3px;overflow:hidden;position:relative}
-        .loader-bar::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--color-accent),#a855f7);transform-origin:left;animation:loaderFill 1.2s ease forwards}
-        @keyframes loaderFill{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
-        .scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--color-accent),#a855f7);z-index:10000;pointer-events:none}
-        .cursor-spotlight{position:fixed;width:500px;height:500px;border-radius:50%;pointer-events:none;z-index:-1;opacity:0;transform:translate(-50%,-50%);will-change:left,top;background:radial-gradient(circle,rgba(255,107,53,0.06) 0%,transparent 70%)}
-        .floating-nav{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(30px);display:flex;align-items:center;gap:0.25rem;padding:0.5rem 0.75rem;z-index:1000;opacity:0}
-        #projects a.project-card,#projects a.project-card:link,#projects a.project-card:visited,#projects a.project-card:-webkit-any-link{text-decoration:none;color:var(--color-text);display:flex;flex-direction:column;position:relative;-webkit-tap-highlight-color:transparent}
-        #projects a.project-card .project-body,#projects a.project-card .project-body *{text-decoration:none;color:inherit}
-        .project-title{color:var(--color-text)}.project-desc{color:var(--color-text-secondary)}.project-tag{color:var(--color-text-muted)}
-        .project-hero-icon{color:rgba(255,255,255,0.85) !important}
-        .project-link-icon{color:rgba(255,255,255,0.9) !important}
-        .bento-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
-        @media(max-width:768px){.bento-grid{grid-template-columns:1fr}.form-submit{align-self:center;width:100%}}
-    </style>
-
-    <link rel="icon" type="image/svg+xml" href="icon-192.svg">
-    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-
-    <title>Karandeep Bhardwaj — Lead Software Engineer & AI Systems Architect</title>
-</head>
-<body>
-
-    <!-- Page Load Transition -->
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-name">KB</div>
-        <div class="loader-bar"></div>
-    </div>
-
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Cursor Spotlight -->
-    <div class="cursor-spotlight" id="cursorSpotlight"></div>
-
-    <!-- Floating Navigation -->
-    <nav class="floating-nav glass-pill" id="floatingNav">
-        <a href="#" class="nav-icon active" data-section="hero" aria-label="Home">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
-        </a>
-        <a href="#about" class="nav-icon" data-section="about" aria-label="About">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-            </svg>
-        </a>
-        <a href="#experience" class="nav-icon" data-section="experience" aria-label="Experience">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-            </svg>
-        </a>
-        <a href="#skills" class="nav-icon" data-section="skills" aria-label="Skills">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"/>
-                <polyline points="8 6 2 12 8 18"/>
-            </svg>
-        </a>
-        <a href="#projects" class="nav-icon" data-section="projects" aria-label="Projects">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-            </svg>
-        </a>
-        <a href="#contact" class="nav-icon" data-section="contact" aria-label="Contact">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-            </svg>
-        </a>
-        <span class="nav-divider"></span>
-        <button class="nav-icon theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"/>
-                <line x1="12" y1="1" x2="12" y2="3"/>
-                <line x1="12" y1="21" x2="12" y2="23"/>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                <line x1="1" y1="12" x2="3" y2="12"/>
-                <line x1="21" y1="12" x2="23" y2="12"/>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            </svg>
-            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-        </button>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="typing-text gradient-text" id="typingText"></span>
-                <span class="typing-cursor">|</span>
-            </h1>
-            <p class="hero-subtitle">Lead Software Engineer & AI Systems Architect</p>
-            <div class="hero-line"></div>
-            <div class="hero-actions">
-                <a href="Karandeep_Resume.pdf" download class="glass-button btn-download">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    Download Resume
-                </a>
-                <span class="keyboard-hint">Press <kbd>&#8984;</kbd><kbd>K</kbd> to navigate</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-grid">
-                <div class="section-label">About</div>
-                <div class="glass-panel">
-                    <div class="section-content section-content-glass">
-                        <p class="about-text text-reveal">
-                            Lead Software Engineer and AI systems architect with 7+ years delivering
-                            production AI systems and cloud-native platforms that serve enterprise-scale
-                            business needs. Specialized in LLM-based agentic workflows, RAG pipelines, and serverless
-                            architecture, with microservices processing 600k+ daily requests.
-                        </p>
-                        <p class="about-text text-reveal">
-                            Expert in AWS (Bedrock, Lambda, Lex, AgentCore), modern full-stack development
-                            (Python, TypeScript, React), and architecting multi-agent AI systems.
-                            Delivered 80% reductions in agent handle time through LLM-driven automation.
-                            Experienced in driving technical roadmaps, cross-functional collaboration,
-                            and growing high-performing engineering teams.
-                        </p>
-                        <div class="about-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Location</span>
-                                <span class="detail-value">Montreal, Canada</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Education</span>
-                                <span class="detail-value">M.Sc. Computer Science, Concordia University (2018–2020)</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Certification</span>
-                                <span class="detail-value">AWS Solutions Architect – Associate (2022)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <div class="section-grid">
-                <div class="section-label">Experience</div>
-                <div class="glass-panel">
-                    <div class="section-content section-content-glass">
-
-                        <div class="experience-item">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Lead Software Engineer</h3>
-                                <span class="experience-date">Nov 2021 – Present</span>
-                            </div>
-                            <p class="experience-company">SunLife Financial</p>
-                            <ul class="experience-list">
-                                <li>Architected an AI-powered call routing system using LangGraph + LLM, cutting contact center agent handle time by 80% and processing retirement plan inquiries through intelligent authentication workflows.</li>
-                                <li>Designed and productionized an MCP integration enabling dynamic tool orchestration across multi-agent systems, with a custom middleware layer enforcing 3-tier authentication (identity, single-factor, multi-factor) for enterprise-grade security.</li>
-                                <li>Spearheading on-premises to cloud migration onto Amazon Bedrock AgentCore, deploying agents via AgentCore Gateway and Runtime to achieve fully managed, scalable agentic infrastructure with centralized observability.</li>
-                                <li>Led migration from legacy systems to serverless architecture processing 600k+ daily requests, achieving 99.99% availability with 30% lower latency.</li>
-                                <li>Built and deployed an agentic workflow on Amazon Bedrock with DynamoDB-backed state persistence, routing 15+ retirement plan categories through context-aware conversation flows.</li>
-                                <li>Optimized AWS End User Messaging (SNS) and multi-Lambda orchestration via Amazon Connect (Lex, ANI lookup, OTP verification), reducing authentication resolution time by 65%.</li>
-                                <li>Led and mentored a team of 5+ engineers on LLM-based system design, agentic architecture patterns, and serverless best practices — owning the technical roadmap and presenting quarterly AI strategy to senior leadership.</li>
-                            </ul>
-                        </div>
-
-                        <div class="experience-item">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Full Stack Engineer</h3>
-                                <span class="experience-date">Jan 2021 – Nov 2021</span>
-                            </div>
-                            <p class="experience-company">Tecsys Inc.</p>
-                            <ul class="experience-list">
-                                <li>Led a full monolith-to-microservices re-architecture using event-driven architecture (Kafka + SQS), scaling the system to handle 50x concurrent requests and increasing throughput by 85%.</li>
-                                <li>Led front-end modernization using Storybook and atomic design, building a reusable component library adopted across 3+ product teams and boosting development velocity by 25%.</li>
-                                <li>Engineered an end-to-end customs compliance microservice using AWS SAM, Lambda, SQS, and S3 with SFTP integration, eliminating a third-party vendor dependency and delivering $900K in validated annual cost savings.</li>
-                                <li>Established an org-wide testing strategy using TDD (Jest) and k6 load testing, achieving zero P0 incidents during peak traffic windows and reducing post-release defect rate across the engineering team.</li>
-                                <li>Hardened integration security by implementing OAuth 2.0 across 10+ carrier integrations, managing token lifecycle (issuance, refresh, revocation) across distributed microservices.</li>
-                            </ul>
-                        </div>
-
-                        <div class="experience-item">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Full Stack Engineer</h3>
-                                <span class="experience-date">Jan 2020 – Jan 2021</span>
-                            </div>
-                            <p class="experience-company">BIDGALA (concurrent with Master of Computer Science, 2018–2020)</p>
-                            <ul class="experience-list">
-                                <li>Architected and shipped a full-stack e-commerce social platform using Python (Django) and React, with RESTful APIs deployed on AWS (EC2, RDS, S3), supporting early-stage product growth.</li>
-                                <li>Defined technical architecture and mentored 3 junior developers, establishing code review standards and Git workflows that reduced integration conflicts by 40%.</li>
-                            </ul>
-                        </div>
-
-                        <div class="experience-item">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Software Developer</h3>
-                                <span class="experience-date">Jan 2017 – Aug 2018</span>
-                            </div>
-                            <p class="experience-company">Unisys Pvt. Ltd.</p>
-                            <ul class="experience-list">
-                                <li>Developed enterprise Java applications for Fortune 500 clients in cross-functional Agile squads, contributing across the full SDLC from requirements to deployment and establishing coding standards adopted team-wide.</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-grid">
-                <div class="section-label">Skills</div>
-                <div class="glass-panel">
-                    <div class="section-content section-content-glass">
-
-                        <div class="skills-category">
-                            <h4 class="skills-title">Languages</h4>
-                            <div class="skills-list">
-                                <span class="skill-tag glass-pill">Python</span>
-                                <span class="skill-tag glass-pill">TypeScript</span>
-                                <span class="skill-tag glass-pill">JavaScript</span>
-                                <span class="skill-tag glass-pill">Java</span>
-                                <span class="skill-tag glass-pill">Golang</span>
-                                <span class="skill-tag glass-pill">SQL (Postgres)</span>
-                                <span class="skill-tag glass-pill">Ruby on Rails</span>
-                            </div>
-                        </div>
-
-                        <div class="skills-category">
-                            <h4 class="skills-title">AI / ML</h4>
-                            <div class="skills-list">
-                                <span class="skill-tag glass-pill">LangGraph</span>
-                                <span class="skill-tag glass-pill">LangChain</span>
-                                <span class="skill-tag glass-pill">Amazon Bedrock</span>
-                                <span class="skill-tag glass-pill">AgentCore</span>
-                                <span class="skill-tag glass-pill">RAG Pipelines</span>
-                                <span class="skill-tag glass-pill">Vector Databases (pgvector, Pinecone)</span>
-                                <span class="skill-tag glass-pill">Model Context Protocol (MCP)</span>
-                                <span class="skill-tag glass-pill">Prompt Engineering</span>
-                                <span class="skill-tag glass-pill">AI Observability</span>
-                            </div>
-                        </div>
-
-                        <div class="skills-category">
-                            <h4 class="skills-title">Frameworks</h4>
-                            <div class="skills-list">
-                                <span class="skill-tag glass-pill">React</span>
-                                <span class="skill-tag glass-pill">Next.js</span>
-                                <span class="skill-tag glass-pill">Vue</span>
-                                <span class="skill-tag glass-pill">Node.js</span>
-                                <span class="skill-tag glass-pill">Express</span>
-                                <span class="skill-tag glass-pill">Django</span>
-                                <span class="skill-tag glass-pill">Kafka</span>
-                                <span class="skill-tag glass-pill">GraphQL</span>
-                                <span class="skill-tag glass-pill">Tailwind</span>
-                            </div>
-                        </div>
-
-                        <div class="skills-category">
-                            <h4 class="skills-title">Cloud & DevOps</h4>
-                            <div class="skills-list">
-                                <span class="skill-tag glass-pill">AWS (Lambda, Bedrock, Lex, DynamoDB, S3, SNS, SQS)</span>
-                                <span class="skill-tag glass-pill">Docker</span>
-                                <span class="skill-tag glass-pill">Kubernetes</span>
-                                <span class="skill-tag glass-pill">Terraform</span>
-                                <span class="skill-tag glass-pill">Jenkins</span>
-                                <span class="skill-tag glass-pill">CI/CD</span>
-                                <span class="skill-tag glass-pill">GitOps</span>
-                                <span class="skill-tag glass-pill">OpenShift</span>
-                            </div>
-                        </div>
-
-                        <div class="skills-category">
-                            <h4 class="skills-title">Architecture</h4>
-                            <div class="skills-list">
-                                <span class="skill-tag glass-pill">Microservices</span>
-                                <span class="skill-tag glass-pill">Serverless</span>
-                                <span class="skill-tag glass-pill">Event-Driven</span>
-                                <span class="skill-tag glass-pill">Multi-Agent Systems</span>
-                                <span class="skill-tag glass-pill">Agentic Workflows</span>
-                                <span class="skill-tag glass-pill">System Design</span>
-                            </div>
-                        </div>
-
-                        <div class="skills-category">
-                            <h4 class="skills-title">Testing</h4>
-                            <div class="skills-list">
-                                <span class="skill-tag glass-pill">Jest</span>
-                                <span class="skill-tag glass-pill">k6</span>
-                                <span class="skill-tag glass-pill">TDD</span>
-                                <span class="skill-tag glass-pill">Test Automation</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-grid">
-                <div class="section-label gradient-text">Projects</div>
-                <div class="bento-grid">
-
-                    <a href="https://github.com/karandeepbhardwaj/Yapper" target="_blank" rel="noopener noreferrer" class="project-card glass-panel bento-large">
-                        <div class="project-hero project-hero-yapper">
-                            <svg class="project-hero-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                                <line x1="12" y1="19" x2="12" y2="23"/>
-                                <line x1="8" y1="23" x2="16" y2="23"/>
-                            </svg>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Yapper</h3>
-                            <p class="project-desc">Voice-to-text desktop app that captures speech, refines transcripts with AI, and auto-pastes at your cursor position.</p>
-                            <div class="project-tags">
-                                <span class="project-tag glass-pill">Tauri 2</span>
-                                <span class="project-tag glass-pill">Rust</span>
-                                <span class="project-tag glass-pill">React</span>
-                                <span class="project-tag glass-pill">TypeScript</span>
-                                <span class="project-tag glass-pill">Swift</span>
-                            </div>
-                        </div>
-                        <span class="project-link-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"/>
-                                <polyline points="7 7 17 7 17 17"/>
-                            </svg>
-                        </span>
-                    </a>
-
-                    <a href="https://github.com/karandeepbhardwaj/AirBrowse" target="_blank" rel="noopener noreferrer" class="project-card glass-panel bento-large">
-                        <div class="project-hero project-hero-airbrowse">
-                            <img src="images/projects/airbrowse.png" alt="AirBrowse — VS Code chat interface for browser automation" class="project-hero-img" loading="lazy" width="512" height="410">
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">AirBrowse</h3>
-                            <p class="project-desc">Browser automation powered by GitHub Copilot — control a browser through natural language, no API keys needed.</p>
-                            <div class="project-tags">
-                                <span class="project-tag glass-pill">VS Code Extension</span>
-                                <span class="project-tag glass-pill">Chrome Extension</span>
-                                <span class="project-tag glass-pill">Node.js</span>
-                                <span class="project-tag glass-pill">TypeScript</span>
-                            </div>
-                        </div>
-                        <span class="project-link-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"/>
-                                <polyline points="7 7 17 7 17 17"/>
-                            </svg>
-                        </span>
-                    </a>
-
-                    <a href="https://github.com/karandeepbhardwaj/prepwise" target="_blank" rel="noopener noreferrer" class="project-card glass-panel bento-small">
-                        <div class="project-hero project-hero-prepwise">
-                            <svg class="project-hero-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                                <polyline points="10 9 9 9 8 9"/>
-                            </svg>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">PrepWise</h3>
-                            <p class="project-desc">AI-powered interview preparation guide generator from job postings.</p>
-                            <div class="project-tags">
-                                <span class="project-tag glass-pill">Python</span>
-                                <span class="project-tag glass-pill">FastAPI</span>
-                                <span class="project-tag glass-pill">LangChain</span>
-                                <span class="project-tag glass-pill">React</span>
-                            </div>
-                        </div>
-                        <span class="project-link-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"/>
-                                <polyline points="7 7 17 7 17 17"/>
-                            </svg>
-                        </span>
-                    </a>
-
-                    <a href="https://github.com/karandeepbhardwaj/pixl.ink" target="_blank" rel="noopener noreferrer" class="project-card glass-panel bento-small">
-                        <div class="project-hero project-hero-pixlink">
-                            <svg class="project-hero-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                <circle cx="8.5" cy="8.5" r="1.5"/>
-                                <polyline points="21 15 16 10 5 21"/>
-                            </svg>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">pixl.ink</h3>
-                            <p class="project-desc">Self-hosted image sharing with instant short URLs and QR codes.</p>
-                            <div class="project-tags">
-                                <span class="project-tag glass-pill">Go</span>
-                                <span class="project-tag glass-pill">HTMX</span>
-                                <span class="project-tag glass-pill">SQLite</span>
-                                <span class="project-tag glass-pill">Tailwind</span>
-                            </div>
-                        </div>
-                        <span class="project-link-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"/>
-                                <polyline points="7 7 17 7 17 17"/>
-                            </svg>
-                        </span>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="container">
-            <div class="section-grid">
-                <div class="section-label">Education</div>
-                <div class="glass-panel">
-                    <div class="section-content section-content-glass">
-
-                        <div class="education-item">
-                            <h3 class="education-degree">Master of Computer Science</h3>
-                            <p class="education-school">Concordia University, Montreal, Canada · 2018 – 2020</p>
-                        </div>
-
-                        <div class="education-item">
-                            <h3 class="education-degree">Bachelor of Computer Science</h3>
-                            <p class="education-school">Chandigarh Engineering College, Chandigarh, India · 2013 – 2017</p>
-                        </div>
-
-                        <div class="education-item">
-                            <h3 class="education-degree">AWS Solutions Architect – Associate</h3>
-                            <p class="education-school">Amazon Web Services · 2022</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-grid">
-                <div class="section-label">Contact</div>
-                <div class="glass-panel">
-                    <div class="section-content section-content-glass">
-                        <p class="contact-intro">Let's connect.</p>
-
-                        <form class="contact-form" action="https://formspree.io/f/mjknzlon" method="POST">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required placeholder="Your name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required placeholder="your@email.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="company">Company</label>
-                                <input type="text" id="company" name="company" placeholder="Your company (optional)">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
-                            </div>
-                            <button type="submit" class="form-submit">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-social">
-            <a href="https://linkedin.com/in/karandeepbhardwaj" target="_blank" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-            </a>
-            <a href="https://github.com/karandeepbhardwaj" target="_blank" aria-label="GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-            </a>
-        </div>
-        <p>&copy; 2026 Karandeep Bhardwaj</p>
-    </footer>
-
-    <!-- Command Palette -->
-    <div class="command-palette-overlay" id="commandPaletteOverlay"></div>
-    <div class="command-palette" id="commandPalette">
-        <div class="command-palette-header">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" id="commandInput" placeholder="Type a command or search..." autocomplete="off">
-            <kbd class="command-esc">ESC</kbd>
-        </div>
-        <div class="command-palette-results" id="commandResults">
-            <div class="command-group">
-                <div class="command-group-title">Navigation</div>
-                <button class="command-item" data-action="navigate" data-target="#hero">
-                    <span class="command-icon">&rarr;</span>
-                    <span class="command-label">Go to Home</span>
-                    <span class="command-shortcut">&crarr;</span>
-                </button>
-                <button class="command-item" data-action="navigate" data-target="#about">
-                    <span class="command-icon">&rarr;</span>
-                    <span class="command-label">Go to About</span>
-                    <span class="command-shortcut">&crarr;</span>
-                </button>
-                <button class="command-item" data-action="navigate" data-target="#experience">
-                    <span class="command-icon">&rarr;</span>
-                    <span class="command-label">Go to Experience</span>
-                    <span class="command-shortcut">&crarr;</span>
-                </button>
-                <button class="command-item" data-action="navigate" data-target="#skills">
-                    <span class="command-icon">&rarr;</span>
-                    <span class="command-label">Go to Skills</span>
-                    <span class="command-shortcut">&crarr;</span>
-                </button>
-                <button class="command-item" data-action="navigate" data-target="#projects">
-                    <span class="command-icon">&rarr;</span>
-                    <span class="command-label">Go to Projects</span>
-                    <span class="command-shortcut">&crarr;</span>
-                </button>
-                <button class="command-item" data-action="navigate" data-target="#contact">
-                    <span class="command-icon">&rarr;</span>
-                    <span class="command-label">Go to Contact</span>
-                    <span class="command-shortcut">&crarr;</span>
-                </button>
-            </div>
-            <div class="command-group">
-                <div class="command-group-title">Actions</div>
-                <button class="command-item" data-action="download">
-                    <span class="command-icon">&darr;</span>
-                    <span class="command-label">Download Resume</span>
-                    <span class="command-shortcut">&crarr;</span>
-                </button>
-                <button class="command-item" data-action="theme">
-                    <span class="command-icon">&#9680;</span>
-                    <span class="command-label">Toggle Dark Mode</span>
-                    <span class="command-shortcut">&crarr;</span>
-                </button>
-                <button class="command-item" data-action="linkedin">
-                    <span class="command-icon">&nearr;</span>
-                    <span class="command-label">Open LinkedIn</span>
-                    <span class="command-shortcut">&crarr;</span>
-                </button>
-                <button class="command-item" data-action="github">
-                    <span class="command-icon">&nearr;</span>
-                    <span class="command-label">Open GitHub</span>
-                    <span class="command-shortcut">&crarr;</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating Back to Top Button -->
-    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 15l-6-6-6 6"/>
-        </svg>
-    </a>
-
-    <script type="module" src="js/main.js"></script>
-    <script>
-        window.addEventListener('load', function() {
-            var loader = document.getElementById('pageLoader');
-            if (loader) {
-                setTimeout(function() { loader.classList.add('hidden'); }, 1400);
-                setTimeout(function() { loader.remove(); }, 2200);
-            }
-        });
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/sw.js').catch(function(){});
+            });
+        }
     </script>
 </body>
 </html>
