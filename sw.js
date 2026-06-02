@@ -1,24 +1,15 @@
-const CACHE_NAME = 'kb-portfolio-v5';
+// Minimal service worker — the entire page (HTML + inlined CSS) is one request.
+// Cache-first for the shell, stale-while-revalidate for the document.
+const CACHE_NAME = 'kb-portfolio-v6';
 const urlsToCache = [
     '/',
     '/index.html',
-    '/style.css',
-    '/js/main.js',
-    '/js/theme.js',
-    '/js/navigation.js',
-    '/js/animations.js',
-    '/js/command-palette.js',
-    '/js/glass-effects.js',
-    '/js/tilt-effect.js',
-    '/js/magnetic-effect.js',
-    '/js/cursor-spotlight.js',
     '/manifest.json',
+    '/icon-192.svg',
     '/icon-192.png',
-    '/icon-512.png',
-    '/icon-192.svg'
+    '/icon-512.png'
 ];
 
-// Install service worker and cache assets
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -27,31 +18,21 @@ self.addEventListener('install', (event) => {
     );
 });
 
-// Activate and clean old caches
 self.addEventListener('activate', (event) => {
     event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames
-                    .filter((name) => name !== CACHE_NAME)
-                    .map((name) => caches.delete(name))
-            );
-        }).then(() => self.clients.claim())
+        caches.keys().then((names) =>
+            Promise.all(names.filter((n) => n !== CACHE_NAME).map((n) => caches.delete(n)))
+        ).then(() => self.clients.claim())
     );
 });
 
-// Stale-while-revalidate for HTML, cache-first for assets
 self.addEventListener('fetch', (event) => {
     const { request } = event;
-
-    // Skip non-GET requests
     if (request.method !== 'GET') return;
-
-    // Skip external requests (analytics, formspree)
     if (new URL(request.url).origin !== self.location.origin) return;
 
     if (request.headers.get('accept')?.includes('text/html')) {
-        // Stale-while-revalidate for HTML
+        // Stale-while-revalidate for the document.
         event.respondWith(
             caches.match(request).then((cached) => {
                 const fetchPromise = fetch(request).then((response) => {
@@ -61,24 +42,20 @@ self.addEventListener('fetch', (event) => {
                     }
                     return response;
                 }).catch(() => cached);
-
                 return cached || fetchPromise;
             })
         );
         return;
     }
 
-    // Cache-first for assets
+    // Cache-first for static assets.
     event.respondWith(
-        caches.match(request).then((cached) => {
-            if (cached) return cached;
-            return fetch(request).then((response) => {
-                if (response.ok) {
-                    const clone = response.clone();
-                    caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-                }
-                return response;
-            });
-        })
+        caches.match(request).then((cached) => cached || fetch(request).then((response) => {
+            if (response.ok) {
+                const clone = response.clone();
+                caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+            }
+            return response;
+        }))
     );
 });
