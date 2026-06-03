@@ -6,8 +6,8 @@
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
-    "background_color": "#f6f5f0",
-    "theme_color": "#f6f5f0",
+    "background_color": "#F2EFE9",
+    "theme_color": "#F2EFE9",
     "orientation": "portrait-primary",
     "categories": ["portfolio", "personal"],
     "icons": [
