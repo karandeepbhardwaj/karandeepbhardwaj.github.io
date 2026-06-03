@@ -225,10 +225,6 @@
     display:block;font-size:10.5px;font-weight:500;opacity:.74;letter-spacing:.01em;
     line-height:1.3;white-space:nowrap;
   }
-  .dl-btn.busy{pointer-events:none;}
-  .dl-btn.busy .dl-ico{animation:dlspin .7s linear infinite;}
-  @keyframes dlspin{to{transform:rotate(360deg);}}
-  @media (prefers-reduced-motion: reduce){ .dl-btn.busy .dl-ico{animation:none;} }
 
   .tb-dl{
     flex-shrink:0;display:inline-flex;align-items:center;gap:7px;
@@ -450,57 +446,6 @@
   .link-row:hover .lk-val{color:var(--accent-deep);}
   .link-row:hover .lk-arr{transform:translate(3px,-3px);}
 
-  /* ---------- Print sheet (screen-hidden, print-only résumé) ---------- */
-  .print-sheet{display:none;}
-  @media screen{ .print-sheet{display:none !important;} }
-
-  @media print{
-    @page{ size:Letter; margin:14mm 15mm; }
-    html,body{height:auto;overflow:visible;background:#fff;}
-    .app,.sidebar,.topbar,.stage,.bottombar{display:none !important;}
-    .print-sheet{
-      display:block !important;
-      font-family:var(--sans);
-      color:#26221C;
-      max-width:none;
-      -webkit-print-color-adjust:exact;
-      print-color-adjust:exact;
-    }
-    .pr-head{ border-bottom:2px solid #2C2924; padding-bottom:14px; margin-bottom:18px; }
-    .pr-name{ font-family:Georgia,"Times New Roman",serif; font-weight:600; font-size:30px; letter-spacing:-.01em; margin:0 0 3px; color:#15130F; }
-    .pr-role{ font-size:13px; font-weight:600; color:#2C2924; margin:0 0 10px; letter-spacing:.01em; }
-    .pr-contact{ display:flex; flex-wrap:wrap; gap:4px 16px; font-size:10.5px; color:#5A5349; font-weight:500; }
-    .pr-contact span{ white-space:nowrap; }
-    .pr-contact b{ color:#2C2924; font-weight:700; }
-    .pr-summary{ font-size:11px; line-height:1.5; color:#3A3733; margin:14px 0 0; }
-
-    .pr-sec{ margin-top:17px; break-inside:avoid; }
-    .pr-sec-title{
-      font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.16em;
-      color:#2C2924; margin:0 0 9px; padding-bottom:4px; border-bottom:1px solid #DED8CC;
-    }
-    .pr-item{ margin-bottom:11px; break-inside:avoid; }
-    .pr-item:last-child{ margin-bottom:0; }
-    .pr-item-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
-    .pr-item-role{ font-family:Georgia,"Times New Roman",serif; font-size:13.5px; font-weight:600; color:#15130F; margin:0; }
-    .pr-item-role span{ color:#2C2924; font-weight:600; }
-    .pr-item-date{ font-size:9.5px; font-weight:600; color:#74706A; white-space:nowrap; }
-    .pr-bullets{ margin:4px 0 0; padding-left:0; list-style:none; }
-    .pr-bullets li{ position:relative; padding-left:13px; font-size:10.5px; line-height:1.42; color:#3A3733; margin-bottom:2px; }
-    .pr-bullets li::before{ content:""; position:absolute; left:1px; top:5px; width:4px; height:4px; border-radius:50%; background:#2C2924; }
-
-    .pr-two{ display:grid; grid-template-columns:1fr 1fr; gap:8px 22px; }
-    .pr-proj b{ font-family:Georgia,"Times New Roman",serif; font-size:12px; font-weight:600; color:#15130F; }
-    .pr-proj p{ font-size:10px; line-height:1.4; color:#3A3733; margin:2px 0 2px; }
-    .pr-proj .pr-stack{ font-size:9px; color:#74706A; font-weight:500; }
-    .pr-proj .pr-repo{ font-size:9px; color:#2C2924; font-weight:600; }
-
-    .pr-skill-row{ font-size:10.5px; line-height:1.5; margin-bottom:4px; color:#3A3733; }
-    .pr-skill-row b{ color:#15130F; font-weight:700; }
-
-    .pr-foot{ margin-top:16px; padding-top:8px; border-top:1px solid #DED8CC; font-size:9px; color:#A09B92; display:flex; justify-content:space-between; }
-  }
-
   /* ---------- Mobile header + bottom bar (hidden on desktop) ---------- */
   .topbar,.bottombar{display:none;}
 
@@ -563,10 +508,10 @@
       <button class="nav-btn" data-view="contact"><span class="idx">06</span><span class="lbl">Contact</span><span class="go">&rarr;</span></button>
     </nav>
 
-    <button class="dl-btn" id="dlBtn" aria-label="Download résumé as PDF">
-      <span class="dl-ico" id="dlIco">&darr;</span>
-      <span class="dl-txt"><b id="dlTxt">Download Résumé</b><small id="dlSub">Print-ready PDF</small></span>
-    </button>
+    <a class="dl-btn" href="Karandeep_Resume_2026.pdf" download="Karandeep_Bhardwaj_Resume.pdf" aria-label="Download résumé (PDF)">
+      <span class="dl-ico">&darr;</span>
+      <span class="dl-txt"><b>Download Résumé</b><small>PDF · 2026</small></span>
+    </a>
 
     <div class="side-art" aria-hidden="true">
       <svg class="rings" viewBox="0 0 220 150" fill="none">
@@ -587,7 +532,7 @@
       <div class="tb-name">Karandeep Bhardwaj</div>
       <div class="tb-role">Lead Software Engineer &amp; AI Systems Architect</div>
     </div>
-    <button class="tb-dl" id="dlBtnMobile" aria-label="Download résumé as PDF"><span class="tb-dl-ico">&darr;</span>Résumé</button>
+    <a class="tb-dl" href="Karandeep_Resume_2026.pdf" download="Karandeep_Bhardwaj_Resume.pdf" aria-label="Download résumé (PDF)"><span class="tb-dl-ico">&darr;</span>Résumé</a>
   </header>
 
   <!-- ============ STAGE ============ -->
@@ -865,88 +810,6 @@
 
 </div>
 
-<!-- ============ PRINT-ONLY RÉSUMÉ SHEET ============ -->
-<div class="print-sheet" id="printSheet" aria-hidden="true">
-  <header class="pr-head">
-    <h1 class="pr-name">Karandeep Bhardwaj</h1>
-    <p class="pr-role">Lead Software Engineer &amp; AI Systems Architect</p>
-    <div class="pr-contact">
-      <span><b>Email</b> bkarandeep@icloud.com</span>
-      <span><b>LinkedIn</b> linkedin.com/in/karandeepbhardwaj</span>
-      <span><b>GitHub</b> github.com/karandeepbhardwaj</span>
-      <span><b>X</b> x.com/karandeepbhrdwj</span>
-    </div>
-    <p class="pr-summary">7+ years building production AI systems and cloud-native platforms at enterprise scale. Specializes in LLM-based agentic workflows, RAG pipelines, and serverless architecture — with microservices processing 600k+ daily requests. Expert in AWS (Bedrock, Lambda, Lex, AgentCore) and full-stack development (Python, TypeScript, React). Delivered up to 80% reductions in agent handle time through LLM-driven automation.</p>
-  </header>
-
-  <section class="pr-sec">
-    <h2 class="pr-sec-title">Experience</h2>
-    <div class="pr-item">
-      <div class="pr-item-head"><p class="pr-item-role">Lead Software Engineer <span>· SunLife Financial</span></p><span class="pr-item-date">Nov 2021 – Present</span></div>
-      <ul class="pr-bullets">
-        <li>Built AI-powered call routing with LangGraph + LLM, cutting agent handle time by 80%.</li>
-        <li>Productionized MCP integration for dynamic multi-agent tool orchestration with 3-tier auth.</li>
-        <li>Leading the on-prem → cloud migration to Amazon Bedrock AgentCore.</li>
-        <li>Drove serverless migration handling 600k+ daily requests at 99.99% availability with 30% lower latency.</li>
-        <li>Led and mentored a team of 5+ engineers and owned the technical roadmap.</li>
-      </ul>
-    </div>
-    <div class="pr-item">
-      <div class="pr-item-head"><p class="pr-item-role">Full Stack Engineer <span>· Tecsys Inc.</span></p><span class="pr-item-date">Jan 2021 – Nov 2021</span></div>
-      <ul class="pr-bullets">
-        <li>Led monolith → microservices re-architecture (Kafka + SQS) scaling to 50× concurrent requests (+85% throughput).</li>
-        <li>Built a reusable component library (Storybook, atomic design) adopted by 3+ teams.</li>
-        <li>Engineered a customs-compliance microservice (AWS SAM, Lambda, SQS, S3) saving $900K annually.</li>
-        <li>Established org-wide TDD + k6 load testing.</li>
-      </ul>
-    </div>
-    <div class="pr-item">
-      <div class="pr-item-head"><p class="pr-item-role">Full Stack Engineer <span>· BIDGALA</span></p><span class="pr-item-date">Jan 2020 – Jan 2021</span></div>
-      <ul class="pr-bullets">
-        <li>Shipped a full-stack e-commerce social platform (Django + React) on AWS (EC2, RDS, S3).</li>
-        <li>Mentored 3 junior devs and set code-review / Git standards.</li>
-      </ul>
-    </div>
-    <div class="pr-item">
-      <div class="pr-item-head"><p class="pr-item-role">Software Developer <span>· Unisys Pvt. Ltd.</span></p><span class="pr-item-date">Jan 2017 – Aug 2018</span></div>
-      <ul class="pr-bullets">
-        <li>Built enterprise Java applications for Fortune 500 clients in Agile squads across the full SDLC.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="pr-sec">
-    <h2 class="pr-sec-title">Selected Projects</h2>
-    <div class="pr-two">
-      <div class="pr-proj"><b>Yapper</b> <span class="pr-repo">/Yapper</span><p>Privacy-first voice-to-text desktop app — on-device transcription, local-LLM refinement, auto-paste. Fully local.</p><div class="pr-stack">Tauri 2 · Rust · React · TypeScript · whisper.cpp · Ollama</div></div>
-      <div class="pr-proj"><b>AirBrowse</b> <span class="pr-repo">/AirBrowse</span><p>Browser automation powered by GitHub Copilot — no API keys, no external AI services.</p><div class="pr-stack">TypeScript</div></div>
-      <div class="pr-proj"><b>cashstash</b> <span class="pr-repo">/cashstash</span><p>Private, offline-first budget tracker that syncs to your own Google Drive. No ads, no tracking.</p><div class="pr-stack">TypeScript</div></div>
-      <div class="pr-proj"><b>wrapzone</b> <span class="pr-repo">/wrapzone</span><p>Premium vehicle-wrapping booking platform with tiered packages, scheduling, and integrated payments.</p><div class="pr-stack">Next.js 15 · Drizzle ORM · Stripe</div></div>
-    </div>
-  </section>
-
-  <section class="pr-sec">
-    <h2 class="pr-sec-title">Skills</h2>
-    <div class="pr-skill-row"><b>Languages</b> · Python, TypeScript, JavaScript, Java, Golang, SQL (Postgres), Ruby on Rails</div>
-    <div class="pr-skill-row"><b>Frameworks</b> · React, Next.js, Vue, Node.js, Express, Django, Kafka, GraphQL, Tailwind</div>
-    <div class="pr-skill-row"><b>AI / ML</b> · LangGraph, LangChain, Amazon Bedrock, AgentCore, RAG Pipelines, Vector DBs (pgvector, Pinecone), MCP, Prompt Engineering, AI Observability</div>
-    <div class="pr-skill-row"><b>Cloud &amp; DevOps</b> · AWS (Lambda, Bedrock, Lex, DynamoDB, S3, SNS, SQS), Docker, Kubernetes, Terraform, Jenkins, CI/CD, GitOps, OpenShift</div>
-    <div class="pr-skill-row"><b>Architecture</b> · Microservices, Serverless, Event-Driven, Multi-Agent Systems, Agentic Workflows, System Design</div>
-    <div class="pr-skill-row"><b>Testing</b> · Jest, k6, TDD, Test Automation</div>
-  </section>
-
-  <section class="pr-sec">
-    <h2 class="pr-sec-title">Education &amp; Certifications</h2>
-    <div class="pr-two">
-      <div class="pr-item"><div class="pr-item-head"><p class="pr-item-role">M.S. Computer Science</p><span class="pr-item-date">2018 – 2020</span></div><ul class="pr-bullets"><li>Concordia University · Montreal, Canada</li></ul></div>
-      <div class="pr-item"><div class="pr-item-head"><p class="pr-item-role">B.S. Computer Science</p><span class="pr-item-date">2013 – 2017</span></div><ul class="pr-bullets"><li>Chandigarh Engineering College · India</li></ul></div>
-      <div class="pr-item"><div class="pr-item-head"><p class="pr-item-role">AWS Solutions Architect</p><span class="pr-item-date">2022</span></div><ul class="pr-bullets"><li>Associate · Amazon Web Services</li></ul></div>
-    </div>
-  </section>
-
-  <div class="pr-foot"><span>Karandeep Bhardwaj — Résumé</span><span>bkarandeep@icloud.com</span></div>
-</div>
-
 <script>
   (function(){
     var views = document.querySelectorAll('.view');
@@ -999,50 +862,6 @@
       var idx = valid.indexOf(cur ? cur.getAttribute('data-view') : 'about');
       if(e.key === 'ArrowRight' && idx < valid.length-1){ activate(valid[idx+1]); }
       if(e.key === 'ArrowLeft' && idx > 0){ activate(valid[idx-1]); }
-    });
-
-    // ----- Download résumé as print-ready PDF (client-side, no libraries) -----
-    var btn = document.getElementById('dlBtn');
-    var ico = document.getElementById('dlIco');
-    var txt = document.getElementById('dlTxt');
-    var sub = document.getElementById('dlSub');
-    var mobileBtn = document.getElementById('dlBtnMobile');
-    var busy = false;
-
-    function triggerPrint(){ window.print(); }
-
-    function download(){
-      if(busy) return;
-      busy = true;
-      if(btn){
-        btn.classList.add('busy');
-        if(ico) ico.innerHTML = '⦿';
-        if(txt) txt.textContent = 'Preparing…';
-        if(sub) sub.textContent = 'Opening print → Save as PDF';
-      }
-      setTimeout(function(){
-        triggerPrint();
-        setTimeout(function(){
-          busy = false;
-          if(btn){
-            btn.classList.remove('busy');
-            if(ico) ico.innerHTML = '↓';
-            if(txt) txt.textContent = 'Download Résumé';
-            if(sub) sub.textContent = 'Print-ready PDF';
-          }
-        }, 350);
-      }, 420);
-    }
-
-    if(btn) btn.addEventListener('click', download);
-    if(mobileBtn) mobileBtn.addEventListener('click', triggerPrint);
-
-    // ⌘/Ctrl + S or P also exports the résumé
-    document.addEventListener('keydown', function(e){
-      if((e.metaKey || e.ctrlKey) && (e.key === 's' || e.key === 'p')){
-        e.preventDefault();
-        download();
-      }
     });
 
     if('serviceWorker' in navigator){
