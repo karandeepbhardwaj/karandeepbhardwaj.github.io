@@ -1,6 +1,6 @@
 // Minimal service worker — the entire page (HTML + inlined CSS) is one request.
 // Cache-first for the shell, stale-while-revalidate for the document.
-const CACHE_NAME = 'kb-portfolio-v9';
+const CACHE_NAME = 'kb-portfolio-v10';
 const urlsToCache = [
     '/',
     '/index.html',
