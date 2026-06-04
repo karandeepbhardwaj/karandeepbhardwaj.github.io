@@ -16,18 +16,20 @@ just one self-contained `index.html` with all CSS inlined and (almost) zero Java
 
 ## Design
 
-A warm, minimalist, editorial layout inspired by Anthropic's design language:
+Implemented from a [Claude Design](https://claude.ai/design) handoff — an **"Ink editorial"** look:
 
-- **Easy-on-the-eyes palette** — warm ivory background (`#f6f5f0`) with a clay/terracotta accent (`#bd5d3a`)
-- **System fonts only** — a serif display stack for headings + the native system sans for body, so there are **zero font network requests** and no layout shift
-- **All CSS inlined** — the entire page renders from a single HTML request
-- **No loaders, no entrance animations** — content is static and visible instantly; the only motion is subtle hover states and CSS smooth-scroll (disabled under `prefers-reduced-motion`)
+- **Tabbed single view, no page scroll** — a fixed left sidebar (desktop) / bottom tab bar (mobile) swaps sections into a fixed stage. Each view fits the viewport and scrolls internally only if long. Hash deep-links + ← → arrow keys also navigate.
+- **Signature nav** — a measured vertical scale: track line, sliding accent indicator, mono index numerals (01–06), and an arrow that reveals on the active row.
+- **Palette** — warm paper (`#F2EFE9`) with a near-black editorial accent (`#2C2924`), flat outlined cards.
+- **Type** — monospace display headings over **Hanken Grotesk** body (one web font).
+- **No entrance animations, no spinners, no scroll effects** — only gentle hover states and the indicator glide (disabled under `prefers-reduced-motion`).
+- Sections: About · Experience · Projects (the centerpiece — GitHub cards with local/offline-first badges) · Skills · Education · Contact.
 
 ## Performance
 
 - One request renders the full page (HTML + inlined CSS)
-- No web fonts, no CSS/JS bundles, no animation runtime
-- Images lazy-loaded; analytics loaded `async` and non-blocking
+- A single web font (Hanken Grotesk); headings use the system monospace stack — no extra request
+- No CSS/JS bundles, no animation runtime; analytics loaded `async` and non-blocking
 - Service Worker (stale-while-revalidate) for instant repeat visits
 - Fully responsive, single-column on mobile
 
