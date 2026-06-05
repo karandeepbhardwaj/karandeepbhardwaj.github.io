@@ -7,8 +7,8 @@
 
 Personal portfolio for **Karandeep Bhardwaj** — Lead Software Engineer & AI Systems Architect.
 
-A single, static, fast-loading page. No frameworks, no build step, no animation libraries —
-just one self-contained `index.html` with all CSS inlined and (almost) zero JavaScript.
+A single, static, fast-loading page. No frameworks, no build step, no animation libraries,
+no third-party scripts — `index.html` with all CSS inlined plus one tiny vanilla `js/app.js`.
 
 > **[karandeepbhardwaj.me](https://karandeepbhardwaj.me)**
 
@@ -25,41 +25,58 @@ Implemented from a [Claude Design](https://claude.ai/design) handoff — an **"I
 - **No entrance animations, no spinners, no scroll effects** — only gentle hover states and the indicator glide (disabled under `prefers-reduced-motion`).
 - Sections: About · Experience · Projects (the centerpiece — GitHub cards with local/offline-first badges) · Skills · Education · Contact.
 
+- **Self-hosted contact actions** — copy-email-to-clipboard, downloadable vCard (`.vcf`), and the résumé PDF.
+- **Accessible by design** — ARIA `tablist`/`tab`/`tabpanel`, focus moved into the activated panel, skip link, AA-contrast text, 48px mobile tap targets, broad `prefers-reduced-motion` support, and a `<noscript>` fallback that shows every section.
+- **Browser Back / Forward** works via `pushState` (each section is a real history entry).
+
 ## Performance
 
-- One request renders the full page (HTML + inlined CSS)
-- A single web font (Hanken Grotesk); headings use the system monospace stack — no extra request
-- No CSS/JS bundles, no animation runtime; analytics loaded `async` and non-blocking
-- Service Worker (stale-while-revalidate) for instant repeat visits
+- One request renders the full page (HTML + inlined CSS) + one tiny deferred `js/app.js`
+- **Self-hosted, preloaded variable font** (Hanken Grotesk, one 34 KB woff2 covering all weights) — no third-party font chain; headings use the system monospace stack
+- **No third-party scripts** — analytics removed; nothing blocks render
+- **View Transitions** for section swaps (reduced-motion-guarded), graceful fallback
+- Service Worker (network-first HTML, cache-first assets) — always-fresh content, instant offline repeat visits, font + PDF precached
 - Fully responsive, single-column on mobile
 
 ## Sections
 
-Hero · About · Experience · Skills · Projects · Education · Contact
+About · Experience · Projects · Skills · Education · Contact
 
 The **Projects** section highlights recent open-source work from
 [github.com/karandeepbhardwaj](https://github.com/karandeepbhardwaj).
 
-## Security
+## Security & Privacy
 
 - **HTTPS enforced** via GitHub Pages + Let's Encrypt
-- **Content Security Policy** locked down via `<meta>` (script/style/img/connect/font sources, `frame-ancestors 'none'`)
-- **Referrer Policy** — `strict-origin-when-cross-origin`
+- **Hardened Content Security Policy** — `default-src 'self'`, `script-src 'self'` (no `'unsafe-inline'`), `object-src 'none'`, `frame-ancestors 'none'`; backed by a JS frame-buster since Pages can't set real headers
+- **No analytics, no cookies, no third-party origins** — privacy-first, matching the projects it showcases
+- **Referrer Policy** `strict-origin-when-cross-origin`; external links use `rel="noopener noreferrer"`
 - **`security.txt`** at `/.well-known/security.txt`
+- Rich social previews via a generated 1200×630 `og-cover.png`; structured data covers role, employer, education, and the AWS credential.
+
+> Want analytics back? Add a cookieless provider (Plausible / Umami / Cloudflare Web Analytics) — no consent banner needed.
 
 ## Architecture
 
 ```
 karandeepbhardwaj.github.io/
-├── index.html      # The entire site — semantic HTML + inlined CSS
-├── 404.html        # Custom 404 (matching palette)
-├── sw.js           # Service Worker (offline + instant repeat loads)
-├── manifest.json   # PWA manifest
-├── icon-*.png/svg  # Icons
+├── index.html                  # The entire site — semantic HTML + inlined CSS
+├── js/app.js                   # Section router, ARIA, View Transitions, copy-email (vanilla)
+├── fonts/                      # Self-hosted Hanken Grotesk (variable woff2)
+├── og-cover.png                # 1200×630 social share card
+├── karandeep-bhardwaj.vcf      # Downloadable contact card
+├── Karandeep_Resume_2026.pdf   # Résumé
+├── 404.html                    # Custom 404 (Ink palette)
+├── sw.js                       # Service Worker (network-first HTML, cache-first assets)
+├── manifest.json               # PWA manifest
+├── icon-*.png/svg              # Icons
 └── .github/workflows/
     ├── ci.yml                  # HTML validation, link check, Lighthouse
     └── security-headers.yml    # Weekly HTTPS/SSL verification
 ```
+
+> **Updating the résumé / sitemap:** replace `Karandeep_Resume_2026.pdf` in place, and bump
+> `<lastmod>` in `sitemap.xml` + `CACHE_NAME` in `sw.js` when content changes.
 
 ## Local Development
 

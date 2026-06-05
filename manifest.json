@@ -1,8 +1,8 @@
 {
     "id": "/",
-    "name": "Karandeep Bhardwaj - Portfolio",
-    "short_name": "KB Portfolio",
-    "description": "Lead Software Engineer & AI Systems Architect — Portfolio",
+    "name": "Karandeep Bhardwaj — Lead Software Engineer & AI Systems Architect",
+    "short_name": "Karandeep B.",
+    "description": "Portfolio of Karandeep Bhardwaj — production AI systems, agentic workflows, RAG pipelines, and serverless platforms at enterprise scale.",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",

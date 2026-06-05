@@ -21,6 +21,9 @@ jobs:
         with:
           root: .
           css: false
+          # vnu's bundled CSS parser predates env()/modern CSS and false-positives on
+          # valid inline styles; this is an HTML validation gate, so skip CSS messages.
+          extra: --ignore-re CSS
 
   link-check:
     name: Broken Link Check
