@@ -1,7 +1,6 @@
 # Security Policy for karandeepbhardwaj.me
 # https://securitytxt.org/
 
-Contact: mailto:bkarandeep@icloud.com
 Contact: https://github.com/karandeepbhardwaj/karandeepbhardwaj.github.io/issues
 Expires: 2027-06-05T00:00:00.000Z
 Preferred-Languages: en

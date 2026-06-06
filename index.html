@@ -43,7 +43,6 @@
   "name": "Karandeep Bhardwaj",
   "url": "https://karandeepbhardwaj.me",
   "image": "https://karandeepbhardwaj.me/og-cover.png",
-  "email": "mailto:bkarandeep@icloud.com",
   "jobTitle": "Lead Software Engineer & AI Systems Architect",
   "description": "Lead Software Engineer and AI Systems Architect with 7+ years building production LLM systems, agentic workflows, and cloud-native platforms at enterprise scale.",
   "address": { "@type": "PostalAddress", "addressLocality": "Montreal", "addressRegion": "QC", "addressCountry": "CA" },
@@ -188,15 +187,6 @@
     max-width:200px;
   }
   .brand .role b{color:var(--accent-deep);font-weight:600;}
-  .status{
-    display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
-    font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
-    margin-top:2px;
-  }
-  .status-dot{
-    width:7px;height:7px;border-radius:50%;background:var(--ok);
-    box-shadow:0 0 0 3px rgba(79,140,94,.18);
-  }
 
   .nav{
     margin-top:40px;
@@ -513,14 +503,20 @@
     padding:20px 4px;border-bottom:1px solid var(--border);
     transition:padding-left .2s ease;
   }
+  .link-row-btn{
+    width:100%;border:none;border-bottom:1px solid var(--border);
+    background:none;font-family:inherit;cursor:pointer;text-align:left;
+  }
   .link-row:hover{padding-left:14px;}
   .link-row .lk-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);width:96px;flex-shrink:0;}
   .link-row .lk-val{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--ink);letter-spacing:-.01em;flex:1;}
   .link-row .lk-arr{color:var(--accent);font-size:18px;transition:transform .2s ease;}
   .link-row:hover .lk-val{color:var(--accent-deep);}
   .link-row:hover .lk-arr{transform:translate(3px,-3px);}
+  .link-row.revealed .lk-arr{transform:rotate(45deg);}
 
   .contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
+  .ca-btn[hidden]{display:none;}
   .ca-btn{
     display:inline-flex;align-items:center;gap:9px;
     font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink);
@@ -629,7 +625,6 @@
     <div class="brand">
       <p class="brand-name">Karandeep<br />Bhardwaj</p>
       <div class="role">Lead Software Engineer<br />&amp; <b>AI Systems Architect</b></div>
-      <span class="status"><span class="status-dot"></span>Open to roles</span>
     </div>
 
     <div class="nav" id="nav" aria-label="Sections" role="tablist">
@@ -912,11 +907,11 @@
         <div class="eyebrow">Contact</div>
         <p class="contact-lead">Open to conversations about <em>AI systems architecture</em>, agentic platforms, and hard scaling problems. The fastest way to reach me is below.</p>
         <div class="links">
-          <a class="link-row" href="mailto:bkarandeep@icloud.com">
+          <button class="link-row link-row-btn" id="emailRow" type="button" aria-label="Reveal email address">
             <span class="lk-label">Email</span>
-            <span class="lk-val">bkarandeep@icloud.com</span>
-            <span class="lk-arr" aria-hidden="true">↗</span>
-          </a>
+            <span class="lk-val" id="emailVal">Click to reveal</span>
+            <span class="lk-arr" aria-hidden="true">→</span>
+          </button>
           <a class="link-row" href="https://linkedin.com/in/karandeepbhardwaj" target="_blank" rel="noopener noreferrer">
             <span class="lk-label">LinkedIn</span>
             <span class="lk-val">linkedin.com/in/karandeepbhardwaj</span>
@@ -934,12 +929,12 @@
           </a>
         </div>
         <div class="contact-actions">
-          <button class="ca-btn" id="copyEmail" type="button" data-email="bkarandeep@icloud.com" aria-label="Copy email address">
+          <button class="ca-btn" id="copyEmail" type="button" hidden aria-label="Copy email address">
             <span class="ca-ico" aria-hidden="true">⧉</span><span class="ca-txt">Copy email</span>
           </button>
-          <a class="ca-btn" href="karandeep-bhardwaj.vcf" download="Karandeep-Bhardwaj.vcf">
+          <button class="ca-btn" id="vcardBtn" type="button">
             <span class="ca-ico" aria-hidden="true">↓</span><span class="ca-txt">Save contact card</span>
-          </a>
+          </button>
         </div>
       </div>
     </section>
