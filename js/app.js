@@ -93,13 +93,38 @@
   window.addEventListener('resize', positionIndicator);
   if (document.fonts && document.fonts.ready) { document.fonts.ready.then(positionIndicator); }
 
-  // Copy email to clipboard.
+  // ----- Contact: email kept out of the page source (anti-scrape) -----
+  // The address is base64-encoded and only assembled after a real click,
+  // so static-HTML scrapers never see it.
+  var EMAIL_B64 = 'YmthcmFuZGVlcEBpY2xvdWQuY29t';
+  var addr = null;
+  function getEmail() { if (!addr) { try { addr = atob(EMAIL_B64); } catch (e) { addr = ''; } } return addr; }
+
+  var emailRow = document.getElementById('emailRow');
+  var emailVal = document.getElementById('emailVal');
   var copyBtn = document.getElementById('copyEmail');
+  var revealed = false;
+
+  if (emailRow && emailVal) {
+    emailRow.addEventListener('click', function () {
+      var e = getEmail();
+      if (!revealed) {
+        revealed = true;
+        emailVal.textContent = e;
+        emailRow.classList.add('revealed');
+        emailRow.setAttribute('aria-label', 'Email ' + e + ' — click again to compose');
+        if (copyBtn) copyBtn.hidden = false;
+      } else {
+        window.location.href = 'mailto:' + e;
+      }
+    });
+  }
+
   if (copyBtn && navigator.clipboard) {
     var txtEl = copyBtn.querySelector('.ca-txt');
     var label = txtEl ? txtEl.textContent : '';
     copyBtn.addEventListener('click', function () {
-      navigator.clipboard.writeText(copyBtn.getAttribute('data-email') || '').then(function () {
+      navigator.clipboard.writeText(getEmail()).then(function () {
         copyBtn.classList.add('copied');
         if (txtEl) txtEl.textContent = 'Copied';
         copyBtn.setAttribute('aria-label', 'Email address copied');
@@ -109,6 +134,32 @@
           copyBtn.setAttribute('aria-label', 'Copy email address');
         }, 1700);
       }).catch(function () {});
+    });
+  }
+
+  // vCard generated on click (reliable cross-browser download; carries the assembled email).
+  var vcardBtn = document.getElementById('vcardBtn');
+  if (vcardBtn) {
+    vcardBtn.addEventListener('click', function () {
+      var vcf = [
+        'BEGIN:VCARD', 'VERSION:3.0',
+        'N:Bhardwaj;Karandeep;;;', 'FN:Karandeep Bhardwaj',
+        'TITLE:Lead Software Engineer & AI Systems Architect',
+        'EMAIL;TYPE=INTERNET,PREF:' + getEmail(),
+        'URL:https://karandeepbhardwaj.me',
+        'item1.URL:https://linkedin.com/in/karandeepbhardwaj', 'item1.X-ABLabel:LinkedIn',
+        'item2.URL:https://github.com/karandeepbhardwaj', 'item2.X-ABLabel:GitHub',
+        'item3.URL:https://x.com/karandeepbhrdwj', 'item3.X-ABLabel:X',
+        'ADR;TYPE=HOME:;;;Montreal;;;Canada',
+        'NOTE:Lead Software Engineer & AI Systems Architect — production AI systems, agentic workflows, RAG, serverless.',
+        'END:VCARD'
+      ].join('\r\n');
+      var blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = 'Karandeep-Bhardwaj.vcf';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
     });
   }
 
