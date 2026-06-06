@@ -1,0 +1,16 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Bhardwaj;Karandeep;;;
+FN:Karandeep Bhardwaj
+TITLE:Lead Software Engineer & AI Systems Architect
+EMAIL;TYPE=INTERNET,PREF:bkarandeep@icloud.com
+URL:https://karandeepbhardwaj.me
+item1.URL:https://linkedin.com/in/karandeepbhardwaj
+item1.X-ABLabel:LinkedIn
+item2.URL:https://github.com/karandeepbhardwaj
+item2.X-ABLabel:GitHub
+item3.URL:https://x.com/karandeepbhrdwj
+item3.X-ABLabel:X
+ADR;TYPE=HOME:;;;Montreal;;;Canada
+NOTE:Lead Software Engineer & AI Systems Architect — production AI systems, agentic workflows, RAG, serverless.
+END:VCARD

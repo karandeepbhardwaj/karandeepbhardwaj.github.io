@@ -9,58 +9,98 @@
 <meta name="color-scheme" content="light" />
 <link rel="canonical" href="https://karandeepbhardwaj.me/" />
 
-<!-- Security: Content Security Policy -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+<!-- Security: Content Security Policy. Note: frame-ancestors / HSTS / nosniff can't be set
+     via <meta> on GitHub Pages (no custom headers); a JS frame-buster backs up clickjacking. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none';" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://karandeepbhardwaj.me/" />
-<meta property="og:title" content="Karandeep Bhardwaj — Lead AI Engineer" />
+<meta property="og:title" content="Karandeep Bhardwaj — Lead Software Engineer & AI Systems Architect" />
 <meta property="og:description" content="Building production AI systems at enterprise scale. LangGraph · Amazon Bedrock AgentCore · RAG Pipelines · Serverless · AWS" />
-<meta property="og:image" content="https://karandeepbhardwaj.me/icon-512.png" />
+<meta property="og:image" content="https://karandeepbhardwaj.me/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="Karandeep Bhardwaj — Lead Software Engineer & AI Systems Architect" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="Karandeep Bhardwaj" />
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@karandeepbhrdwj" />
-<meta name="twitter:title" content="Karandeep Bhardwaj — Lead AI Engineer" />
+<meta name="twitter:title" content="Karandeep Bhardwaj — Lead Software Engineer & AI Systems Architect" />
 <meta name="twitter:description" content="Building production AI systems at enterprise scale. LangGraph · Amazon Bedrock AgentCore · RAG Pipelines · Serverless · AWS" />
-<meta name="twitter:image" content="https://karandeepbhardwaj.me/icon-512.png" />
+<meta name="twitter:image" content="https://karandeepbhardwaj.me/og-cover.png" />
+<meta name="twitter:image:alt" content="Karandeep Bhardwaj — Lead Software Engineer & AI Systems Architect" />
 
 <!-- Structured Data -->
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Karandeep Bhardwaj",
-    "url": "https://karandeepbhardwaj.me",
-    "email": "bkarandeep@icloud.com",
-    "jobTitle": "Lead Software Engineer",
-    "description": "Lead Software Engineer and AI Systems Architect with 7+ years building production LLM systems, agentic workflows, and cloud-native platforms at enterprise scale.",
-    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Concordia University" },
-    "knowsAbout": ["LLM", "AWS", "Serverless", "React", "Python", "TypeScript", "Agentic Workflows", "RAG"],
-    "sameAs": [
-        "https://linkedin.com/in/karandeepbhardwaj",
-        "https://github.com/karandeepbhardwaj",
-        "https://x.com/karandeepbhrdwj"
-    ]
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Karandeep Bhardwaj",
+  "url": "https://karandeepbhardwaj.me",
+  "image": "https://karandeepbhardwaj.me/og-cover.png",
+  "email": "mailto:bkarandeep@icloud.com",
+  "jobTitle": "Lead Software Engineer & AI Systems Architect",
+  "description": "Lead Software Engineer and AI Systems Architect with 7+ years building production LLM systems, agentic workflows, and cloud-native platforms at enterprise scale.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Montreal", "addressRegion": "QC", "addressCountry": "CA" },
+  "worksFor": { "@type": "Organization", "name": "SunLife Financial" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Concordia University" },
+    { "@type": "CollegeOrUniversity", "name": "Chandigarh Engineering College" }
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Lead Software Engineer & AI Systems Architect",
+    "occupationLocation": { "@type": "City", "name": "Montreal, Canada" }
+  },
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "certificate",
+    "name": "AWS Solutions Architect – Associate",
+    "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" }
+  },
+  "knowsAbout": ["LLM", "AWS", "Serverless", "React", "Python", "TypeScript", "Agentic Workflows", "RAG", "LangGraph", "Amazon Bedrock"],
+  "sameAs": [
+    "https://linkedin.com/in/karandeepbhardwaj",
+    "https://github.com/karandeepbhardwaj",
+    "https://x.com/karandeepbhrdwj"
+  ]
 }
 </script>
 
 <title>Karandeep Bhardwaj — Lead Software Engineer & AI Systems Architect</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 
 <link rel="icon" type="image/svg+xml" href="icon-192.svg" />
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
 <link rel="manifest" href="manifest.json" />
 <link rel="apple-touch-icon" href="icon-192.png" />
 
+<!-- No-JS fallback: show every section as a scrollable document -->
+<noscript>
+  <style>
+    .app{display:block !important;height:auto !important;overflow:visible !important;}
+    .stage{position:static !important;overflow:visible !important;}
+    .view{position:static !important;display:block !important;inset:auto;overflow:visible !important;padding:40px clamp(22px,5vw,60px);border-top:1px solid #DED8CC;}
+    .nav-indicator,.nav-track{display:none !important;}
+    html,body{height:auto !important;overflow:auto !important;}
+  </style>
+</noscript>
+
 <style>
+  @font-face{
+    font-family:'Hanken Grotesk';
+    font-style:normal;
+    font-weight:400 700;
+    font-display:swap;
+    src:url('fonts/hanken-grotesk-latin.woff2') format('woff2');
+  }
+
   :root{
     /* Ink palette (editorial paper & near-black) */
     --bg:#F2EFE9;
@@ -68,14 +108,15 @@
     --surface:#FBFAF7;
     --ink:#1C1A17;
     --ink-soft:#3A3733;
-    --muted:#74706A;
-    --faint:#A09B92;
+    --muted:#645F58;          /* darkened for AA contrast (>=4.5:1 on paper + sidebar) */
+    --faint:#A09B92;          /* decorative only (aria-hidden surfaces) */
     --accent:#2C2924;
     --accent-deep:#15130F;
     --accent-soft:#DAD4C9;
     --accent-tint:#ECE8E0;
     --border:#DED8CC;
     --border-strong:#CCC5B6;
+    --ok:#4F8C5E;
     --shadow-sm:0 1px 2px rgba(42,38,32,.04), 0 2px 8px rgba(42,38,32,.04);
     --shadow-md:0 2px 6px rgba(42,38,32,.05), 0 12px 30px rgba(42,38,32,.07);
     --sans:"Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
@@ -101,6 +142,14 @@
   a{color:inherit;text-decoration:none;}
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px;}
 
+  /* Skip link */
+  .skip-link{
+    position:absolute;left:8px;top:-60px;z-index:200;
+    background:var(--accent);color:#FBFAF7;font-weight:600;font-size:14px;
+    padding:10px 16px;border-radius:10px;transition:top .18s ease;
+  }
+  .skip-link:focus{top:8px;}
+
   /* ---------- App shell ---------- */
   .app{
     display:grid;
@@ -119,14 +168,15 @@
     padding:38px 30px 30px;
     min-height:0;
   }
-  .brand{display:flex;flex-direction:column;gap:13px;}
-  .brand h1{
+  .brand{display:flex;flex-direction:column;gap:11px;}
+  .brand-name{
     font-family:var(--serif);
     font-weight:500;
     font-size:27px;
     line-height:1.08;
     margin:0;
     letter-spacing:-.02em;
+    color:var(--ink);
   }
   .brand .role{
     font-size:13px;
@@ -136,9 +186,18 @@
     max-width:200px;
   }
   .brand .role b{color:var(--accent-deep);font-weight:600;}
+  .status{
+    display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+    font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+    margin-top:2px;
+  }
+  .status-dot{
+    width:7px;height:7px;border-radius:50%;background:var(--ok);
+    box-shadow:0 0 0 3px rgba(79,140,94,.18);
+  }
 
   .nav{
-    margin-top:44px;
+    margin-top:40px;
     position:relative;
     display:flex;
     flex-direction:column;
@@ -154,7 +213,6 @@
     background:var(--accent);
     transition:top .34s cubic-bezier(.66,0,.34,1), height .34s cubic-bezier(.66,0,.34,1);
   }
-  @media (prefers-reduced-motion: reduce){ .nav-indicator{transition:none;} }
   .nav-btn{
     position:relative;
     display:flex;align-items:center;gap:13px;
@@ -172,7 +230,7 @@
   .nav-btn .idx{
     font-family:ui-monospace,Menlo,monospace;
     font-size:11px;
-    color:var(--faint);
+    color:var(--muted);
     width:20px;
     letter-spacing:.04em;
     transition:color .16s ease;
@@ -183,16 +241,28 @@
     opacity:0;transform:translateX(-7px);
     transition:opacity .16s ease, transform .16s ease;
   }
-  .nav-btn:hover{background:rgba(127,116,106,.09);color:var(--ink);transform:translateX(3px);}
   .nav-btn:hover .idx{color:var(--accent);}
   .nav-btn:hover .go{opacity:.55;transform:translateX(0);}
   .nav-btn.active{background:var(--accent-tint);color:var(--accent-deep);font-weight:600;}
   .nav-btn.active .idx{color:var(--accent-deep);}
   .nav-btn.active .go{opacity:1;transform:translateX(0);}
+  @media (hover:hover){
+    .nav-btn:hover{background:rgba(60,56,50,.08);color:var(--ink);transform:translateX(3px);}
+  }
+  .nav-hint{
+    margin:14px 0 0 22px;
+    font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);opacity:.8;
+  }
+  .nav-hint kbd{
+    font-family:inherit;border:1px solid var(--border-strong);border-radius:4px;
+    padding:0 3px;background:var(--surface);
+  }
 
   /* ---------- Download button ---------- */
+  .side-sep{border:none;border-top:1px solid var(--border);margin:22px 0 0;}
   .dl-btn{
-    margin-top:22px;
+    margin-top:16px;
     display:flex;align-items:center;gap:12px;
     width:100%;
     border:1px solid var(--accent);
@@ -222,7 +292,7 @@
     line-height:1.25;white-space:nowrap;
   }
   .dl-txt small{
-    display:block;font-size:10.5px;font-weight:500;opacity:.74;letter-spacing:.01em;
+    display:block;font-size:10.5px;font-weight:500;opacity:.78;letter-spacing:.01em;
     line-height:1.3;white-space:nowrap;
   }
 
@@ -234,7 +304,7 @@
   }
   .tb-dl .tb-dl-ico{font-size:14px;line-height:1;}
 
-  .side-art{margin-top:auto;padding-top:26px;display:flex;flex-direction:column;gap:15px;}
+  .side-art{margin-top:auto;padding-top:24px;display:flex;flex-direction:column;gap:15px;}
   .rings{width:100%;height:auto;display:block;}
   .rings circle{fill:none;stroke:var(--border-strong);stroke-width:1.3;}
   .rings .ring-accent{stroke:var(--accent);stroke-width:1.85;}
@@ -245,13 +315,14 @@
   }
 
   /* On shorter monitors, drop the decorative rings so the nav + download button never clip */
-  @media (min-width:881px) and (max-height:840px){
-    .sidebar{padding-top:32px;}
-    .nav{margin-top:32px;}
+  @media (min-width:881px) and (max-height:870px){
+    .sidebar{padding-top:30px;}
+    .nav{margin-top:30px;}
+    .nav-hint{display:none;}
     .side-art .rings{display:none;}
-    .side-art{padding-top:18px;}
+    .side-art{padding-top:16px;}
   }
-  @media (min-width:881px) and (max-height:720px){
+  @media (min-width:881px) and (max-height:740px){
     .side-art{display:none;}
   }
 
@@ -329,7 +400,7 @@
     box-shadow:none;
     transition:border-color .18s ease, box-shadow .18s ease, transform .18s ease;
   }
-  .xp-card:hover{border-color:var(--border-strong);box-shadow:var(--shadow-md);transform:translateY(-2px);}
+  .xp-card:hover{border-color:var(--accent-soft);box-shadow:var(--shadow-md);transform:translateY(-2px);}
   .xp-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
   .xp-role{font-family:var(--serif);font-size:23px;font-weight:500;letter-spacing:-.01em;margin:0;line-height:1.15;}
   .xp-co{color:var(--accent-deep);font-weight:600;}
@@ -379,7 +450,7 @@
     transition:gap .18s ease, color .18s ease;
   }
   .proj-card:hover .proj-link{gap:11px;}
-  .proj-link .repo{color:var(--faint);font-weight:500;}
+  .proj-link .repo{color:var(--muted);font-weight:500;}
   .proj-link .arr{transition:transform .18s ease;}
   .proj-card:hover .proj-link .arr{transform:translate(2px,-2px);}
 
@@ -393,7 +464,6 @@
     font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;
     color:var(--accent);margin:0 0 15px;display:flex;align-items:center;gap:9px;
   }
-  .skill-cluster h3 .ct{color:var(--faint);font-weight:500;letter-spacing:0;font-size:11px;}
   .chips{display:flex;flex-wrap:wrap;gap:8px;}
   .chip{
     font-size:13px;font-weight:500;color:var(--ink-soft);
@@ -415,7 +485,7 @@
     border-radius:var(--radius);padding:26px 28px;box-shadow:none;
     transition:border-color .18s ease, box-shadow .18s ease, transform .18s ease;
   }
-  .edu-card:hover{border-color:var(--border-strong);box-shadow:var(--shadow-md);transform:translateY(-2px);}
+  .edu-card:hover{border-color:var(--accent-soft);box-shadow:var(--shadow-md);transform:translateY(-2px);}
   .edu-card.accent{background:transparent;border-color:var(--accent-soft);}
   .edu-yr{
     display:inline-block;font-family:var(--serif);font-size:14px;font-weight:500;
@@ -440,11 +510,25 @@
     transition:padding-left .2s ease;
   }
   .link-row:hover{padding-left:14px;}
-  .link-row .lk-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;color:var(--faint);width:96px;flex-shrink:0;}
+  .link-row .lk-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);width:96px;flex-shrink:0;}
   .link-row .lk-val{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--ink);letter-spacing:-.01em;flex:1;}
   .link-row .lk-arr{color:var(--accent);font-size:18px;transition:transform .2s ease;}
   .link-row:hover .lk-val{color:var(--accent-deep);}
   .link-row:hover .lk-arr{transform:translate(3px,-3px);}
+
+  .contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
+  .ca-btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink);
+    background:var(--surface);border:1px solid var(--border-strong);
+    padding:11px 16px;border-radius:11px;cursor:pointer;
+    transition:border-color .15s ease, background .15s ease, transform .12s ease;
+  }
+  .ca-btn:hover{border-color:var(--accent);background:var(--accent-tint);transform:translateY(-1px);}
+  .ca-btn:active{transform:translateY(0);}
+  .ca-btn .ca-ico{font-size:15px;line-height:1;color:var(--accent);}
+  .ca-btn.copied{border-color:var(--ok);background:rgba(79,140,94,.10);}
+  .ca-btn.copied .ca-ico{color:var(--ok);}
 
   /* ---------- Mobile header + bottom bar (hidden on desktop) ---------- */
   .topbar,.bottombar{display:none;}
@@ -468,12 +552,12 @@
     .bottombar{
       display:grid;grid-template-columns:repeat(6,1fr);
       background:var(--surface);border-top:1px solid var(--border);
-      padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:5;
+      padding:6px 6px calc(6px + env(safe-area-inset-bottom));z-index:5;
     }
     .bb-btn{
       border:none;background:none;cursor:pointer;
-      display:flex;flex-direction:column;align-items:center;gap:5px;
-      padding:7px 2px;font-family:var(--sans);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+      min-height:48px;padding:6px 2px;font-family:var(--sans);
       font-size:11px;font-weight:600;color:var(--muted);border-radius:10px;
     }
     .bb-btn .bb-dot{width:6px;height:6px;border-radius:50%;background:var(--border-strong);transition:background .15s ease,transform .15s ease;}
@@ -496,37 +580,69 @@
       overflow-wrap:anywhere;word-break:break-word;
     }
     .link-row .lk-arr{font-size:16px;flex-shrink:0;align-self:center;}
+    .contact-actions .ca-btn{flex:1 1 auto;justify-content:center;}
   }
   @media (max-width:430px){
     .metrics{grid-template-columns:1fr 1fr;}
     .about-name{font-size:36px;}
     .bb-btn{font-size:10px;}
   }
+
+  /* ---------- Reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+      transition-duration:.01ms !important;
+      animation-duration:.01ms !important;
+      animation-iteration-count:1 !important;
+      scroll-behavior:auto !important;
+    }
+    .nav-btn:hover,.dl-btn:hover,.proj-card:hover,.xp-card:hover,.edu-card:hover,.link-row:hover,.ca-btn:hover{transform:none !important;}
+  }
+
+  /* ---------- Print: flatten every section into a plain document ---------- */
+  @media print{
+    @page{size:Letter;margin:14mm 15mm;}
+    html,body{height:auto !important;overflow:visible !important;background:#fff;}
+    .app{display:block !important;height:auto !important;overflow:visible !important;}
+    .sidebar,.topbar,.bottombar,.skip-link{display:none !important;}
+    .stage{position:static !important;overflow:visible !important;}
+    .view{position:static !important;display:block !important;inset:auto;overflow:visible !important;padding:0 0 18px;}
+    .view + .view{padding-top:16px;border-top:1px solid #ccc;}
+    .view-inner{max-width:none;}
+    .metrics{break-inside:avoid;}
+    .xp-card,.proj-card,.skill-cluster,.edu-card{break-inside:avoid;}
+    *{color:#000 !important;box-shadow:none !important;background:transparent !important;border-color:#bbb !important;}
+    .eyebrow::before,.nav-indicator,.nav-track{display:none !important;}
+  }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="app">
 
   <!-- ============ SIDEBAR (desktop) ============ -->
   <aside class="sidebar">
     <div class="brand">
-      <h1>Karandeep<br />Bhardwaj</h1>
+      <p class="brand-name">Karandeep<br />Bhardwaj</p>
       <div class="role">Lead Software Engineer<br />&amp; <b>AI Systems Architect</b></div>
+      <span class="status"><span class="status-dot"></span>Open to roles</span>
     </div>
 
-    <nav class="nav" id="nav" aria-label="Sections">
-      <span class="nav-track"></span>
-      <span class="nav-indicator" id="navIndicator"></span>
-      <button class="nav-btn active" data-view="about"><span class="idx">01</span><span class="lbl">About</span><span class="go">&rarr;</span></button>
-      <button class="nav-btn" data-view="experience"><span class="idx">02</span><span class="lbl">Experience</span><span class="go">&rarr;</span></button>
-      <button class="nav-btn" data-view="projects"><span class="idx">03</span><span class="lbl">Projects</span><span class="go">&rarr;</span></button>
-      <button class="nav-btn" data-view="skills"><span class="idx">04</span><span class="lbl">Skills</span><span class="go">&rarr;</span></button>
-      <button class="nav-btn" data-view="education"><span class="idx">05</span><span class="lbl">Education</span><span class="go">&rarr;</span></button>
-      <button class="nav-btn" data-view="contact"><span class="idx">06</span><span class="lbl">Contact</span><span class="go">&rarr;</span></button>
-    </nav>
+    <div class="nav" id="nav" aria-label="Sections" role="tablist">
+      <span class="nav-track" aria-hidden="true"></span>
+      <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+      <button class="nav-btn active" role="tab" aria-selected="true" aria-controls="view-about" data-view="about"><span class="idx">01</span><span class="lbl">About</span><span class="go" aria-hidden="true">&rarr;</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-experience" data-view="experience"><span class="idx">02</span><span class="lbl">Experience</span><span class="go" aria-hidden="true">&rarr;</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-projects" data-view="projects"><span class="idx">03</span><span class="lbl">Projects</span><span class="go" aria-hidden="true">&rarr;</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-skills" data-view="skills"><span class="idx">04</span><span class="lbl">Skills</span><span class="go" aria-hidden="true">&rarr;</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-education" data-view="education"><span class="idx">05</span><span class="lbl">Education</span><span class="go" aria-hidden="true">&rarr;</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-contact" data-view="contact"><span class="idx">06</span><span class="lbl">Contact</span><span class="go" aria-hidden="true">&rarr;</span></button>
+    </div>
+    <p class="nav-hint" aria-hidden="true"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> to move</p>
 
-    <a class="dl-btn" href="Karandeep_Resume_2026.pdf" download="Karandeep_Bhardwaj_Resume.pdf" aria-label="Download résumé (PDF)">
-      <span class="dl-ico">&darr;</span>
+    <hr class="side-sep" />
+    <a class="dl-btn" href="Karandeep_Resume_2026.pdf" download="Karandeep_Bhardwaj_Resume.pdf" aria-label="Download résumé (PDF, 2026)">
+      <span class="dl-ico" aria-hidden="true">&darr;</span>
       <span class="dl-txt"><b>Download Résumé</b><small>PDF · 2026</small></span>
     </a>
 
@@ -549,18 +665,18 @@
       <div class="tb-name">Karandeep Bhardwaj</div>
       <div class="tb-role">Lead Software Engineer &amp; AI Systems Architect</div>
     </div>
-    <a class="tb-dl" href="Karandeep_Resume_2026.pdf" download="Karandeep_Bhardwaj_Resume.pdf" aria-label="Download résumé (PDF)"><span class="tb-dl-ico">&darr;</span>Résumé</a>
+    <a class="tb-dl" href="Karandeep_Resume_2026.pdf" download="Karandeep_Bhardwaj_Resume.pdf" aria-label="Download résumé (PDF, 2026)"><span class="tb-dl-ico" aria-hidden="true">&darr;</span>Résumé</a>
   </header>
 
   <!-- ============ STAGE ============ -->
-  <main class="stage">
+  <main class="stage" id="main" tabindex="-1">
 
     <!-- ===== ABOUT ===== -->
-    <section class="view active" data-view="about" tabindex="-1">
+    <section class="view active" id="view-about" data-view="about" role="tabpanel" aria-label="About" tabindex="-1">
       <div class="view-inner">
         <div class="eyebrow">About</div>
         <div class="about-hero">
-          <h2 class="about-name">Karandeep Bhardwaj</h2>
+          <h1 class="about-name">Karandeep Bhardwaj</h1>
           <p class="about-title">Lead Software Engineer &amp; AI Systems Architect</p>
           <p class="about-summary"><b>7+ years building production AI systems and cloud-native platforms at enterprise scale.</b> Specializes in LLM-based agentic workflows, RAG pipelines, and serverless architecture — with microservices processing 600k+ daily requests. Expert in AWS (Bedrock, Lambda, Lex, AgentCore) and full-stack development (Python, TypeScript, React), and in architecting multi-agent AI systems. Delivered up to 80% reductions in agent handle time through LLM-driven automation.</p>
         </div>
@@ -574,7 +690,7 @@
     </section>
 
     <!-- ===== EXPERIENCE ===== -->
-    <section class="view" data-view="experience" tabindex="-1">
+    <section class="view" id="view-experience" data-view="experience" role="tabpanel" aria-label="Experience" tabindex="-1">
       <div class="view-inner">
         <div class="eyebrow">Experience</div>
         <h2 class="section-title">Where I've built</h2>
@@ -634,7 +750,7 @@
     </section>
 
     <!-- ===== PROJECTS ===== -->
-    <section class="view" data-view="projects" tabindex="-1">
+    <section class="view" id="view-projects" data-view="projects" role="tabpanel" aria-label="Projects" tabindex="-1">
       <div class="view-inner">
         <div class="eyebrow">Projects</div>
         <h2 class="section-title">Selected work</h2>
@@ -651,18 +767,20 @@
               <span class="tag">Tauri 2</span><span class="tag">Rust</span><span class="tag">React</span>
               <span class="tag">TypeScript</span><span class="tag">whisper.cpp</span><span class="tag">Ollama</span>
             </div>
-            <a class="proj-link" href="https://github.com/karandeepbhardwaj/Yapper" target="_blank" rel="noopener">View on GitHub <span class="repo">/Yapper</span> <span class="arr">↗</span></a>
+            <a class="proj-link" href="https://github.com/karandeepbhardwaj/Yapper" target="_blank" rel="noopener noreferrer">View on GitHub <span class="repo">/Yapper</span> <span class="arr" aria-hidden="true">↗</span></a>
           </article>
 
           <article class="proj-card">
             <div class="proj-top">
               <h3 class="proj-name">AirBrowse</h3>
+              <span class="badge-local">No API keys</span>
             </div>
             <p class="proj-desc">Browser automation powered by GitHub Copilot — no API keys, no external AI services. Drives the browser entirely through your existing Copilot subscription.</p>
             <div class="tags">
-              <span class="tag">TypeScript</span>
+              <span class="tag">TypeScript</span><span class="tag">VS Code Extension</span>
+              <span class="tag">Chrome Extension</span><span class="tag">Node.js</span>
             </div>
-            <a class="proj-link" href="https://github.com/karandeepbhardwaj/AirBrowse" target="_blank" rel="noopener">View on GitHub <span class="repo">/AirBrowse</span> <span class="arr">↗</span></a>
+            <a class="proj-link" href="https://github.com/karandeepbhardwaj/AirBrowse" target="_blank" rel="noopener noreferrer">View on GitHub <span class="repo">/AirBrowse</span> <span class="arr" aria-hidden="true">↗</span></a>
           </article>
 
           <article class="proj-card">
@@ -672,20 +790,21 @@
             </div>
             <p class="proj-desc">Private, offline-first budget tracker that syncs to your own Google Drive. No ads, no tracking — your finances never touch a third-party server.</p>
             <div class="tags">
-              <span class="tag">TypeScript</span>
+              <span class="tag">TypeScript</span><span class="tag">Offline-first</span><span class="tag">Google Drive Sync</span>
             </div>
-            <a class="proj-link" href="https://github.com/karandeepbhardwaj/cashstash" target="_blank" rel="noopener">View on GitHub <span class="repo">/cashstash</span> <span class="arr">↗</span></a>
+            <a class="proj-link" href="https://github.com/karandeepbhardwaj/cashstash" target="_blank" rel="noopener noreferrer">View on GitHub <span class="repo">/cashstash</span> <span class="arr" aria-hidden="true">↗</span></a>
           </article>
 
           <article class="proj-card">
             <div class="proj-top">
               <h3 class="proj-name">wrapzone</h3>
+              <span class="badge-local">Full-stack</span>
             </div>
             <p class="proj-desc">Premium vehicle-wrapping booking platform with 3-tier packages, scheduling, and integrated payments.</p>
             <div class="tags">
               <span class="tag">Next.js 15</span><span class="tag">Drizzle ORM</span><span class="tag">Stripe</span>
             </div>
-            <a class="proj-link" href="https://github.com/karandeepbhardwaj/wrapzone" target="_blank" rel="noopener">View on GitHub <span class="repo">/wrapzone</span> <span class="arr">↗</span></a>
+            <a class="proj-link" href="https://github.com/karandeepbhardwaj/wrapzone" target="_blank" rel="noopener noreferrer">View on GitHub <span class="repo">/wrapzone</span> <span class="arr" aria-hidden="true">↗</span></a>
           </article>
 
         </div>
@@ -693,7 +812,7 @@
     </section>
 
     <!-- ===== SKILLS ===== -->
-    <section class="view" data-view="skills" tabindex="-1">
+    <section class="view" id="view-skills" data-view="skills" role="tabpanel" aria-label="Skills" tabindex="-1">
       <div class="view-inner">
         <div class="eyebrow">Skills</div>
         <h2 class="section-title">Toolbox</h2>
@@ -750,7 +869,7 @@
     </section>
 
     <!-- ===== EDUCATION ===== -->
-    <section class="view" data-view="education" tabindex="-1">
+    <section class="view" id="view-education" data-view="education" role="tabpanel" aria-label="Education and certifications" tabindex="-1">
       <div class="view-inner">
         <div class="eyebrow">Education &amp; Certifications</div>
         <h2 class="section-title">Foundations</h2>
@@ -784,7 +903,7 @@
     </section>
 
     <!-- ===== CONTACT ===== -->
-    <section class="view" data-view="contact" tabindex="-1">
+    <section class="view" id="view-contact" data-view="contact" role="tabpanel" aria-label="Contact" tabindex="-1">
       <div class="view-inner contact-wrap">
         <div class="eyebrow">Contact</div>
         <p class="contact-lead">Open to conversations about <em>AI systems architecture</em>, agentic platforms, and hard scaling problems. The fastest way to reach me is below.</p>
@@ -792,22 +911,30 @@
           <a class="link-row" href="mailto:bkarandeep@icloud.com">
             <span class="lk-label">Email</span>
             <span class="lk-val">bkarandeep@icloud.com</span>
-            <span class="lk-arr">↗</span>
+            <span class="lk-arr" aria-hidden="true">↗</span>
           </a>
-          <a class="link-row" href="https://linkedin.com/in/karandeepbhardwaj" target="_blank" rel="noopener">
+          <a class="link-row" href="https://linkedin.com/in/karandeepbhardwaj" target="_blank" rel="noopener noreferrer">
             <span class="lk-label">LinkedIn</span>
             <span class="lk-val">linkedin.com/in/karandeepbhardwaj</span>
-            <span class="lk-arr">↗</span>
+            <span class="lk-arr" aria-hidden="true">↗</span>
           </a>
-          <a class="link-row" href="https://github.com/karandeepbhardwaj" target="_blank" rel="noopener">
+          <a class="link-row" href="https://github.com/karandeepbhardwaj" target="_blank" rel="noopener noreferrer">
             <span class="lk-label">GitHub</span>
             <span class="lk-val">github.com/karandeepbhardwaj</span>
-            <span class="lk-arr">↗</span>
+            <span class="lk-arr" aria-hidden="true">↗</span>
           </a>
-          <a class="link-row" href="https://x.com/karandeepbhrdwj" target="_blank" rel="noopener">
+          <a class="link-row" href="https://x.com/karandeepbhrdwj" target="_blank" rel="noopener noreferrer">
             <span class="lk-label">X</span>
             <span class="lk-val">x.com/karandeepbhrdwj</span>
-            <span class="lk-arr">↗</span>
+            <span class="lk-arr" aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="contact-actions">
+          <button class="ca-btn" id="copyEmail" type="button" data-email="bkarandeep@icloud.com" aria-label="Copy email address">
+            <span class="ca-ico" aria-hidden="true">⧉</span><span class="ca-txt">Copy email</span>
+          </button>
+          <a class="ca-btn" href="karandeep-bhardwaj.vcf" download="Karandeep-Bhardwaj.vcf">
+            <span class="ca-ico" aria-hidden="true">↓</span><span class="ca-txt">Save contact card</span>
           </a>
         </div>
       </div>
@@ -816,84 +943,17 @@
   </main>
 
   <!-- ============ MOBILE BOTTOM BAR ============ -->
-  <nav class="bottombar" id="bottombar" aria-label="Sections">
-    <button class="bb-btn active" data-view="about"><span class="bb-dot"></span>About</button>
-    <button class="bb-btn" data-view="experience"><span class="bb-dot"></span>Work</button>
-    <button class="bb-btn" data-view="projects"><span class="bb-dot"></span>Projects</button>
-    <button class="bb-btn" data-view="skills"><span class="bb-dot"></span>Skills</button>
-    <button class="bb-btn" data-view="education"><span class="bb-dot"></span>Edu</button>
-    <button class="bb-btn" data-view="contact"><span class="bb-dot"></span>Contact</button>
-  </nav>
+  <div class="bottombar" id="bottombar" aria-label="Sections" role="tablist">
+    <button class="bb-btn active" role="tab" aria-selected="true" aria-controls="view-about" data-view="about"><span class="bb-dot" aria-hidden="true"></span>About</button>
+    <button class="bb-btn" role="tab" aria-selected="false" aria-controls="view-experience" data-view="experience"><span class="bb-dot" aria-hidden="true"></span>Work</button>
+    <button class="bb-btn" role="tab" aria-selected="false" aria-controls="view-projects" data-view="projects"><span class="bb-dot" aria-hidden="true"></span>Projects</button>
+    <button class="bb-btn" role="tab" aria-selected="false" aria-controls="view-skills" data-view="skills"><span class="bb-dot" aria-hidden="true"></span>Skills</button>
+    <button class="bb-btn" role="tab" aria-selected="false" aria-controls="view-education" data-view="education"><span class="bb-dot" aria-hidden="true"></span>Edu</button>
+    <button class="bb-btn" role="tab" aria-selected="false" aria-controls="view-contact" data-view="contact"><span class="bb-dot" aria-hidden="true"></span>Contact</button>
+  </div>
 
 </div>
 
-<script>
-  (function(){
-    var views = document.querySelectorAll('.view');
-    var navBtns = document.querySelectorAll('[data-view]');
-    var nav = document.getElementById('nav');
-    var indicator = document.getElementById('navIndicator');
-    var valid = ['about','experience','projects','skills','education','contact'];
-
-    function positionIndicator(){
-      var active = nav.querySelector('.nav-btn.active');
-      if(!active || !indicator) return;
-      indicator.style.top = (active.offsetTop + 8) + 'px';
-      indicator.style.height = (active.offsetHeight - 16) + 'px';
-    }
-
-    function activate(name){
-      if(valid.indexOf(name) === -1) name = 'about';
-      views.forEach(function(v){
-        var on = v.getAttribute('data-view') === name;
-        v.classList.toggle('active', on);
-        if(on) v.scrollTop = 0;
-      });
-      navBtns.forEach(function(b){
-        b.classList.toggle('active', b.getAttribute('data-view') === name);
-      });
-      positionIndicator();
-      if(history.replaceState) history.replaceState(null,'','#'+name);
-    }
-
-    navBtns.forEach(function(b){
-      b.addEventListener('click', function(){ activate(b.getAttribute('data-view')); });
-    });
-
-    // restore from hash
-    var start = (location.hash || '').replace('#','');
-    if(valid.indexOf(start) !== -1) activate(start);
-
-    // position the sliding nav indicator on load + when layout changes
-    positionIndicator();
-    window.addEventListener('resize', positionIndicator);
-    if(document.fonts && document.fonts.ready){ document.fonts.ready.then(positionIndicator); }
-
-    // hash deep-links / back-forward
-    window.addEventListener('hashchange', function(){ activate((location.hash||'').replace('#','')); });
-
-    // keyboard arrows to move between sections
-    document.addEventListener('keydown', function(e){
-      if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-      var cur = document.querySelector('.nav-btn.active') || document.querySelector('.bb-btn.active');
-      var idx = valid.indexOf(cur ? cur.getAttribute('data-view') : 'about');
-      if(e.key === 'ArrowRight' && idx < valid.length-1){ activate(valid[idx+1]); }
-      if(e.key === 'ArrowLeft' && idx > 0){ activate(valid[idx-1]); }
-    });
-
-    if('serviceWorker' in navigator){
-      window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); });
-    }
-  })();
-</script>
-
-<!-- Google Analytics (async, non-blocking) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F93L5YE4B0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-F93L5YE4B0');
-</script>
+<script src="js/app.js" defer></script>
 </body>
 </html>
