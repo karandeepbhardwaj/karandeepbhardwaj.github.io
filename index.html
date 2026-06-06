@@ -167,6 +167,8 @@
     flex-direction:column;
     padding:38px 30px 30px;
     min-height:0;
+    overflow-y:auto;
+    scrollbar-width:thin;
   }
   .brand{display:flex;flex-direction:column;gap:11px;}
   .brand-name{
@@ -314,16 +316,18 @@
     letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
   }
 
-  /* On shorter monitors, drop the decorative rings so the nav + download button never clip */
-  @media (min-width:881px) and (max-height:870px){
+  /* On shorter desktop windows, compact the spacing and SHRINK the rings (rather than
+     hiding them) so the graphic + keyboard hint always show; the sidebar scrolls if truly tiny. */
+  @media (min-width:881px) and (max-height:880px){
     .sidebar{padding-top:30px;}
     .nav{margin-top:30px;}
-    .nav-hint{display:none;}
-    .side-art .rings{display:none;}
-    .side-art{padding-top:16px;}
+    .rings{width:auto;height:104px;}
+    .side-art{padding-top:14px;}
   }
-  @media (min-width:881px) and (max-height:740px){
-    .side-art{display:none;}
+  @media (min-width:881px) and (max-height:760px){
+    .nav{margin-top:24px;}
+    .rings{width:auto;height:74px;}
+    .side-art{padding-top:10px;gap:10px;}
   }
 
   /* ---------- Stage ---------- */
