@@ -144,14 +144,14 @@
       var vcf = [
         'BEGIN:VCARD', 'VERSION:3.0',
         'N:Bhardwaj;Karandeep;;;', 'FN:Karandeep Bhardwaj',
-        'TITLE:Lead Software Engineer & AI Systems Architect',
+        'TITLE:Lead Software Engineer',
         'EMAIL;TYPE=INTERNET,PREF:' + getEmail(),
         'URL:https://karandeepbhardwaj.me',
         'item1.URL:https://linkedin.com/in/karandeepbhardwaj', 'item1.X-ABLabel:LinkedIn',
         'item2.URL:https://github.com/karandeepbhardwaj', 'item2.X-ABLabel:GitHub',
         'item3.URL:https://x.com/karandeepbhrdwj', 'item3.X-ABLabel:X',
-        'ADR;TYPE=HOME:;;;Montreal;;;Canada',
-        'NOTE:Lead Software Engineer & AI Systems Architect — production AI systems, agentic workflows, RAG, serverless.',
+        'ADR;TYPE=HOME:;;;Toronto;ON;;Canada',
+        'NOTE:Lead Software Engineer — production AI systems, agentic workflows, Go, Python, serverless AWS.',
         'END:VCARD'
       ].join('\r\n');
       var blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' });
