@@ -693,20 +693,22 @@
       <div class="view-inner">
         <div class="eyebrow">Experience</div>
         <h2 class="section-title">Where I've built</h2>
-        <p class="section-sub">A decade of shipping AI platforms, microservices, and full-stack products — from Fortune 500 enterprise to greenfield architecture.</p>
+        <p class="section-sub">7+ years shipping AI platforms, microservices, and full-stack products — from Fortune 500 enterprise to greenfield architecture.</p>
         <div class="timeline">
 
           <article class="xp-card current">
             <div class="xp-head">
-              <h3 class="xp-role">Lead Software Engineer <span class="xp-co">· SunLife Financial</span></h3>
+              <h3 class="xp-role">Lead Software Engineer <span class="xp-co">· Sun Life Financial</span></h3>
               <span class="xp-date">Nov 2021 – Present</span>
             </div>
             <ul class="xp-bullets">
-              <li>Built AI-powered call routing with LangGraph + LLM, cutting agent handle time by 80%.</li>
-              <li>Productionized MCP integration for dynamic multi-agent tool orchestration with 3-tier auth.</li>
-              <li>Leading the on-prem → cloud migration to Amazon Bedrock AgentCore.</li>
-              <li>Drove serverless migration handling 600k+ daily requests at 99.99% availability with 30% lower latency.</li>
-              <li>Led and mentored a team of 5+ engineers and owned the technical roadmap.</li>
+              <li>Designed and shipped an LLM-powered call routing and authentication system — a LangGraph state machine on Amazon Bedrock with DynamoDB-backed session persistence — routing 15+ plan categories and lifting self-service containment from 61% to 96%.</li>
+              <li>Built Go microservices to onboard Interac as a payments vendor, integrating with core record-keeping systems with full audit logging and processing 25,000+ transactions/month.</li>
+              <li>Productionized MCP integration for dynamic multi-agent tool orchestration with a custom middleware layer enforcing 3-tier authentication (identity, single-factor, multi-factor).</li>
+              <li>Spearheading on-prem → cloud migration onto Amazon Bedrock AgentCore, deploying agents via AgentCore Gateway and Runtime for fully managed, scalable agentic infrastructure.</li>
+              <li>Led serverless migration (Lambda, API Gateway, DynamoDB, SQS) processing 200k+ monthly requests with zero customer-impacting incidents and ~30% lower p95 latency.</li>
+              <li>Automated caller verification in Amazon Connect through multi-Lambda orchestration — Lex intent capture, ANI lookup, and OTP step-up — reducing authentication resolution time by 65%.</li>
+              <li>Led and mentored a team of 5+ engineers on LLM-based system design, owning the technical roadmap and presenting quarterly AI strategy to senior leadership.</li>
             </ul>
           </article>
 
@@ -716,10 +718,11 @@
               <span class="xp-date">Jan 2021 – Nov 2021</span>
             </div>
             <ul class="xp-bullets">
-              <li>Led monolith → microservices re-architecture (Kafka + SQS) scaling to 50× concurrent requests (+85% throughput).</li>
-              <li>Built a reusable component library (Storybook, atomic design) adopted by 3+ teams.</li>
-              <li>Engineered a customs-compliance microservice (AWS SAM, Lambda, SQS, S3) saving $900K annually.</li>
-              <li>Established org-wide TDD + k6 load testing.</li>
+              <li>Led monolith-to-microservices re-architecture using event-driven architecture (SQS) built on Node.js/Next.js with TypeScript, enabling independent scaling and deployment of supply-chain services.</li>
+              <li>Led front-end modernization with Vue 3 + TypeScript, building a Storybook-documented atomic-design component library adopted across 3+ product teams.</li>
+              <li>Engineered an end-to-end customs compliance microservice using AWS SAM, Lambda, SQS, and S3 with SFTP integration, eliminating a vendor dependency and saving $300K annually.</li>
+              <li>Established TDD (Jest) and k6 load testing, achieving zero P0 incidents during peak traffic windows.</li>
+              <li>Hardened integration security by implementing OAuth 2.0 across 10+ carrier integrations, managing token lifecycle across distributed microservices.</li>
             </ul>
           </article>
 
@@ -729,8 +732,8 @@
               <span class="xp-date">Jan 2020 – Jan 2021</span>
             </div>
             <ul class="xp-bullets">
-              <li>Shipped a full-stack e-commerce social platform (Django + React) on AWS (EC2, RDS, S3).</li>
-              <li>Mentored 3 junior devs and set code-review / Git standards.</li>
+              <li>Architected and shipped a full-stack e-commerce social platform using Python (Django) and React, with RESTful APIs deployed on AWS (EC2, RDS, S3).</li>
+              <li>Defined technical architecture and mentored 3 junior developers, establishing code review standards and Git workflows adopted by the team.</li>
             </ul>
           </article>
 
@@ -740,7 +743,7 @@
               <span class="xp-date">Jan 2017 – Aug 2018</span>
             </div>
             <ul class="xp-bullets">
-              <li>Built enterprise Java applications for Fortune 500 clients in Agile squads across the full SDLC.</li>
+              <li>Developed enterprise Java applications for Fortune 500 clients in cross-functional Agile squads, contributing across the full SDLC and establishing coding standards adopted team-wide.</li>
             </ul>
           </article>
 
