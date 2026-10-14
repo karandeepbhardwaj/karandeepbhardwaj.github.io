@@ -5,10 +5,10 @@
 [![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-blue?logo=github)](https://karandeepbhardwaj.me)
 [![HTTPS](https://img.shields.io/badge/HTTPS-Enforced-brightgreen?logo=letsencrypt)](https://karandeepbhardwaj.me)
 
-Personal portfolio for **Karandeep Bhardwaj** — Lead Software Engineer & AI Systems Architect.
+Personal portfolio for **Karandeep Bhardwaj** — Senior AI Engineer at Workday.
 
-A single, static, fast-loading page. No frameworks, no build step, no animation libraries,
-no third-party scripts — `index.html` with all CSS inlined plus one tiny vanilla `js/app.js`.
+A single, static, fast-loading page. No frameworks, no build step, no animation libraries.
+`index.html` inlines all CSS, plus one tiny vanilla `js/app.js`. Cloudflare Web Analytics is the only third-party script.
 
 > **[karandeepbhardwaj.me](https://karandeepbhardwaj.me)**
 
@@ -33,7 +33,7 @@ Implemented from a [Claude Design](https://claude.ai/design) handoff — an **"I
 
 - One request renders the full page (HTML + inlined CSS) + one tiny deferred `js/app.js`
 - **Self-hosted, preloaded variable font** (Hanken Grotesk, one 34 KB woff2 covering all weights) — no third-party font chain; headings use the system monospace stack
-- **No third-party scripts** — analytics removed; nothing blocks render
+- **Cloudflare Web Analytics** loads deferred and does not block render. It is cookieless. No other third-party scripts.
 - **View Transitions** for section swaps (reduced-motion-guarded), graceful fallback
 - Service Worker (network-first HTML, cache-first assets) — always-fresh content, instant offline repeat visits, font + PDF precached
 - Fully responsive, single-column on mobile
@@ -49,12 +49,10 @@ The **Projects** section highlights recent open-source work from
 
 - **HTTPS enforced** via GitHub Pages + Let's Encrypt
 - **Hardened Content Security Policy** — `default-src 'self'`, `script-src 'self'` (no `'unsafe-inline'`), `object-src 'none'`, `frame-ancestors 'none'`; backed by a JS frame-buster since Pages can't set real headers
-- **No analytics, no cookies, no third-party origins** — privacy-first, matching the projects it showcases
+- **Cookieless Cloudflare Web Analytics only** — no ad pixels, no extra third-party origins beyond that beacon
 - **Referrer Policy** `strict-origin-when-cross-origin`; external links use `rel="noopener noreferrer"`
 - **`security.txt`** at `/.well-known/security.txt`
-- Rich social previews via a generated 1200×630 `og-cover.png`; structured data covers role, employer, education, and the AWS credential.
-
-> Want analytics back? Add a cookieless provider (Plausible / Umami / Cloudflare Web Analytics) — no consent banner needed.
+- Rich social previews via a generated 1200×630 `og-cover.png`; structured data covers the current role, employer, education, and the AWS credential.
 
 ## Architecture
 
@@ -64,8 +62,7 @@ karandeepbhardwaj.github.io/
 ├── js/app.js                   # Section router, ARIA, View Transitions, copy-email (vanilla)
 ├── fonts/                      # Self-hosted Hanken Grotesk (variable woff2)
 ├── og-cover.png                # 1200×630 social share card
-├── karandeep-bhardwaj.vcf      # Downloadable contact card
-├── Karandeep_Resume_2026.pdf   # Résumé
+├── Karandeep_Resume_2026.pdf   # Résumé (replace in place when a new PDF is ready)
 ├── 404.html                    # Custom 404 (Ink palette)
 ├── sw.js                       # Service Worker (network-first HTML, cache-first assets)
 ├── manifest.json               # PWA manifest
@@ -77,6 +74,10 @@ karandeepbhardwaj.github.io/
 
 > **Updating the résumé / sitemap:** replace `Karandeep_Resume_2026.pdf` in place, and bump
 > `<lastmod>` in `sitemap.xml` + `CACHE_NAME` in `sw.js` when content changes.
+> The contact card (`.vcf`) is generated in the browser from `js/app.js`, not stored as a file.
+>
+> Workday starts July 2026 and is the current role. Sun Life ended July 2026.
+> The downloadable PDF is still the previous résumé and should be replaced when a new file is ready.
 
 ## Local Development
 
