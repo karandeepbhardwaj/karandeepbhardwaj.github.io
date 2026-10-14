@@ -76,8 +76,8 @@ karandeepbhardwaj.github.io/
 > `<lastmod>` in `sitemap.xml` + `CACHE_NAME` in `sw.js` when content changes.
 > The contact card (`.vcf`) is generated in the browser from `js/app.js`, not stored as a file.
 >
-> **Placeholder:** Sun Life is shown as ended, with `TODO: end date` until that month is confirmed.
-> Workday starts July 2026 and is the current role. The downloadable PDF still needs a matching update.
+> Workday starts July 2026 and is the current role. Sun Life ended July 2026.
+> The downloadable PDF is still the previous résumé and should be replaced when a new file is ready.
 
 ## Local Development
 
