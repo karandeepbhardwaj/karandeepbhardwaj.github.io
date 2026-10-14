@@ -147,14 +147,15 @@
       var vcf = [
         'BEGIN:VCARD', 'VERSION:3.0',
         'N:Bhardwaj;Karandeep;;;', 'FN:Karandeep Bhardwaj',
-        'TITLE:Lead Software Engineer',
+        'TITLE:Senior AI Engineer',
+        'ORG:Workday',
         'EMAIL;TYPE=INTERNET,PREF:' + getEmail(),
         'URL:https://karandeepbhardwaj.me',
         'item1.URL:https://linkedin.com/in/karandeepbhardwaj', 'item1.X-ABLabel:LinkedIn',
         'item2.URL:https://github.com/karandeepbhardwaj', 'item2.X-ABLabel:GitHub',
         'item3.URL:https://x.com/karandeepbhrdwj', 'item3.X-ABLabel:X',
         'ADR;TYPE=HOME:;;;Toronto;ON;;Canada',
-        'NOTE:Lead Software Engineer — production AI systems, agentic workflows, Go, Python, serverless AWS.',
+        'NOTE:Senior AI Engineer at Workday — AI for Agent Factory and Sana Enterprise. Production AI systems, agentic workflows, Go, Python, serverless AWS.',
         'END:VCARD'
       ].join('\r\n');
       var blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' });
@@ -164,6 +165,17 @@
       document.body.appendChild(a); a.click(); document.body.removeChild(a);
       setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
     });
+  }
+
+  // Cloudflare Web Analytics on the public hosts only. Local previews skip the
+  // beacon so it does not throw cross-origin console errors.
+  var host = location.hostname;
+  if (host === 'karandeepbhardwaj.me' || host === 'www.karandeepbhardwaj.me' || host.endsWith('.github.io')) {
+    var beacon = document.createElement('script');
+    beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    beacon.defer = true;
+    beacon.setAttribute('data-cf-beacon', '{"token": "eb2878598f9d4135869b73504e4984c4"}');
+    document.body.appendChild(beacon);
   }
 
   // Service worker (instant repeat loads + offline).
