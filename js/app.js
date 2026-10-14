@@ -96,51 +96,115 @@
   window.addEventListener('resize', positionIndicator);
   if (document.fonts && document.fonts.ready) { document.fonts.ready.then(positionIndicator); }
 
-  // ----- Contact: email kept out of the page source (anti-scrape) -----
-  // The address is base64-encoded and only assembled after a real click,
-  // so static-HTML scrapers never see it.
-  var EMAIL_B64 = 'YmthcmFuZGVlcEBpY2xvdWQuY29t';
-  var addr = null;
-  function getEmail() { if (!addr) { try { addr = atob(EMAIL_B64); } catch (e) { addr = ''; } } return addr; }
+  // ----- Contact form (Web3Forms). No address is published on the site. -----
+  // Replace this placeholder with the real Web3Forms access key. It is the only copy.
+  var WEB3FORMS_ACCESS_KEY = '3d6ce322-3122-4628-af79-ab6ff4cba5ac';
 
-  var emailRow = document.getElementById('emailRow');
-  var emailVal = document.getElementById('emailVal');
-  var copyBtn = document.getElementById('copyEmail');
-  var revealed = false;
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    var statusEl = document.getElementById('formStatus');
+    var submitBtn = contactForm.querySelector('button[type="submit"]');
+    var submitLabel = submitBtn ? submitBtn.textContent : 'Send message';
+    var sending = false;
 
-  if (emailRow && emailVal) {
-    emailRow.addEventListener('click', function () {
-      var e = getEmail();
-      if (!revealed) {
-        revealed = true;
-        emailVal.textContent = e;
-        emailRow.classList.add('revealed');
-        emailRow.setAttribute('aria-label', 'Email ' + e + ' — click again to compose');
-        if (copyBtn) copyBtn.hidden = false;
-      } else {
-        window.location.href = 'mailto:' + e;
+    function fieldError(input, el, message) {
+      input.setAttribute('aria-invalid', 'true');
+      input.setAttribute('aria-describedby', el.id);
+      el.hidden = false;
+      el.textContent = message;
+    }
+
+    function fieldOk(input, el) {
+      input.removeAttribute('aria-invalid');
+      input.removeAttribute('aria-describedby');
+      el.hidden = true;
+      el.textContent = '';
+    }
+
+    function trim(value) { return String(value || '').replace(/^\s+|\s+$/g, ''); }
+
+    function validateForm() {
+      var name = contactForm.elements.name;
+      var email = contactForm.elements.email;
+      var message = contactForm.elements.message;
+      var nameError = document.getElementById('nameError');
+      var emailError = document.getElementById('emailError');
+      var messageError = document.getElementById('messageError');
+      var first = null;
+      var nameVal = trim(name.value);
+      var emailVal = trim(email.value);
+      var messageVal = trim(message.value);
+
+      if (!nameVal) { fieldError(name, nameError, 'Enter your name.'); if (!first) first = name; }
+      else fieldOk(name, nameError);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+        fieldError(email, emailError, 'Enter a valid email address.');
+        if (!first) first = email;
+      } else fieldOk(email, emailError);
+      if (!messageVal) { fieldError(message, messageError, 'Enter a message.'); if (!first) first = message; }
+      else fieldOk(message, messageError);
+
+      if (first) first.focus();
+      return !first;
+    }
+
+    function showStatus(kind, text) {
+      statusEl.hidden = false;
+      statusEl.className = 'form-status ' + kind;
+      statusEl.textContent = text;
+      try { statusEl.focus({ preventScroll: true }); } catch (err) { statusEl.focus(); }
+    }
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (sending) return;
+      if (statusEl) statusEl.hidden = true;
+      if (!validateForm()) return;
+
+      var honeypot = contactForm.elements.botcheck;
+      if (honeypot && trim(honeypot.value)) {
+        contactForm.reset();
+        showStatus('success', 'Message sent. Thank you — I will get back to you.');
+        return;
       }
+
+      sending = true;
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+      contactForm.setAttribute('aria-busy', 'true');
+
+      var data = new FormData();
+      data.append('access_key', WEB3FORMS_ACCESS_KEY);
+      data.append('name', trim(contactForm.elements.name.value));
+      data.append('email', trim(contactForm.elements.email.value));
+      data.append('message', trim(contactForm.elements.message.value));
+      data.append('subject', 'Portfolio message from ' + trim(contactForm.elements.name.value));
+      data.append('from_name', trim(contactForm.elements.name.value));
+      data.append('botcheck', '');
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: data
+      }).then(function (res) {
+        return res.json().catch(function () { return { success: false }; });
+      }).then(function (body) {
+        if (body && body.success) {
+          contactForm.reset();
+          showStatus('success', 'Message sent. Thank you — I will get back to you.');
+        } else {
+          showStatus('error', 'The message did not send. Please try again in a moment.');
+        }
+      }).catch(function () {
+        showStatus('error', 'The message did not send. Check your connection and try again.');
+      }).then(function () {
+        sending = false;
+        contactForm.removeAttribute('aria-busy');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = submitLabel; }
+      });
     });
   }
 
-  if (copyBtn && navigator.clipboard) {
-    var txtEl = copyBtn.querySelector('.ca-txt');
-    var label = txtEl ? txtEl.textContent : '';
-    copyBtn.addEventListener('click', function () {
-      navigator.clipboard.writeText(getEmail()).then(function () {
-        copyBtn.classList.add('copied');
-        if (txtEl) txtEl.textContent = 'Copied';
-        copyBtn.setAttribute('aria-label', 'Email address copied');
-        setTimeout(function () {
-          copyBtn.classList.remove('copied');
-          if (txtEl) txtEl.textContent = label;
-          copyBtn.setAttribute('aria-label', 'Copy email address');
-        }, 1700);
-      }).catch(function () {});
-    });
-  }
-
-  // vCard generated on click (reliable cross-browser download; carries the assembled email).
+  // vCard generated on click. It carries public profile links only — no email address.
   var vcardBtn = document.getElementById('vcardBtn');
   if (vcardBtn) {
     vcardBtn.addEventListener('click', function () {
@@ -149,7 +213,6 @@
         'N:Bhardwaj;Karandeep;;;', 'FN:Karandeep Bhardwaj',
         'TITLE:Senior AI Engineer',
         'ORG:Workday',
-        'EMAIL;TYPE=INTERNET,PREF:' + getEmail(),
         'URL:https://karandeepbhardwaj.me',
         'item1.URL:https://linkedin.com/in/karandeepbhardwaj', 'item1.X-ABLabel:LinkedIn',
         'item2.URL:https://github.com/karandeepbhardwaj', 'item2.X-ABLabel:GitHub',
