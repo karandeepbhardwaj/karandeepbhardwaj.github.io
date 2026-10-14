@@ -8,11 +8,11 @@
   var views = document.querySelectorAll('.view');
   // Only the actual tab controls — NOT the section panels (which also carry
   // [data-view]). Binding the click handler to a section would preventDefault()
-  // every click that bubbles up from inside it, breaking links (contact, projects).
+  // every click that bubbles up from inside it, breaking links (contact, experience).
   var tabs = document.querySelectorAll('.nav-btn, .bb-btn');
   var nav = document.getElementById('nav');
   var indicator = document.getElementById('navIndicator');
-  var valid = ['about', 'experience', 'projects', 'skills', 'education', 'contact'];
+  var valid = ['about', 'experience', 'skills', 'education', 'contact'];
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function positionIndicator() {

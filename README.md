@@ -19,11 +19,11 @@ A single, static, fast-loading page. No frameworks, no build step, no animation 
 Implemented from a [Claude Design](https://claude.ai/design) handoff — an **"Ink editorial"** look:
 
 - **Tabbed single view, no page scroll** — a fixed left sidebar (desktop) / bottom tab bar (mobile) swaps sections into a fixed stage. Each view fits the viewport and scrolls internally only if long. Hash deep-links + ← → arrow keys also navigate.
-- **Signature nav** — a measured vertical scale: track line, sliding accent indicator, mono index numerals (01–06), and an arrow that reveals on the active row.
+- **Signature nav** — a measured vertical scale: track line, sliding accent indicator, mono index numerals (01–05), and an arrow that reveals on the active row.
 - **Palette** — warm paper (`#F2EFE9`) with a near-black editorial accent (`#2C2924`), flat outlined cards.
 - **Type** — monospace display headings over **Hanken Grotesk** body (one web font).
 - **No entrance animations, no spinners, no scroll effects** — only gentle hover states and the indicator glide (disabled under `prefers-reduced-motion`).
-- Sections: About · Experience · Projects (the centerpiece — GitHub cards with local/offline-first badges) · Skills · Education · Contact.
+- Sections: About · Experience · Skills · Education · Contact.
 
 - **Contact form** — name, email, and message post to [Web3Forms](https://api.web3forms.com/submit) without a page reload. The public access key is the `WEB3FORMS_ACCESS_KEY` constant in `js/app.js`. A honeypot field drops spam. The downloadable vCard has no email address. The résumé PDF is offline until a new file is ready.
 - **Accessible by design** — ARIA `tablist`/`tab`/`tabpanel`, focus moved into the activated panel, skip link, AA-contrast text, 48px mobile tap targets, broad `prefers-reduced-motion` support, and a `<noscript>` fallback that shows every section.
@@ -40,10 +40,7 @@ Implemented from a [Claude Design](https://claude.ai/design) handoff — an **"I
 
 ## Sections
 
-About · Experience · Projects · Skills · Education · Contact
-
-The **Projects** section highlights recent open-source work from
-[github.com/karandeepbhardwaj](https://github.com/karandeepbhardwaj).
+About · Experience · Skills · Education · Contact
 
 ## Security & Privacy
 

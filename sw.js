@@ -1,6 +1,6 @@
 // Minimal service worker. The document is network-first (always fresh after a
 // deploy); static assets are cache-first; everything works offline once cached.
-const CACHE_NAME = 'kb-portfolio-v19';
+const CACHE_NAME = 'kb-portfolio-v20';
 const urlsToCache = [
     '/',
     '/index.html',
