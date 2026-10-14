@@ -415,41 +415,6 @@
     border-radius:50%;background:var(--accent);opacity:.55;
   }
 
-  /* ---------- Projects ---------- */
-  .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-  .proj-card{
-    position:relative;background:transparent;border:1px solid var(--border-strong);
-    border-radius:var(--radius);padding:26px 26px 22px;
-    box-shadow:none;display:flex;flex-direction:column;
-    transition:border-color .18s ease, box-shadow .18s ease, transform .18s ease;
-  }
-  .proj-card:hover{border-color:var(--accent-soft);box-shadow:var(--shadow-md);transform:translateY(-3px);}
-  .proj-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;}
-  .proj-name{font-family:var(--serif);font-size:25px;font-weight:500;letter-spacing:-.01em;margin:0;}
-  .badge-local{
-    font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;
-    color:var(--accent-deep);background:var(--accent-tint);
-    border:1px solid var(--accent-soft);
-    padding:3px 9px;border-radius:20px;white-space:nowrap;
-  }
-  .proj-desc{font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 18px;text-wrap:pretty;}
-  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px;}
-  .tag{
-    font-size:12px;font-weight:500;color:var(--muted);
-    background:var(--bg-2);border:1px solid var(--border);
-    padding:4px 10px;border-radius:7px;white-space:nowrap;
-  }
-  .proj-link{
-    margin-top:auto;display:inline-flex;align-items:center;gap:7px;
-    font-size:13.5px;font-weight:600;color:var(--accent-deep);
-    padding-top:14px;border-top:1px solid var(--border);
-    transition:gap .18s ease, color .18s ease;
-  }
-  .proj-card:hover .proj-link{gap:11px;}
-  .proj-link .repo{color:var(--muted);font-weight:500;}
-  .proj-link .arr{transition:transform .18s ease;}
-  .proj-card:hover .proj-link .arr{transform:translate(2px,-2px);}
-
   /* ---------- Skills ---------- */
   .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   .skill-cluster{
@@ -583,9 +548,9 @@
     .view-inner{max-width:560px;}
     .about-hero{margin-bottom:30px;}
     .metrics{grid-template-columns:1fr 1fr;gap:20px 14px;}
-    .proj-grid,.skill-grid,.edu-cols{grid-template-columns:1fr;}
+    .skill-grid,.edu-cols{grid-template-columns:1fr;}
     .bottombar{
-      display:grid;grid-template-columns:repeat(6,1fr);
+      display:grid;grid-template-columns:repeat(5,1fr);
       background:var(--surface);border-top:1px solid var(--border);
       padding:6px 6px calc(6px + env(safe-area-inset-bottom));z-index:5;
     }
@@ -638,7 +603,7 @@
       animation-iteration-count:1 !important;
       scroll-behavior:auto !important;
     }
-    .nav-btn:hover,.proj-card:hover,.xp-card:hover,.edu-card:hover,.link-row:hover,.ca-btn:hover,.send-btn:hover{transform:none !important;}
+    .nav-btn:hover,.xp-card:hover,.edu-card:hover,.link-row:hover,.ca-btn:hover,.send-btn:hover{transform:none !important;}
   }
 
   /* ---------- Print: flatten every section into a plain document ---------- */
@@ -652,7 +617,7 @@
     .view + .view{padding-top:16px;border-top:1px solid #ccc;}
     .view-inner{max-width:none;}
     .metrics{break-inside:avoid;}
-    .xp-card,.proj-card,.skill-cluster,.edu-card{break-inside:avoid;}
+    .xp-card,.skill-cluster,.edu-card{break-inside:avoid;}
     *{color:#000 !important;box-shadow:none !important;background:transparent !important;border-color:#bbb !important;}
     .eyebrow::before,.nav-indicator,.nav-track{display:none !important;}
   }
@@ -674,10 +639,9 @@
       <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
       <button class="nav-btn active" role="tab" aria-selected="true" aria-controls="view-about" data-view="about"><span class="idx">01</span><span class="lbl">About</span><span class="go" aria-hidden="true">&rarr;</span></button>
       <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-experience" data-view="experience"><span class="idx">02</span><span class="lbl">Experience</span><span class="go" aria-hidden="true">&rarr;</span></button>
-      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-projects" data-view="projects"><span class="idx">03</span><span class="lbl">Projects</span><span class="go" aria-hidden="true">&rarr;</span></button>
-      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-skills" data-view="skills"><span class="idx">04</span><span class="lbl">Skills</span><span class="go" aria-hidden="true">&rarr;</span></button>
-      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-education" data-view="education"><span class="idx">05</span><span class="lbl">Education</span><span class="go" aria-hidden="true">&rarr;</span></button>
-      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-contact" data-view="contact"><span class="idx">06</span><span class="lbl">Contact</span><span class="go" aria-hidden="true">&rarr;</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-skills" data-view="skills"><span class="idx">03</span><span class="lbl">Skills</span><span class="go" aria-hidden="true">&rarr;</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-education" data-view="education"><span class="idx">04</span><span class="lbl">Education</span><span class="go" aria-hidden="true">&rarr;</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="view-contact" data-view="contact"><span class="idx">05</span><span class="lbl">Contact</span><span class="go" aria-hidden="true">&rarr;</span></button>
     </div>
     <p class="nav-hint" aria-hidden="true"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> to move</p>
 
@@ -797,68 +761,6 @@
             <ul class="xp-bullets">
               <li>Developed enterprise Java applications for Fortune 500 clients in cross-functional Agile squads, contributing across the full SDLC and establishing coding standards adopted team-wide.</li>
             </ul>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section class="view" id="view-projects" data-view="projects" role="tabpanel" aria-label="Projects" tabindex="-1">
-      <div class="view-inner">
-        <div class="eyebrow">Projects</div>
-        <h2 class="section-title">Selected work</h2>
-        <p class="section-sub">A recurring thread runs through these: privacy-first, local-first software that keeps your data on your own machine.</p>
-        <div class="proj-grid">
-
-          <article class="proj-card">
-            <div class="proj-top">
-              <h3 class="proj-name">Yapper</h3>
-              <span class="badge-local">Local-first</span>
-            </div>
-            <p class="proj-desc">Privacy-first voice-to-text desktop app: captures speech, transcribes on-device, refines the text with a local LLM, and auto-pastes at your cursor. Fully local — no cloud, no API keys.</p>
-            <div class="tags">
-              <span class="tag">Tauri 2</span><span class="tag">Rust</span><span class="tag">React</span>
-              <span class="tag">TypeScript</span><span class="tag">whisper.cpp</span><span class="tag">Ollama</span>
-            </div>
-            <a class="proj-link" href="https://github.com/karandeepbhardwaj/Yapper" target="_blank" rel="noopener noreferrer">View on GitHub <span class="repo">/Yapper</span> <span class="arr" aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a>
-          </article>
-
-          <article class="proj-card">
-            <div class="proj-top">
-              <h3 class="proj-name">AirBrowse</h3>
-              <span class="badge-local">No API keys</span>
-            </div>
-            <p class="proj-desc">Browser automation powered by GitHub Copilot — no API keys, no external AI services. Drives the browser entirely through your existing Copilot subscription.</p>
-            <div class="tags">
-              <span class="tag">TypeScript</span><span class="tag">VS Code Extension</span>
-              <span class="tag">Chrome Extension</span><span class="tag">Node.js</span>
-            </div>
-            <a class="proj-link" href="https://github.com/karandeepbhardwaj/AirBrowse" target="_blank" rel="noopener noreferrer">View on GitHub <span class="repo">/AirBrowse</span> <span class="arr" aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a>
-          </article>
-
-          <article class="proj-card">
-            <div class="proj-top">
-              <h3 class="proj-name">cashstash</h3>
-              <span class="badge-local">Offline-first</span>
-            </div>
-            <p class="proj-desc">Private, offline-first budget tracker that syncs to your own Google Drive. No ads, no tracking — your finances never touch a third-party server.</p>
-            <div class="tags">
-              <span class="tag">TypeScript</span><span class="tag">Offline-first</span><span class="tag">Google Drive Sync</span>
-            </div>
-            <a class="proj-link" href="https://github.com/karandeepbhardwaj/cashstash" target="_blank" rel="noopener noreferrer">View on GitHub <span class="repo">/cashstash</span> <span class="arr" aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a>
-          </article>
-
-          <article class="proj-card">
-            <div class="proj-top">
-              <h3 class="proj-name">wrapzone</h3>
-              <span class="badge-local">Full-stack</span>
-            </div>
-            <p class="proj-desc">Premium vehicle-wrapping booking platform with 3-tier packages, scheduling, and integrated payments.</p>
-            <div class="tags">
-              <span class="tag">Next.js 15</span><span class="tag">Drizzle ORM</span><span class="tag">Stripe</span>
-            </div>
-            <a class="proj-link" href="https://github.com/karandeepbhardwaj/wrapzone" target="_blank" rel="noopener noreferrer">View on GitHub <span class="repo">/wrapzone</span> <span class="arr" aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a>
           </article>
 
         </div>
@@ -1017,7 +919,6 @@
   <div class="bottombar" id="bottombar" aria-label="Sections" role="tablist">
     <button class="bb-btn active" role="tab" aria-selected="true" aria-controls="view-about" data-view="about"><span class="bb-dot" aria-hidden="true"></span>About</button>
     <button class="bb-btn" role="tab" aria-selected="false" aria-controls="view-experience" data-view="experience" aria-label="Experience"><span class="bb-dot" aria-hidden="true"></span>Work</button>
-    <button class="bb-btn" role="tab" aria-selected="false" aria-controls="view-projects" data-view="projects"><span class="bb-dot" aria-hidden="true"></span>Projects</button>
     <button class="bb-btn" role="tab" aria-selected="false" aria-controls="view-skills" data-view="skills"><span class="bb-dot" aria-hidden="true"></span>Skills</button>
     <button class="bb-btn" role="tab" aria-selected="false" aria-controls="view-education" data-view="education" aria-label="Education"><span class="bb-dot" aria-hidden="true"></span>Edu</button>
     <button class="bb-btn" role="tab" aria-selected="false" aria-controls="view-contact" data-view="contact"><span class="bb-dot" aria-hidden="true"></span>Contact</button>

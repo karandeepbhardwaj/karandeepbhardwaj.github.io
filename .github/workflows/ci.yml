@@ -34,10 +34,11 @@ jobs:
       - name: Check for broken links
         uses: lycheeverse/lychee-action@v2
         with:
+          # 405: the contact form posts to Web3Forms, so a GET of that URL is rejected.
           args: >-
             --verbose
             --no-progress
-            --accept 200,204,301,302,403,429
+            --accept 200,204,301,302,403,405,429
             --exclude "mailto:"
             --base "https://karandeepbhardwaj.me"
             "*.html"
