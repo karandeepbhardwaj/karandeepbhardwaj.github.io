@@ -25,7 +25,7 @@ Implemented from a [Claude Design](https://claude.ai/design) handoff — an **"I
 - **No entrance animations, no spinners, no scroll effects** — only gentle hover states and the indicator glide (disabled under `prefers-reduced-motion`).
 - Sections: About · Experience · Projects (the centerpiece — GitHub cards with local/offline-first badges) · Skills · Education · Contact.
 
-- **Self-hosted contact actions** — copy-email-to-clipboard, downloadable vCard (`.vcf`), and the résumé PDF.
+- **Self-hosted contact actions** — copy-email-to-clipboard and a downloadable vCard (`.vcf`). The résumé PDF is offline until a new file is ready.
 - **Accessible by design** — ARIA `tablist`/`tab`/`tabpanel`, focus moved into the activated panel, skip link, AA-contrast text, 48px mobile tap targets, broad `prefers-reduced-motion` support, and a `<noscript>` fallback that shows every section.
 - **Browser Back / Forward** works via `pushState` (each section is a real history entry).
 
@@ -62,7 +62,6 @@ karandeepbhardwaj.github.io/
 ├── js/app.js                   # Section router, ARIA, View Transitions, copy-email (vanilla)
 ├── fonts/                      # Self-hosted Hanken Grotesk (variable woff2)
 ├── og-cover.png                # 1200×630 social share card
-├── Karandeep_Resume_2026.pdf   # Résumé (replace in place when a new PDF is ready)
 ├── 404.html                    # Custom 404 (Ink palette)
 ├── sw.js                       # Service Worker (network-first HTML, cache-first assets)
 ├── manifest.json               # PWA manifest
@@ -72,12 +71,11 @@ karandeepbhardwaj.github.io/
     └── security-headers.yml    # Weekly HTTPS/SSL verification
 ```
 
-> **Updating the résumé / sitemap:** replace `Karandeep_Resume_2026.pdf` in place, and bump
-> `<lastmod>` in `sitemap.xml` + `CACHE_NAME` in `sw.js` when content changes.
+> **Updating the sitemap:** bump `<lastmod>` in `sitemap.xml` and `CACHE_NAME` in `sw.js` when content changes.
 > The contact card (`.vcf`) is generated in the browser from `js/app.js`, not stored as a file.
 >
 > Workday starts July 2026 and is the current role. Sun Life ended July 2026.
-> The downloadable PDF is still the previous résumé and should be replaced when a new file is ready.
+> The résumé PDF is not published. Add it back only after Karandeep supplies an updated file.
 
 ## Local Development
 

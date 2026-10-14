@@ -151,11 +151,6 @@
   ::selection{background:var(--accent-soft);color:var(--accent-deep);}
   a{color:inherit;text-decoration:none;}
   :focus-visible{outline:2px solid var(--accent-deep);outline-offset:3px;border-radius:6px;}
-  .dl-btn:focus-visible,.tb-dl:focus-visible{
-    outline:2px solid var(--accent-deep);
-    outline-offset:3px;
-    box-shadow:0 0 0 5px var(--bg);
-  }
   .sr-only{
     position:absolute;width:1px;height:1px;padding:0;margin:-1px;
     overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
@@ -271,51 +266,6 @@
     font-family:inherit;border:1px solid var(--border-strong);border-radius:4px;
     padding:0 3px;background:var(--surface);
   }
-
-  /* ---------- Download button ---------- */
-  .side-sep{border:none;border-top:1px solid var(--border);margin:22px 0 0;}
-  .dl-btn{
-    margin-top:16px;
-    display:flex;align-items:center;gap:12px;
-    width:100%;
-    border:1px solid var(--accent);
-    background:var(--accent);
-    color:#FBFAF7;
-    font-family:var(--sans);
-    padding:12px 14px;
-    border-radius:12px;
-    cursor:pointer;
-    text-align:left;
-    box-shadow:0 2px 10px rgba(28,26,23,.16);
-    transition:transform .16s ease, box-shadow .18s ease, background .16s ease;
-  }
-  .dl-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(28,26,23,.24);background:var(--accent-deep);}
-  .dl-btn:active{transform:translateY(0);}
-  .dl-ico{
-    flex-shrink:0;width:30px;height:30px;border-radius:9px;
-    background:rgba(255,255,255,.16);
-    display:flex;align-items:center;justify-content:center;
-    font-size:15px;line-height:1;
-    transition:transform .35s cubic-bezier(.66,0,.34,1);
-  }
-  .dl-btn:hover .dl-ico{transform:translateY(3px);}
-  .dl-txt{display:flex;flex-direction:column;min-width:0;}
-  .dl-txt b{
-    display:block;font-size:14px;font-weight:600;letter-spacing:-.005em;
-    line-height:1.25;white-space:nowrap;
-  }
-  .dl-txt small{
-    display:block;font-size:10.5px;font-weight:500;opacity:.78;letter-spacing:.01em;
-    line-height:1.3;white-space:nowrap;
-  }
-
-  .tb-dl{
-    flex-shrink:0;display:inline-flex;align-items:center;gap:7px;
-    border:1px solid var(--accent);background:var(--accent);color:#FBFAF7;
-    font-family:var(--sans);font-size:12px;font-weight:600;
-    padding:9px 13px;border-radius:10px;cursor:pointer;letter-spacing:.01em;
-  }
-  .tb-dl .tb-dl-ico{font-size:14px;line-height:1;}
 
   .side-art{margin-top:auto;padding-top:24px;display:flex;flex-direction:column;gap:15px;}
   .rings{width:100%;height:auto;display:block;}
@@ -652,7 +602,7 @@
       animation-iteration-count:1 !important;
       scroll-behavior:auto !important;
     }
-    .nav-btn:hover,.dl-btn:hover,.proj-card:hover,.xp-card:hover,.edu-card:hover,.link-row:hover,.ca-btn:hover,.dl-btn:hover .dl-ico{transform:none !important;}
+    .nav-btn:hover,.proj-card:hover,.xp-card:hover,.edu-card:hover,.link-row:hover,.ca-btn:hover{transform:none !important;}
   }
 
   /* ---------- Print: flatten every section into a plain document ---------- */
@@ -695,12 +645,6 @@
     </div>
     <p class="nav-hint" aria-hidden="true"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> to move</p>
 
-    <hr class="side-sep" />
-    <a class="dl-btn" href="Karandeep_Resume_2026.pdf" download="Karandeep_Bhardwaj_Resume.pdf" aria-label="Download résumé (PDF, 2026)">
-      <span class="dl-ico" aria-hidden="true">&darr;</span>
-      <span class="dl-txt"><b>Download Résumé</b><small>PDF · 2026</small></span>
-    </a>
-
     <div class="side-art" aria-hidden="true">
       <svg class="rings" viewBox="0 0 220 150" fill="none">
         <circle cx="6" cy="150" r="40" />
@@ -720,7 +664,6 @@
       <div class="tb-name">Karandeep Bhardwaj</div>
       <div class="tb-role">Senior AI Engineer · Workday</div>
     </div>
-    <a class="tb-dl" href="Karandeep_Resume_2026.pdf" download="Karandeep_Bhardwaj_Resume.pdf" aria-label="Download résumé (PDF, 2026)"><span class="tb-dl-ico" aria-hidden="true">&darr;</span>Résumé</a>
   </header>
 
   <!-- ============ STAGE ============ -->
