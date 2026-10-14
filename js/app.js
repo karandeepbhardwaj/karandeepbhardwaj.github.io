@@ -154,7 +154,7 @@
         'item1.URL:https://linkedin.com/in/karandeepbhardwaj', 'item1.X-ABLabel:LinkedIn',
         'item2.URL:https://github.com/karandeepbhardwaj', 'item2.X-ABLabel:GitHub',
         'item3.URL:https://x.com/karandeepbhrdwj', 'item3.X-ABLabel:X',
-        'ADR;TYPE=HOME:;;;Toronto;ON;;Canada',
+        'ADR:;;;Toronto;ON;;Canada',
         'NOTE:Senior AI Engineer at Workday — AI for Agent Factory and Sana Enterprise. Production AI systems, agentic workflows, Go, Python, serverless AWS.',
         'END:VCARD'
       ].join('\r\n');
