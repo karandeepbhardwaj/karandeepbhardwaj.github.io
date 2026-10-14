@@ -98,7 +98,7 @@
 
   // ----- Contact form (Web3Forms). No address is published on the site. -----
   // Replace this placeholder with the real Web3Forms access key. It is the only copy.
-  var WEB3FORMS_ACCESS_KEY = 'WEB3FORMS_ACCESS_KEY';
+  var WEB3FORMS_ACCESS_KEY = '3d6ce322-3122-4628-af79-ab6ff4cba5ac';
 
   var contactForm = document.getElementById('contactForm');
   if (contactForm) {

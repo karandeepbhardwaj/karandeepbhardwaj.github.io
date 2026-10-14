@@ -25,7 +25,7 @@ Implemented from a [Claude Design](https://claude.ai/design) handoff — an **"I
 - **No entrance animations, no spinners, no scroll effects** — only gentle hover states and the indicator glide (disabled under `prefers-reduced-motion`).
 - Sections: About · Experience · Projects (the centerpiece — GitHub cards with local/offline-first badges) · Skills · Education · Contact.
 
-- **Contact form** — name, email, and message post to [Web3Forms](https://api.web3forms.com/submit) without a page reload. The access key is the `WEB3FORMS_ACCESS_KEY` constant in `js/app.js` (placeholder until replaced). A honeypot field drops spam. The downloadable vCard has no email address. The résumé PDF is offline until a new file is ready.
+- **Contact form** — name, email, and message post to [Web3Forms](https://api.web3forms.com/submit) without a page reload. The public access key is the `WEB3FORMS_ACCESS_KEY` constant in `js/app.js`. A honeypot field drops spam. The downloadable vCard has no email address. The résumé PDF is offline until a new file is ready.
 - **Accessible by design** — ARIA `tablist`/`tab`/`tabpanel`, focus moved into the activated panel, skip link, AA-contrast text, 48px mobile tap targets, broad `prefers-reduced-motion` support, and a `<noscript>` fallback that shows every section.
 - **Browser Back / Forward** works via `pushState` (each section is a real history entry).
 
@@ -73,7 +73,7 @@ karandeepbhardwaj.github.io/
 
 > **Updating the sitemap:** bump `<lastmod>` in `sitemap.xml` and `CACHE_NAME` in `sw.js` when content changes.
 > The contact card (`.vcf`) is generated in the browser from `js/app.js`, not stored as a file, and it does not include an email address.
-> To turn the contact form on, replace `WEB3FORMS_ACCESS_KEY` in `js/app.js` with the real Web3Forms access key.
+> The Web3Forms access key is the public `WEB3FORMS_ACCESS_KEY` constant in `js/app.js`.
 >
 > Workday starts July 2026 and is the current role. Sun Life ended July 2026.
 > The résumé PDF is not published. Add it back only after Karandeep supplies an updated file.
