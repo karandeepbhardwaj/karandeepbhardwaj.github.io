@@ -74,7 +74,7 @@
       var honeypot = contactForm.elements.botcheck;
       if (honeypot && trim(honeypot.value)) {
         contactForm.reset();
-        showStatus('success', 'Message sent. Thank you — I will get back to you.');
+        showStatus('success', 'Message sent. Thank you. I will get back to you.');
         return;
       }
 
@@ -100,7 +100,7 @@
       }).then(function (body) {
         if (body && body.success) {
           contactForm.reset();
-          showStatus('success', 'Message sent. Thank you — I will get back to you.');
+          showStatus('success', 'Message sent. Thank you. I will get back to you.');
         } else {
           showStatus('error', 'The message did not send. Please try again in a moment.');
         }
@@ -114,7 +114,7 @@
     });
   }
 
-  // vCard generated on click. It carries public profile links only — no email address.
+  // vCard generated on click. It carries public profile links only, no email address.
   var vcardBtn = document.getElementById('vcardBtn');
   if (vcardBtn) {
     vcardBtn.addEventListener('click', function () {
@@ -128,7 +128,7 @@
         'item2.URL:https://github.com/karandeepbhardwaj', 'item2.X-ABLabel:GitHub',
         'item3.URL:https://x.com/karandeepbhrdwj', 'item3.X-ABLabel:X',
         'ADR:;;;Toronto;ON;;Canada',
-        'NOTE:Senior AI Engineer at Workday — AI for Agent Factory and Sana Enterprise. Production AI systems, agentic workflows, Go, Python, serverless AWS.',
+        'NOTE:Senior AI Engineer at Workday: AI for Agent Factory and Sana Enterprise. Production AI systems, agentic workflows, Go, Python, serverless AWS.',
         'END:VCARD'
       ].join('\r\n');
       var blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' });
